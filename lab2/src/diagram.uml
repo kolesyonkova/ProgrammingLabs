@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="413.0" y="315.0">ru.ifmo.se.pokemon.Effect</node>
+    <node x="444.00000000000006" y="240.0">Moves.Simisage.Rock_Slide</node>
+    <node x="964.0" y="80.0">ru.ifmo.se.pokemon.StatusMove</node>
+    <node x="1236.0470588235296" y="160.0">Moves.Pansage.Confide</node>
+    <node x="264.0" y="395.0">Pokemons.Groudon</node>
+    <node x="0.0" y="240.0">ru.ifmo.se.pokemon.FireMove</node>
+    <node x="4.0" y="475.0">Pokemons.Monferno</node>
+    <node x="589.5176470588236" y="0.0">ru.ifmo.se.pokemon.Move</node>
+    <node x="365.5176470588236" y="80.0">ru.ifmo.se.pokemon.DamageMove</node>
+    <node x="972.0470588235296" y="160.0">Moves.Groudon.Swagger</node>
+    <node x="0.0" y="555.0">Pokemons.Infernape</node>
+    <node x="748.0470588235296" y="160.0">Moves.Groudon.Rest</node>
+    <node x="140.0" y="315.0">ru.ifmo.se.pokemon.Pokemon</node>
+    <node x="1096.0470588235296" y="160.0">Moves.Monferno.Slack_Off</node>
+    <node x="136.0" y="475.0">Pokemons.Simisage</node>
+    <node x="592.0000000000001" y="240.0">Moves.Chimchar.Shadow_Claw</node>
+    <node x="140.0" y="395.0">Pokemons.Pansage</node>
+    <node x="304.00000000000006" y="240.0">Moves.Pansage.Seed_Bomb</node>
+    <node x="64.0" y="160.0">ru.ifmo.se.pokemon.SpecialMove</node>
+    <node x="4.0" y="395.0">Pokemons.Chimchar</node>
+    <node x="584.0470588235296" y="160.0">ru.ifmo.se.pokemon.PhysicalMove</node>
+    <node x="848.0470588235296" y="160.0">Moves.Groudon.Bulk_Up</node>
+    <node x="748.0" y="240.0">Moves.Infernape.Rock_Tomb</node>
+    <node x="554.0" y="315.0">Main</node>
+    <node x="888.0" y="240.0">Moves.Pansage.Facade</node>
+    <node x="132.0" y="240.0">Moves.Groudon.Ancient_Power</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Moves.Pansage.Confide" target="ru.ifmo.se.pokemon.StatusMove">
+      <point x="0.0" y="-15.0" />
+      <point x="1288.0470588235296" y="130.0" />
+      <point x="1079.2" y="130.0" />
+      <point x="51.200000000000045" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Chimchar" target="ru.ifmo.se.pokemon.Pokemon">
+      <point x="0.0" y="-15.0" />
+      <point x="60.0" y="370.0" />
+      <point x="157.33333333333334" y="370.0" />
+      <point x="-34.66666666666666" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Monferno" target="Pokemons.Chimchar">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ru.ifmo.se.pokemon.PhysicalMove" target="ru.ifmo.se.pokemon.DamageMove">
+      <point x="0.0" y="-15.0" />
+      <point x="656.0470588235296" y="140.0" />
+      <point x="461.5176470588236" y="140.0" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Groudon.Ancient_Power" target="ru.ifmo.se.pokemon.SpecialMove">
+      <point x="0.0" y="-15.0" />
+      <point x="208.0" y="220.0" />
+      <point x="166.0" y="220.0" />
+      <point x="34.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Pansage.Seed_Bomb" target="ru.ifmo.se.pokemon.PhysicalMove">
+      <point x="0.0" y="-15.0" />
+      <point x="364.00000000000006" y="210.0" />
+      <point x="598.4470588235296" y="210.0" />
+      <point x="-57.60000000000002" y="15.0" />
+    </edge>
+    <edge source="Moves.Infernape.Rock_Tomb" target="ru.ifmo.se.pokemon.PhysicalMove">
+      <point x="0.0" y="-15.0" />
+      <point x="808.0" y="220.0" />
+      <point x="684.8470588235296" y="220.0" />
+      <point x="28.799999999999955" y="15.0" />
+    </edge>
+    <edge source="ru.ifmo.se.pokemon.StatusMove" target="ru.ifmo.se.pokemon.Move">
+      <point x="0.0" y="-15.0" />
+      <point x="1028.0" y="55.0" />
+      <point x="649.5176470588236" y="55.0" />
+      <point x="20.0" y="15.0" />
+    </edge>
+    <edge source="ru.ifmo.se.pokemon.SpecialMove" target="ru.ifmo.se.pokemon.DamageMove">
+      <point x="0.0" y="-15.0" />
+      <point x="132.0" y="140.0" />
+      <point x="397.5176470588236" y="140.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Chimchar.Shadow_Claw" target="ru.ifmo.se.pokemon.PhysicalMove">
+      <point x="0.0" y="-15.0" />
+      <point x="660.0000000000001" y="220.0" />
+      <point x="656.0470588235296" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Simisage.Rock_Slide" target="ru.ifmo.se.pokemon.PhysicalMove">
+      <point x="0.0" y="-15.0" />
+      <point x="508.00000000000006" y="220.0" />
+      <point x="627.2470588235296" y="220.0" />
+      <point x="-28.799999999999955" y="15.0" />
+    </edge>
+    <edge source="ru.ifmo.se.pokemon.DamageMove" target="ru.ifmo.se.pokemon.Move">
+      <point x="0.0" y="-15.0" />
+      <point x="429.5176470588236" y="55.0" />
+      <point x="609.5176470588236" y="55.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Pansage" target="ru.ifmo.se.pokemon.Pokemon">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Infernape" target="Pokemons.Monferno">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Groudon.Bulk_Up" target="ru.ifmo.se.pokemon.StatusMove">
+      <point x="0.0" y="-15.0" />
+      <point x="900.0470588235296" y="140.0" />
+      <point x="1002.4000000000001" y="140.0" />
+      <point x="-25.600000000000023" y="15.0" />
+    </edge>
+    <edge source="ru.ifmo.se.pokemon.FireMove" target="ru.ifmo.se.pokemon.SpecialMove">
+      <point x="0.0" y="-15.0" />
+      <point x="56.0" y="220.0" />
+      <point x="98.0" y="220.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Pansage.Facade" target="ru.ifmo.se.pokemon.PhysicalMove">
+      <point x="5.6843418860808015E-14" y="-15.0" />
+      <point x="936.0000000000001" y="210.0" />
+      <point x="713.6470588235296" y="210.0" />
+      <point x="57.60000000000002" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Groudon" target="ru.ifmo.se.pokemon.Pokemon">
+      <point x="0.0" y="-15.0" />
+      <point x="316.0" y="370.0" />
+      <point x="226.66666666666666" y="370.0" />
+      <point x="34.66666666666666" y="15.0" />
+    </edge>
+    <edge source="Moves.Groudon.Rest" target="ru.ifmo.se.pokemon.StatusMove">
+      <point x="0.0" y="-15.0" />
+      <point x="788.0470588235296" y="130.0" />
+      <point x="976.8" y="130.0" />
+      <point x="-51.200000000000045" y="15.0" />
+    </edge>
+    <edge source="Pokemons.Simisage" target="Pokemons.Pansage">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Groudon.Swagger" target="ru.ifmo.se.pokemon.StatusMove">
+      <point x="0.0" y="-15.0" />
+      <point x="1024.0470588235296" y="140.0" />
+      <point x="1028.0" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Moves.Monferno.Slack_Off" target="ru.ifmo.se.pokemon.StatusMove">
+      <point x="0.0" y="-15.0" />
+      <point x="1156.0470588235296" y="140.0" />
+      <point x="1053.6" y="140.0" />
+      <point x="25.59999999999991" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7123966942148762" x="670.5" y="292.49999999999994" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
