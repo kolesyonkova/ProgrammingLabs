@@ -46,7 +46,7 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void returnHome() {
-        System.out.println("Вернулся домой");
-        System.out.println("обедает");
+        System.out.println("Вернулся домой Крошка Ру");
+        System.out.println("обедает Крошка Ру");
     }
 }
