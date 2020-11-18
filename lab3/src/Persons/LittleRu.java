@@ -2,6 +2,7 @@ package Persons;
 
 import Moves.MovesInForest;
 import Moves.MovesInHome;
+import Objects.Cones;
 
 public class LittleRu extends Person implements MovesInHome, MovesInForest {
     public LittleRu(String name) {
@@ -12,7 +13,6 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
     public void getLocation() {
         super.getLocation();
     }
-
     @Override
     public void setLocation(boolean location) {
         super.setLocation(location);
@@ -20,7 +20,7 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void say() {
-        System.out.println("А я уже принял");
+        System.out.println(getName()+" с радостью заявил:\"А я уже принял!\"");
     }
 
     @Override
@@ -36,7 +36,8 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void throwСones() {
-        System.out.println("КИдаю шишкой в Тигру");
+        Cones con=new Cones(getName(),"Тигру");
+        con.beThrow(con);
     }
 
     @Override
@@ -46,7 +47,7 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void returnHome() {
-        System.out.println("Вернулся домой Крошка Ру");
-        System.out.println("обедает Крошка Ру");
+        System.out.println("Вернулся домой " + getName());
+        System.out.println("обедает " + getName());
     }
 }

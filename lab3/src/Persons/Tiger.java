@@ -2,12 +2,15 @@ package Persons;
 
 import Moves.MovesInForest;
 import Moves.MovesInHome;
+import Objects.Cones;
+import Objects.Cup;
 
 public class Tiger extends Person implements MovesInHome, MovesInForest {
 
     public Tiger(String name) {
         super(name);
     }
+
     @Override
     public void getLocation() {
         super.getLocation();
@@ -20,7 +23,9 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void say() {
-        System.out.println("Я тоже!");
+        Cup cup=new Cup();
+        cup.drankCup();
+        System.out.println(getName()+" проглотив все, что было в чашке, сказал: \"И я тоже\"");
     }
 
     @Override
@@ -36,7 +41,8 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void throwСones() {
-        System.out.println("КИдаю шишкой в Крошку Ру");
+        Cones con = new Cones(getName(), "Крошку Ру");
+        con.beThrow(con);
     }
 
     @Override
@@ -46,7 +52,7 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void returnHome() {
-        System.out.println("Вернулся домой Тигра");
-        System.out.println("обедает Тигра");
+        System.out.println("Вернулся домой " + getName());
+        System.out.println("обедает " + getName());
     }
 }

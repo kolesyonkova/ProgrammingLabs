@@ -1,7 +1,6 @@
 package Persons;
 
-import Moves.MovesInForest;
-import Moves.MovesInHome;
+import Objects.Cup;
 
 public class Kyungs extends Person {
     public Kyungs(String name) {
@@ -17,10 +16,15 @@ public class Kyungs extends Person {
     public void setLocation(boolean location) {
         super.setLocation(location);
     }
-    public void pourTea(){
-        System.out.println("ВОт вам чай");
-    };
-    public void say(){
+
+    public void pourTea() {
+        Cup cup=new Cup();
+        cup.fillTheCup();
+        System.out.println("Вот вам чай");
+    }
+
+    public void say() {
         System.out.println("ИДите в лес!");
-    };
+
+    }
 }

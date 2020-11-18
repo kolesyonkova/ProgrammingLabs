@@ -1,3 +1,4 @@
-public class IsHome {
-    public enum isHome { home, forest}
+public enum  IsHome {
+    HOME,
+    FOREST;
 }
