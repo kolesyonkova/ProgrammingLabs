@@ -1,6 +1,5 @@
 package Moves;
 
-import Objects.Cup;
 
 public interface ForObjects {
     public void empty(String name);

@@ -6,7 +6,7 @@ import Objects.Cart;
 import Objects.Cones;
 
 
-public class LittleRu extends Person implements MovesInHome, MovesInForest{
+public class LittleRu extends Person implements MovesInHome, MovesInForest {
     public LittleRu(String name) {
         super(name);
     }
@@ -39,7 +39,6 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest{
         this.turnChair();
     }
 
-
     @Override
     public void throwСones() {
         Cones con = new Cones(getName(), "Тигру");
@@ -59,4 +58,5 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest{
         System.out.println("Вернулся домой " + getName());
         System.out.println("обедает " + getName());
     }
+
 }
