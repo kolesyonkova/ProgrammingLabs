@@ -23,19 +23,18 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
     public void setLocation(boolean location) {
         super.setLocation(location);
     }
-    public void takeCup(Cup cup){
-       cup.drankCup();
-       say();
+
+    public void takeCup(Cup cup) {
+        cup.take(getName());
+        cup.empty(getName());
+        say();
     }
+
     @Override
     public void say() {
         System.out.println(getName() + " проглотив все, что было в чашке, сказал: \"И я тоже\"");
     }
 
-    @Override
-    public void takeCart() {
-        cartTi.takeCart(getName());
-    }
 
     @Override
     public void turnChair() {
@@ -55,13 +54,16 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
     }
 
     @Override
-    public void forgetCart() {
-        cartTi.forgetCart(getName());
-    }
-
-    @Override
     public void returnHome() {
         System.out.println("Вернулся домой " + getName());
         System.out.println("обедает " + getName());
+    }
+
+    public void take(String name) {
+        cartTi.take(getName());
+    }
+
+    public void forget(String name) {
+        cartTi.forget(getName());
     }
 }

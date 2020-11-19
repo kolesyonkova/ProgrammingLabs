@@ -1,17 +1,31 @@
 package Objects;
 
-public class Cup {
-    private boolean isEmpty;
+import Moves.ForObjects;
 
-    public boolean getIsEmpty() {
-        return isEmpty;
-    }
+public class Cup implements ForObjects {
+    private boolean isEmpty;
 
     public void fillTheCup() {
         isEmpty = true;
     }
 
-    public void drankCup() {
+    @Override
+    public void empty(String name) {
         isEmpty = false;
     }
+
+    public boolean getIsEmpty() {
+        return isEmpty;
+    }
+
+    @Override
+    public void take(String name) {
+
+    }
+
+    @Override
+    public void forget(String name) {
+
+    }
+
 }

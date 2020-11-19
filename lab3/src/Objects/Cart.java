@@ -1,21 +1,36 @@
 package Objects;
 
+import Moves.ForObjects;
 import Persons.Person;
 
-public class Cart {
+public class Cart implements ForObjects {
     private boolean isCart = true;
 
     public boolean isCart() {
         return isCart;
     }
 
-    public void forgetCart(String name) {
-        isCart = false;
-        System.out.println(name + " забыл корзину под деревом!");
+
+
+    @Override
+    public void empty(String name) {
+
     }
 
-    public void takeCart(String name) {
+    @Override
+    public boolean getIsEmpty() {
+        return false;
+    }
+
+    @Override
+    public void take(String name) {
         isCart = true;
         System.out.println(name + " взял корзину!");
+    }
+
+    @Override
+    public void forget(String name) {
+        isCart = false;
+        System.out.println(name + " забыл корзину под деревом!");
     }
 }

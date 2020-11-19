@@ -4,9 +4,9 @@ import Moves.MovesInForest;
 import Moves.MovesInHome;
 import Objects.Cart;
 import Objects.Cones;
-import Objects.Cup;
 
-public class LittleRu extends Person implements MovesInHome, MovesInForest {
+
+public class LittleRu extends Person implements MovesInHome, MovesInForest{
     public LittleRu(String name) {
         super(name);
     }
@@ -39,20 +39,19 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
         this.turnChair();
     }
 
+
     @Override
     public void throwСones() {
         Cones con = new Cones(getName(), "Тигру");
         con.beThrow(con);
     }
 
-    @Override
-    public void takeCart() {
-        cartRu.takeCart(getName());
+    public void take(String name) {
+        cartRu.take(getName());
     }
 
-    @Override
-    public void forgetCart() {
-        cartRu.forgetCart(getName());
+    public void forget(String name) {
+        cartRu.forget(getName());
     }
 
     @Override

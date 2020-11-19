@@ -23,8 +23,8 @@ public class Main {
         if (isHome == Location.FOREST) {
             LittleRu.throwСones();
             Tiger.throwСones();
-            LittleRu.forgetCart();
-            Tiger.forgetCart();
+            LittleRu.forget(LittleRu.getName());
+            Tiger.forget(Tiger.getName());
             LittleRu.returnHome();
             Tiger.returnHome();
         }
