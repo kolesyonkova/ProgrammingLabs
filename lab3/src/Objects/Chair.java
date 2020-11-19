@@ -1,16 +1,16 @@
 package Objects;
 
-public class Cones {
+public class Chair {
     private String thrown;
     private String threw;
 
-    public Cones(String threw, String thrown) {
+    public Chair(String threw, String thrown, int count) {
         this.threw = threw;
         this.thrown = thrown;
     }
 
-    public void beThrow(Cones cone) {
-        System.out.println(cone);
+    public void beThrow(Chair chair) {
+        System.out.println(chair);
     }
 
     @Override

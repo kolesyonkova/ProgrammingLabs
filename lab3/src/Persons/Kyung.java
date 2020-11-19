@@ -2,8 +2,8 @@ package Persons;
 
 import Objects.Cup;
 
-public class Kyungs extends Person {
-    public Kyungs(String name) {
+public class Kyung extends Person {
+    public Kyung(String name) {
         super(name);
     }
 

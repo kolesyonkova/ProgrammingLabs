@@ -5,5 +5,5 @@ public interface MovesInHome {
 
     void turnChair();
 
-    void push();
+    void push(String thrown, boolean isAggressive);
 }

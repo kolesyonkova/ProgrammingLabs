@@ -42,14 +42,19 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
     }
 
     @Override
-    public void push() {
-        System.out.println("Толкаю Крошку Ру");
-        this.turnChair();
+    public void push(String thrown, boolean isAggressive) {
+        if (isAggressive) {
+            System.out.println(getName() + " толкнул агрессивно" + thrown);
+            this.turnChair();
+        } else {
+            System.out.println(getName() + " толкнул дружески " + thrown);
+            this.turnChair();
+        }
     }
 
     @Override
-    public void throwСones() {
-        Cones con = new Cones(getName(), "Крошку Ру");
+    public void throwСones(String thrown) {
+        Cones con = new Cones(getName(), thrown);
         con.beThrow(con);
     }
 

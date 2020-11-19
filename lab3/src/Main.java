@@ -1,32 +1,32 @@
 import Objects.Cafeteriy;
 import Objects.Cup;
-import Persons.Kyungs;
+import Persons.Kyung;
 import Persons.LittleRu;
 import Persons.Tiger;
 
 public class Main {
     public static void main(String[] args) {
-        LittleRu LittleRu = new LittleRu("Крошка Ру");
-        Tiger Tiger = new Tiger("Тигра");
-        Kyungs Kyung = new Kyungs("Кенга");
+        LittleRu littleRu = new LittleRu("Крошка Ру");
+        Tiger tiger = new Tiger("Тигра");
+        Kyung kyung = new Kyung("Кенга");
         Location isHome = Location.HOME;
         if (isHome == Location.HOME) {
-            Cup b=Cafeteriy.createCup(Kyung);
-            Kyung.pourTea(b);
-            LittleRu.say();
-            Tiger.takeCup(b);
-            LittleRu.push();
-            Tiger.push();
-            Kyung.say();
+            Cup b = Cafeteriy.createCup(kyung);
+            kyung.pourTea(b);
+            littleRu.say();
+            tiger.takeCup(b);
+            littleRu.push(tiger.getName(),false);
+            tiger.push(littleRu.getName(),false);
+            kyung.say();
         }
         isHome = Location.FOREST;
         if (isHome == Location.FOREST) {
-            LittleRu.throwСones();
-            Tiger.throwСones();
-            LittleRu.forget(LittleRu.getName());
-            Tiger.forget(Tiger.getName());
-            LittleRu.returnHome();
-            Tiger.returnHome();
+            littleRu.throwСones(tiger.getName());
+            tiger.throwСones(littleRu.getName());
+            littleRu.forget(littleRu.getName());
+            tiger.forget(tiger.getName());
+            littleRu.returnHome();
+            tiger.returnHome();
         }
     }
 }

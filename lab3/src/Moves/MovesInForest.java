@@ -1,6 +1,6 @@
 package Moves;
 
 public interface MovesInForest {
-    void throwСones();
+    void throwСones(String thrown);
     void returnHome();
 }

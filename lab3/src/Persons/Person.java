@@ -1,7 +1,7 @@
 package Persons;
 
 public abstract class Person {
-    private final String name;
+    private String name;
     private boolean location;
 
     public Person(String name) {
