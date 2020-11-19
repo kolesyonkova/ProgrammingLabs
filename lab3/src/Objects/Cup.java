@@ -3,7 +3,7 @@ package Objects;
 public class Cup {
     private boolean isEmpty;
 
-    boolean getIsEmpty() {
+    public boolean getIsEmpty() {
         return isEmpty;
     }
 

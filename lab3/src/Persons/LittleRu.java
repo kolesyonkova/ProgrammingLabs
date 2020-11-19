@@ -2,6 +2,7 @@ package Persons;
 
 import Moves.MovesInForest;
 import Moves.MovesInHome;
+import Objects.Cart;
 import Objects.Cones;
 
 public class LittleRu extends Person implements MovesInHome, MovesInForest {
@@ -9,10 +10,13 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
         super(name);
     }
 
+    Cart cartRu = new Cart();
+
     @Override
     public void getLocation() {
         super.getLocation();
     }
+
     @Override
     public void setLocation(boolean location) {
         super.setLocation(location);
@@ -20,12 +24,12 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void say() {
-        System.out.println(getName()+" с радостью заявил:\"А я уже принял!\"");
+        System.out.println(getName() + " с радостью заявил:\"А я уже принял!\"");
     }
 
     @Override
     public void turnChair() {
-        System.out.println("случайно перевернул один, нарочно");
+        System.out.println("случайно перевернул один, нарочно " + getName());
     }
 
     @Override
@@ -36,13 +40,18 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
 
     @Override
     public void throwСones() {
-        Cones con=new Cones(getName(),"Тигру");
+        Cones con = new Cones(getName(), "Тигру");
         con.beThrow(con);
     }
 
     @Override
+    public void takeCart() {
+        cartRu.takeCart(getName());
+    }
+
+    @Override
     public void forgetCart() {
-        System.out.println("Забыл корзину");
+        cartRu.forgetCart(getName());
     }
 
     @Override

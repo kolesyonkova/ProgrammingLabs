@@ -18,9 +18,9 @@ public class Kyungs extends Person {
     }
 
     public void pourTea() {
-        Cup cup=new Cup();
+        Cup cup = new Cup();
         cup.fillTheCup();
-        System.out.println("Вот вам чай");
+        System.out.println("\"ВОт вам чай\"-сказала " + getName());
     }
 
     public void say() {

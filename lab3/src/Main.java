@@ -3,12 +3,12 @@ import Persons.LittleRu;
 import Persons.Tiger;
 
 public class Main {
-    public static void main(String[] args){
-        LittleRu LittleRu=new LittleRu("Крошка Ру");
-        Tiger Tiger=new Tiger("Тигра");
-        Kyungs Kyung=new Kyungs("Кенга");
-        IsHome isHome=IsHome.HOME;
-        if (isHome==IsHome.HOME){
+    public static void main(String[] args) {
+        LittleRu LittleRu = new LittleRu("Крошка Ру");
+        Tiger Tiger = new Tiger("Тигра");
+        Kyungs Kyung = new Kyungs("Кенга");
+        Location isHome = Location.HOME;
+        if (isHome == Location.HOME) {
             Kyung.pourTea();
             LittleRu.say();
             Tiger.say();
@@ -16,13 +16,14 @@ public class Main {
             Tiger.push();
             Kyung.say();
         }
-        isHome=IsHome.FOREST;
-        if (isHome==IsHome.FOREST) {
+        isHome = Location.FOREST;
+        if (isHome == Location.FOREST) {
             LittleRu.throwСones();
             Tiger.throwСones();
             LittleRu.forgetCart();
+            Tiger.forgetCart();
             LittleRu.returnHome();
             Tiger.returnHome();
-        };
+        }
     }
 }
