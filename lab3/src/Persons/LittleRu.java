@@ -4,6 +4,7 @@ import Moves.MovesInForest;
 import Moves.MovesInHome;
 import Objects.Cart;
 import Objects.Cones;
+import Objects.Cup;
 
 public class LittleRu extends Person implements MovesInHome, MovesInForest {
     public LittleRu(String name) {

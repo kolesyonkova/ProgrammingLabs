@@ -1,3 +1,5 @@
+import Objects.Cafeteriy;
+import Objects.Cup;
 import Persons.Kyungs;
 import Persons.LittleRu;
 import Persons.Tiger;
@@ -9,9 +11,10 @@ public class Main {
         Kyungs Kyung = new Kyungs("Кенга");
         Location isHome = Location.HOME;
         if (isHome == Location.HOME) {
-            Kyung.pourTea();
+            Cup b=Cafeteriy.createCup(Kyung);
+            Kyung.pourTea(b);
             LittleRu.say();
-            Tiger.say();
+            Tiger.takeCup(b);
             LittleRu.push();
             Tiger.push();
             Kyung.say();

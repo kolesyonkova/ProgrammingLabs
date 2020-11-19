@@ -4,11 +4,11 @@ public abstract class Person {
     private final String name;
     private boolean location;
 
-    void getLocation() {
+    public void getLocation() {
         System.out.println("Находится на локации" + this.location);
     }
 
-    void setLocation(boolean location) {
+    public void setLocation(boolean location) {
         this.location = location;
     }
 
@@ -16,7 +16,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 }

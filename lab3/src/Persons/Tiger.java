@@ -23,11 +23,12 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
     public void setLocation(boolean location) {
         super.setLocation(location);
     }
-
+    public void takeCup(Cup cup){
+       cup.drankCup();
+       say();
+    }
     @Override
     public void say() {
-        Cup cup = new Cup();
-        cup.drankCup();
         System.out.println(getName() + " проглотив все, что было в чашке, сказал: \"И я тоже\"");
     }
 

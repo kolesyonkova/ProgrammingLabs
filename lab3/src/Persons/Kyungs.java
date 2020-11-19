@@ -6,7 +6,6 @@ public class Kyungs extends Person {
     public Kyungs(String name) {
         super(name);
     }
-
     @Override
     public void getLocation() {
         super.getLocation();
@@ -17,8 +16,7 @@ public class Kyungs extends Person {
         super.setLocation(location);
     }
 
-    public void pourTea() {
-        Cup cup = new Cup();
+    public void pourTea(Cup cup) {
         cup.fillTheCup();
         System.out.println("\"ВОт вам чай\"-сказала " + getName());
     }

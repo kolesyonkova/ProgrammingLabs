@@ -3,65 +3,66 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="52.083333333333314" y="223.0">Persons.LittleRu</node>
-    <node x="385.66666666666663" y="0.0">Persons.Person</node>
-    <node x="0.0" y="22.5">Moves.MovesInForest</node>
-    <node x="0.0" y="476.0">Objects.Cup</node>
-    <node x="261.0833333333333" y="223.0">Persons.Tiger</node>
-    <node x="0.0" y="642.0">Objects.Cart</node>
-    <node x="470.0833333333333" y="267.0">Persons.Kyungs</node>
-    <node x="417.0" y="476.0">Main</node>
-    <node x="209.0" y="476.0">Objects.Cones</node>
-    <node x="186.79166666666666" y="22.5">Moves.MovesInHome</node>
+    <node x="84.41666666666669" y="0.0">Persons.Person</node>
+    <node x="209.0" y="224.0">Persons.LittleRu</node>
+    <node x="507.0833333333333" y="11.5">Moves.MovesInForest</node>
+    <node x="435.0" y="533.0">Objects.Cup</node>
+    <node x="418.0" y="213.0">Persons.Tiger</node>
+    <node x="220.0" y="533.0">Objects.Cart</node>
+    <node x="0.0" y="290.5">Persons.Kyungs</node>
+    <node x="644.0" y="533.0">Objects.Cones</node>
+    <node x="0.0" y="699.0">Main</node>
+    <node x="336.29166666666663" y="22.5">Moves.MovesInHome</node>
+    <node x="0.0" y="533.0">Location</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Persons.LittleRu" target="Moves.MovesInHome">
-      <point x="0.0" y="-104.0" />
-      <point x="146.58333333333331" y="183.0" />
-      <point x="220.79166666666666" y="183.0" />
+      <point x="0.0" y="-126.5" />
+      <point x="303.5" y="183.0" />
+      <point x="370.29166666666663" y="183.0" />
       <point x="-34.0" y="49.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Moves.MovesInForest">
-      <point x="-63.0" y="-104.0" />
-      <point x="83.58333333333331" y="203.0" />
-      <point x="38.0" y="203.0" />
-      <point x="-38.0" y="49.0" />
+      <point x="63.0" y="-126.5" />
+      <point x="366.5" y="193.0" />
+      <point x="545.0833333333333" y="193.0" />
+      <point x="-38.0" y="60.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInForest">
-      <point x="-63.0" y="-104.0" />
-      <point x="292.5833333333333" y="173.0" />
-      <point x="114.0" y="173.0" />
-      <point x="38.0" y="49.0" />
+      <point x="63.0" y="-137.5" />
+      <point x="575.5" y="193.0" />
+      <point x="621.0833333333333" y="193.0" />
+      <point x="38.0" y="60.0" />
     </edge>
     <edge source="Persons.Tiger" target="Persons.Person">
-      <point x="63.0" y="-104.0" />
-      <point x="418.5833333333333" y="203.0" />
-      <point x="480.16666666666663" y="203.0" />
-      <point x="0.0" y="71.5" />
+      <point x="-63.0" y="-137.5" />
+      <point x="449.5" y="173.0" />
+      <point x="241.91666666666669" y="173.0" />
+      <point x="63.0" y="71.5" />
     </edge>
     <edge source="Persons.LittleRu" target="Persons.Person">
-      <point x="63.0" y="-104.0" />
-      <point x="209.58333333333331" y="193.0" />
-      <point x="417.16666666666663" y="193.0" />
-      <point x="-63.0" y="71.5" />
+      <point x="-63.0" y="-126.5" />
+      <point x="240.5" y="193.0" />
+      <point x="178.91666666666669" y="193.0" />
+      <point x="0.0" y="71.5" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInHome">
-      <point x="0.0" y="-104.0" />
-      <point x="355.5833333333333" y="163.0" />
-      <point x="288.79166666666663" y="163.0" />
-      <point x="34.0" y="49.0" />
+      <point x="0.0" y="-137.5" />
+      <point x="512.5" y="163.0" />
+      <point x="438.29166666666663" y="163.0" />
+      <point x="33.99999999999997" y="49.0" />
     </edge>
     <edge source="Persons.Kyungs" target="Persons.Person">
       <point x="0.0" y="-60.0" />
-      <point x="564.5833333333333" y="203.0" />
-      <point x="543.1666666666666" y="203.0" />
-      <point x="63.0" y="71.5" />
+      <point x="94.5" y="193.0" />
+      <point x="115.91666666666669" y="193.0" />
+      <point x="-63.0" y="71.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.6950867052023122" x="330.0" y="336.0" />
+  <settings layout="Hierarchic Group" zoom="0.6144890038809832" x="403.5" y="376.5" />
   <SelectedNodes>
-    <node>Objects.Cart</node>
+    <node>Persons.Person</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
