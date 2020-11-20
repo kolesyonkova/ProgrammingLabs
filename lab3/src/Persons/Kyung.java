@@ -1,6 +1,6 @@
 package Persons;
 
-import Objects.Cup;
+import Objects.inHome.Cup;
 
 public class Kyung extends Person {
     public Kyung(String name) {

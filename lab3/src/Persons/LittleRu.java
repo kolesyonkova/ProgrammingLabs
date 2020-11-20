@@ -2,8 +2,10 @@ package Persons;
 
 import Moves.MovesInForest;
 import Moves.MovesInHome;
-import Objects.Cart;
-import Objects.Cones;
+import Objects.inForest.Cart;
+import Objects.inForest.Cones;
+
+import static Objects.inHome.Chair.beThrown;
 
 
 public class LittleRu extends Person implements MovesInHome, MovesInForest {
@@ -11,7 +13,7 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
         super(name);
     }
 
-    Cart cartRu = new Cart();
+    public Cart cartRu = new Cart();
 
     @Override
     public void getLocation() {
@@ -29,18 +31,19 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
     }
 
     @Override
-    public void turnChair() {
-        System.out.println("случайно перевернул один, нарочно " + getName());
+    public void turnChair(String name,boolean isRandom, int count) {
+            beThrown(getName(),isRandom,count);
     }
-
+    @Override
+    public void turnChair(String name,boolean isRandom, int count,int count2) {
+        beThrown(getName(),isRandom,count,count2);
+    }
     @Override
     public void push(String thrown, boolean isAggressive) {
         if (isAggressive) {
             System.out.println(getName() + " толкнул агрессивно" + thrown);
-            this.turnChair();
         } else {
             System.out.println(getName() + " толкнул дружески " + thrown);
-            this.turnChair();
         }
     }
 

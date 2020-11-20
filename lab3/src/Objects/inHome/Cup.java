@@ -1,6 +1,7 @@
-package Objects;
+package Objects.inHome;
 
 import Moves.ForObjects;
+import Persons.Person;
 
 public class Cup implements ForObjects {
     private boolean isEmpty;
@@ -27,5 +28,8 @@ public class Cup implements ForObjects {
     public void forget(String name) {
 
     }
-
+    public static Cup createCup(Person p){
+        System.out.println("Создала кружку "+p.getName());
+        return new Cup();
+    }
 }

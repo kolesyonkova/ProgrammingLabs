@@ -1,4 +1,4 @@
-package Objects;
+package Objects.inForest;
 
 import Moves.ForObjects;
 import Persons.Person;
@@ -9,7 +9,6 @@ public class Cart implements ForObjects {
     public boolean isCart() {
         return isCart;
     }
-
 
 
     @Override
@@ -31,6 +30,10 @@ public class Cart implements ForObjects {
     @Override
     public void forget(String name) {
         isCart = false;
-        System.out.println(name + " забыл корзину под деревом!");
+    }
+
+    @Override
+    public String toString() {
+        return "корзина";
     }
 }
