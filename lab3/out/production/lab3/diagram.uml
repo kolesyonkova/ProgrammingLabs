@@ -3,87 +3,89 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="518.3194444444443" y="334.5">Persons.Kyung</node>
-    <node x="92.0694444444444" y="268.0">Persons.LittleRu</node>
-    <node x="442.25" y="0.0">Persons.Person</node>
-    <node x="210.0" y="55.5">Moves.MovesInForest</node>
-    <node x="305.0" y="257.0">Persons.Tiger</node>
-    <node x="613.0" y="577.0">Objects.inForest.Cones</node>
-    <node x="489.0" y="979.0">Objects.inHome.Cafeteria</node>
-    <node x="0.0" y="758.0">Objects.inHome.Cup</node>
-    <node x="0.0" y="44.5">Moves.MovesInHome</node>
-    <node x="0.0" y="979.0">Objects.inForest.ForestArea</node>
-    <node x="184.0" y="747.0">Objects.inForest.Cart</node>
-    <node x="821.0" y="577.0">Objects.inHome.Chair</node>
-    <node x="309.0" y="979.0">Objects.inForest.Tree</node>
-    <node x="704.0" y="979.0">Main</node>
-    <node x="393.0" y="577.0">Location</node>
-    <node x="92.0" y="577.0">Moves.ForObjects</node>
+    <node x="641.9583333333335" y="368.5">Persons.Kyung</node>
+    <node x="369.9583333333335" y="291.0">Persons.LittleRu</node>
+    <node x="539.2083333333335" y="0.0">Persons.Person</node>
+    <node x="276.08333333333337" y="67.0">Moves.MovesInForest</node>
+    <node x="97.95833333333348" y="280.0">Persons.Tiger</node>
+    <node x="708.0" y="645.0">Objects.inForest.Cones</node>
+    <node x="669.0" y="1047.0">Objects.inHome.Cafeteria</node>
+    <node x="184.0" y="815.0">Objects.inHome.Cup</node>
+    <node x="0.0" y="45.0">Moves.MovesInHome</node>
+    <node x="496.0" y="1047.0">Objects.inForest.ForestArea</node>
+    <node x="0.0" y="815.0">Objects.inForest.Cart</node>
+    <node x="0.0" y="1047.0">Objects.inHome.Chair</node>
+    <node x="399.0" y="645.0">Objects.inForest.Tree</node>
+    <node x="301.0" y="1047.0">Main</node>
+    <node x="916.0" y="645.0">Location</node>
+    <node x="93.5" y="645.0">Moves.ForObjects</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Persons.LittleRu" target="Moves.MovesInHome">
-      <point x="-63.33333333333334" y="-126.5" />
-      <point x="123.73611111111106" y="237.0" />
-      <point x="47.5" y="237.0" />
-      <point x="-47.5" y="49.0" />
+      <point x="-84.0" y="-149.0" />
+      <point x="411.9583333333335" y="240.0" />
+      <point x="189.0" y="240.0" />
+      <point x="63.0" y="60.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInForest">
-      <point x="0.0" y="-137.5" />
-      <point x="400.0" y="217.0" />
-      <point x="343.5" y="217.0" />
-      <point x="44.5" y="38.0" />
-    </edge>
-    <edge source="Persons.LittleRu" target="Moves.MovesInForest">
-      <point x="0.0" y="-126.5" />
-      <point x="187.0694444444444" y="217.0" />
-      <point x="254.5" y="217.0" />
+      <point x="-1.1368683772161603E-13" y="-160.0" />
+      <point x="223.95833333333337" y="250.0" />
+      <point x="320.58333333333337" y="250.0" />
       <point x="-44.5" y="38.0" />
     </edge>
-    <edge source="Persons.Kyung" target="Persons.Person">
-      <point x="0.0" y="-60.0" />
-      <point x="612.8194444444443" y="237.0" />
-      <point x="599.75" y="237.0" />
-      <point x="63.0" y="93.5" />
+    <edge source="Persons.LittleRu" target="Moves.MovesInForest">
+      <point x="0.0" y="-149.0" />
+      <point x="495.9583333333335" y="230.0" />
+      <point x="409.58333333333337" y="230.0" />
+      <point x="44.5" y="38.0" />
     </edge>
     <edge source="Persons.Tiger" target="Persons.Person">
-      <point x="63.333333333333314" y="-137.5" />
-      <point x="463.3333333333333" y="237.0" />
-      <point x="536.75" y="237.0" />
-      <point x="0.0" y="93.5" />
+      <point x="83.99999999999989" y="-160.0" />
+      <point x="307.95833333333337" y="260.0" />
+      <point x="570.7083333333335" y="260.0" />
+      <point x="-63.0" y="105.0" />
+    </edge>
+    <edge source="Persons.Kyung" target="Persons.Person">
+      <point x="0.0" y="-71.5" />
+      <point x="736.4583333333335" y="260.0" />
+      <point x="696.7083333333335" y="260.0" />
+      <point x="63.0" y="105.0" />
     </edge>
     <edge source="Objects.inHome.Cup" target="Moves.ForObjects">
-      <point x="0.0" y="-82.5" />
-      <point x="82.0" y="722.0" />
-      <point x="133.0" y="722.0" />
-      <point x="-41.0" y="60.0" />
+      <point x="0.0" y="-93.5" />
+      <point x="269.0" y="790.0" />
+      <point x="216.5" y="790.0" />
+      <point x="41.0" y="60.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Persons.Person">
-      <point x="63.33333333333334" y="-126.5" />
-      <point x="250.40277777777774" y="227.0" />
-      <point x="473.75" y="227.0" />
-      <point x="-63.0" y="93.5" />
+      <point x="84.0" y="-149.0" />
+      <point x="579.9583333333335" y="260.0" />
+      <point x="633.7083333333335" y="260.0" />
+      <point x="0.0" y="105.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInHome">
-      <point x="-63.33333333333337" y="-137.5" />
-      <point x="336.66666666666663" y="207.0" />
-      <point x="142.5" y="207.0" />
-      <point x="47.5" y="49.0" />
+      <point x="-84.00000000000011" y="-160.0" />
+      <point x="139.95833333333337" y="260.0" />
+      <point x="63.0" y="260.0" />
+      <point x="-63.0" y="60.0" />
     </edge>
     <edge source="Objects.inForest.Cart" target="Moves.ForObjects">
       <point x="0.0" y="-93.5" />
-      <point x="266.0" y="722.0" />
-      <point x="215.0" y="722.0" />
-      <point x="41.0" y="60.0" />
+      <point x="82.0" y="790.0" />
+      <point x="134.5" y="790.0" />
+      <point x="-41.0" y="60.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7749070631970261" x="543.5681239109786" y="745.6159796498569" />
+  <settings layout="Hierarchic Group" zoom="0.575107296137339" x="545.5" y="572.5" />
   <SelectedNodes>
-    <node>Persons.Person</node>
+    <node>Moves.MovesInHome</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
+    <Category>Constructors</Category>
     <Category>Methods</Category>
+    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
