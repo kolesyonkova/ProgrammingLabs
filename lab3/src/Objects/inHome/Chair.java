@@ -38,4 +38,5 @@ public class Chair {
     public String toString() {
         return "styl";
     }
+
 }

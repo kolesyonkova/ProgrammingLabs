@@ -1,22 +1,22 @@
-import Objects.inForest.ForestArea;
 import Objects.inForest.Tree;
-import Objects.inHome.Cafeteria;
-import Objects.inHome.Chair;
 import Objects.inHome.Cup;
-import Persons.Kyung;
-import Persons.LittleRu;
-import Persons.Tiger;
+import Persons.*;
 
 public class Main {
     public static void main(String[] args) {
+        Piglet piglet=new Piglet("Пятачок");
+        WinnieThePooh winnieThePooh=new WinnieThePooh("Винни-Пух");
         LittleRu littleRu = new LittleRu("Крошка Ру");
         Tiger tiger = new Tiger("Тигра");
         Kyung kyung = new Kyung("Кенга");
+        ChristopherRobin christopherRobin=new ChristopherRobin("Кристофер Робин");
+        piglet.stealUp(winnieThePooh.getName()+"у","сзади");
+        tiger.stopWaiting("что остальные найдут его");
         Location isHome = Location.HOME;
         if (isHome == Location.HOME) {
             int i = 0;
             Cup b = Cup.createCup(kyung);
-            kyung.pourTea(b);
+            kyung.fillCup(b);
             littleRu.say();
             tiger.takeCup(b);
             littleRu.push(tiger.getName(), false);
@@ -33,6 +33,8 @@ public class Main {
             Tree.forgetUnderTree(tiger, tiger.cartTi, Tree.pine);
             littleRu.returnHome();
             tiger.returnHome();
+            christopherRobin.look();
         }
+
     }
 }

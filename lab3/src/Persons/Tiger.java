@@ -39,13 +39,15 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
 
 
     @Override
-    public void turnChair(String name,boolean isRandom, int count) {
-        beThrown(getName(),isRandom,count);
+    public void turnChair(String name, boolean isRandom, int count) {
+        beThrown(getName(), isRandom, count);
     }
+
     @Override
-    public void turnChair(String name,boolean isRandom, int count,int count2) {
-        beThrown(getName(),isRandom,count,count2);
+    public void turnChair(String name, boolean isRandom, int count, int count2) {
+        beThrown(getName(), isRandom, count, count2);
     }
+
     @Override
     public void push(String thrown, boolean isAggressive) {
         if (isAggressive) {
@@ -67,6 +69,22 @@ public class Tiger extends Person implements MovesInHome, MovesInForest {
         System.out.println("обедает " + getName());
     }
 
+    public void stopWaiting(String whatWaiting) {
+        System.out.print("Когда " + getName() + " перестал ждать, что " + whatWaiting + ", ");
+        tired();
+    }
+
+    public void tired() {
+        System.out.print("и когда ему надоело, что рядом нет никого, кому он мог бы сказать:\"Эй, пошли, что ли!\"-");
+        thinkAboutHome();
+    }
+    public void thinkAboutHome(){
+        System.out.println("- он подумал, что надо пойти домой.");
+        runBack();
+    }
+    public void runBack(){
+        System.out.println("И он побежал назад.");
+    }
     public void take(String name) {
         cartTi.take(getName());
     }

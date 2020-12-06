@@ -17,9 +17,10 @@ public class Kyung extends Person {
         super.setLocation(location);
     }
 
-    public void pourTea(Cup cup) {
+    public void fillCup(Cup cup) {
         cup.fillTheCup();
-        System.out.println("\"ВОт вам чай\"-сказала " + getName());
+        System.out.println("Первое, что сказала Кенга, увидав его, это: \"А вот и наш милый Тигра! Как раз пора принимать рыбий жир!\"-сказала " + getName());
+        System.out.println("И она налила ему полную чашку.");
     }
 
     public void say() {
