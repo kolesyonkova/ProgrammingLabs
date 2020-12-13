@@ -28,8 +28,9 @@ public class Cup implements ForObjects {
     public void forget(String name) {
 
     }
-    public static Cup createCup(Person p){
-        System.out.println("Создала кружку "+p.getName());
+
+    public static Cup createCup(Person p) {
+        System.out.println("Создала кружку " + p.getName());
         return new Cup();
     }
 }

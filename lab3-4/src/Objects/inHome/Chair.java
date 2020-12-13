@@ -1,4 +1,5 @@
 package Objects.inHome;
+
 public class Chair {
     /*private boolean overturned;
 

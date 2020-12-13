@@ -1,41 +1,62 @@
 package Persons;
 
-public class ChristopherRobin extends Person {
+import Location.LocForPersons;
+import Moves.ChangeLoc;
+import Objects.inHome.Dinner;
+
+public class ChristopherRobin extends Person implements ChangeLoc {
     public ChristopherRobin(String name) {
         super(name);
     }
-    public void look(){
-        class Dinner{
-            private boolean isDinner=true;
-            public void setDinner(){
-                isDinner=true;
-            }
-            public void overDinner(){
-                isDinner=false;
+
+    LocForPersons loc = LocForPersons.FOREST;
+
+    public void look(Dinner dinner) {
+        class Eyes {
+            String watch(Object onWhat) {
+                return " заглянул в " + onWhat;
             }
         }
-        Dinner dinner=new Dinner();
+        Eyes eyes = new Eyes();
         dinner.overDinner();
-        Door door=new Door();
-        if (door.getCondition()){
+        Door door = new Door();
+        if (door.getCondition()) {
             door.openDoor();
-        }else {
+        } else {
             door.closeDoor();
         }
-        System.out.println("Обед как раз подходил к концу, когда Кристофер Робин заглянул в дверь.");
+        System.out.println("Обед как раз подходил к концу, когда " + getName() + eyes.watch(door));
 
     }
 
-    public static class Door{
-        private boolean isClosed=true;
-        public void closeDoor(){
-            isClosed=true;
+    @Override
+    public void changeLoc(LocForPersons e) {
+        loc = e;
+    }
+
+    @Override
+    public LocForPersons getLoc() {
+        return loc;
+    }
+
+    public static class Door {
+        private boolean isClosed = true;
+
+        public void closeDoor() {
+            isClosed = true;
         }
-        public void openDoor(){
-            isClosed=false;
+
+        public void openDoor() {
+            isClosed = false;
         }
-        public boolean getCondition(){
+
+        public boolean getCondition() {
             return isClosed;
+        }
+
+        @Override
+        public String toString() {
+            return "дверь";
         }
     }
 

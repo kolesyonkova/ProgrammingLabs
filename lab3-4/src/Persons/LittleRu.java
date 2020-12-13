@@ -1,18 +1,22 @@
 package Persons;
 
+import Location.LocForPersons;
+import Moves.ChangeLoc;
 import Moves.MovesInForest;
 import Moves.MovesInHome;
 import Objects.inForest.Cart;
 import Objects.inForest.Cones;
+import Objects.inHome.Dinner;
 
 import static Objects.inHome.Chair.beThrown;
 
 
-public class LittleRu extends Person implements MovesInHome, MovesInForest {
+public class LittleRu extends Person implements MovesInHome, MovesInForest, ChangeLoc {
     public LittleRu(String name) {
         super(name);
     }
 
+    LocForPersons loc = LocForPersons.HOME;
     public Cart cartRu = new Cart();
 
     @Override
@@ -31,13 +35,15 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
     }
 
     @Override
-    public void turnChair(String name,boolean isRandom, int count) {
-            beThrown(getName(),isRandom,count);
+    public void turnChair(String name, boolean isRandom, int count) {
+        beThrown(getName(), isRandom, count);
     }
+
     @Override
-    public void turnChair(String name,boolean isRandom, int count,int count2) {
-        beThrown(getName(),isRandom,count,count2);
+    public void turnChair(String name, boolean isRandom, int count, int count2) {
+        beThrown(getName(), isRandom, count, count2);
     }
+
     @Override
     public void push(String thrown, boolean isAggressive) {
         if (isAggressive) {
@@ -61,10 +67,24 @@ public class LittleRu extends Person implements MovesInHome, MovesInForest {
         cartRu.forget(getName());
     }
 
+    public void startDinner(Dinner dinner) {
+        dinner.setDinner();
+    }
+
     @Override
     public void returnHome() {
         System.out.println("Вернулся домой " + getName());
         System.out.println("обедает " + getName());
+        loc = LocForPersons.HOME;
     }
 
+    @Override
+    public void changeLoc(LocForPersons e) {
+        loc = e;
+    }
+
+    @Override
+    public LocForPersons getLoc() {
+        return loc;
+    }
 }

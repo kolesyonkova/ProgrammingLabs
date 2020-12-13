@@ -1,25 +1,21 @@
 import Moves.MovesInArea;
-import Moves.MovesInForest;
-import Moves.MovesInHome;
 import Objects.inForest.Tree;
 import Objects.inHome.Cup;
+import Objects.inHome.Dinner;
 import Persons.*;
+
+import Location.LocForPersons;
 
 public class Main {
     public static void main(String[] args) throws NumberOfFurniture, IsLocation {
-        int count =1;
+        int count = 1;
         int count1 = 2;
-        if (count < 0||count1 < 0) {
-                throw new NumberOfFurniture("Отрицательное количество мебели");
-        }
-        //Location isHome=null ;
-        Location isHome = Location.HOME;
-        if (isHome == null){
-            throw new IsLocation("не задана локация");
+        if (count < 0 || count1 < 0) {
+            throw new NumberOfFurniture("Отрицательное количество мебели");
         }
         Piglet piglet = new Piglet("Пятачок");
         //WinnieThePooh winnieThePooh = new WinnieThePooh("Винни-Пух");
-        MovesInArea winnieThePooh=new MovesInArea() {
+        MovesInArea winnieThePooh = new MovesInArea() {
             @Override
             public String getName() {
                 return "Винни-Пух";
@@ -28,11 +24,14 @@ public class Main {
         LittleRu littleRu = new LittleRu("Крошка Ру");
         Tiger tiger = new Tiger("Тигра");
         Kyung kyung = new Kyung("Кенга");
+        Dinner dinner=new Dinner();
         ChristopherRobin christopherRobin = new ChristopherRobin("Кристофер Робин");
         piglet.stealUp(winnieThePooh.getName() + "у", "сзади");
         tiger.stopWaiting("что остальные найдут его");
-        if (isHome == Location.HOME) {
-            int i = 0;
+        if ((littleRu.getLoc() == null)||(tiger.getLoc()==null)){
+            throw new IsLocation("не задана локация");
+        }
+        if ((tiger.getLoc() == LocForPersons.HOME)||(littleRu.getLoc()==LocForPersons.HOME)) {
             Cup b = Cup.createCup(kyung);
             kyung.fillCup(b);
             littleRu.say();
@@ -41,17 +40,19 @@ public class Main {
             tiger.push(littleRu.getName(), false);
             littleRu.turnChair(littleRu.getName(), false, count);
             tiger.turnChair(tiger.getName(), true, count, count1);
-            kyung.say();
+            kyung.say(tiger, littleRu);
         }
-        isHome = Location.FOREST;
-        if (isHome == Location.FOREST) {
+
+        if ((tiger.getLoc() == LocForPersons.FOREST)||(littleRu.getLoc()==LocForPersons.FOREST)) {
             littleRu.throwСones(tiger.getName());
             tiger.throwСones(littleRu.getName());
             Tree.forgetUnderTree(littleRu, littleRu.cartRu, Tree.pine);
             Tree.forgetUnderTree(tiger, tiger.cartTi, Tree.pine);
             littleRu.returnHome();
+            littleRu.startDinner(dinner);
             tiger.returnHome();
-            christopherRobin.look();
+            tiger.startDinner(dinner);
+            christopherRobin.look(dinner);
         }
 
     }
