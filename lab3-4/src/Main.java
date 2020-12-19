@@ -7,8 +7,8 @@ import Persons.*;
 import Location.LocForPersons;
 
 public class Main {
-    public static void main(String[] args) throws NumberOfFurniture, IsLocation {
-        int count = 1;
+    public static void main(String[] args) throws Exception {
+        int count=1;
         int count1 = 2;
         if (count < 0 || count1 < 0) {
             throw new NumberOfFurniture("Отрицательное количество мебели");
@@ -21,17 +21,19 @@ public class Main {
                 return "Винни-Пух";
             }
         };
+
         LittleRu littleRu = new LittleRu("Крошка Ру");
         Tiger tiger = new Tiger("Тигра");
         Kyung kyung = new Kyung("Кенга");
-        Dinner dinner=new Dinner();
+        Dinner dinner = new Dinner();
         ChristopherRobin christopherRobin = new ChristopherRobin("Кристофер Робин");
-        piglet.stealUp(winnieThePooh.getName() + "у", "сзади");
-        tiger.stopWaiting("что остальные найдут его");
-        if ((littleRu.getLoc() == null)||(tiger.getLoc()==null)){
+        if ((littleRu.getLoc() == null) || (tiger.getLoc() == null)) {
             throw new IsLocation("не задана локация");
         }
-        if ((tiger.getLoc() == LocForPersons.HOME)||(littleRu.getLoc()==LocForPersons.HOME)) {
+        piglet.stealUp(winnieThePooh.getName() + "у", "сзади");
+        tiger.stopWaiting("что остальные найдут его");
+
+        if ((tiger.getLoc() == LocForPersons.HOME) || (littleRu.getLoc() == LocForPersons.HOME)) {
             Cup b = Cup.createCup(kyung);
             kyung.fillCup(b);
             littleRu.say();
@@ -43,7 +45,7 @@ public class Main {
             kyung.say(tiger, littleRu);
         }
 
-        if ((tiger.getLoc() == LocForPersons.FOREST)||(littleRu.getLoc()==LocForPersons.FOREST)) {
+        if ((tiger.getLoc() == LocForPersons.FOREST) || (littleRu.getLoc() == LocForPersons.FOREST)) {
             littleRu.throwСones(tiger.getName());
             tiger.throwСones(littleRu.getName());
             Tree.forgetUnderTree(littleRu, littleRu.cartRu, Tree.pine);

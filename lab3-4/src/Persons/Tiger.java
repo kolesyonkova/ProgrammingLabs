@@ -100,11 +100,11 @@ public class Tiger extends Person implements MovesInHome, MovesInForest, ChangeL
         loc = LocForPersons.HOME;
     }
 
-    public void take(String name) {
+    public void take() {
         cartTi.take(getName());
     }
 
-    public void forget(String name) {
+    public void forget() {
         cartTi.forget(getName());
     }
 

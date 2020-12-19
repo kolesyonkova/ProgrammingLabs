@@ -3,140 +3,138 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1088.0727272727272" y="453.0">Persons.Kyung</node>
-    <node x="64.57272727272732" y="376.0">Persons.LittleRu</node>
-    <node x="903.8227272727273" y="0.0">Persons.Person</node>
-    <node x="852.0727272727273" y="453.0">Persons.Piglet</node>
-    <node x="272.0" y="67.0">Moves.MovesInForest</node>
-    <node x="562.0727272727273" y="67.0">Moves.ChangeLoc</node>
-    <node x="195.0" y="1424.0">IsLocation</node>
-    <node x="637.0727272727273" y="856.0">Persons.ChristopherRobin.Door</node>
-    <node x="344.0727272727273" y="310.0">Persons.Tiger</node>
-    <node x="708.0" y="1022.0">Objects.inForest.Cones</node>
-    <node x="950.0" y="1424.0">Objects.inHome.Cafeteria</node>
-    <node x="1324.0727272727272" y="531.0">Persons.WinnieThePooh</node>
-    <node x="1217.0" y="1022.0">NumberOfFurniture</node>
-    <node x="0.0" y="45.0">Moves.MovesInHome</node>
-    <node x="0.0" y="1192.0">Objects.inHome.Cup</node>
-    <node x="777.0" y="1424.0">Objects.inForest.ForestArea</node>
-    <node x="190.0" y="1192.0">Objects.inForest.Cart</node>
-    <node x="916.0" y="1022.0">Objects.inHome.Chair</node>
-    <node x="616.0727272727273" y="486.0">Persons.ChristopherRobin</node>
-    <node x="385.0" y="1424.0">Moves.MovesInArea</node>
-    <node x="399.0" y="1022.0">Objects.inForest.Tree</node>
-    <node x="0.0" y="1424.0">Main</node>
-    <node x="572.0" y="1424.0">Location</node>
-    <node x="96.5" y="1022.0">Moves.ForObjects</node>
+    <node x="1069.5727272727272" y="464.0">Persons.Kyung</node>
+    <node x="46.07272727272721" y="376.0">Persons.LittleRu</node>
+    <node x="885.3227272727271" y="0.0">Persons.Person</node>
+    <node x="597.5727272727272" y="464.0">Persons.Piglet</node>
+    <node x="0.0" y="67.0">Moves.MovesInForest</node>
+    <node x="195.0" y="1468.0">IsLocation</node>
+    <node x="543.5727272727272" y="67.0">Moves.ChangeLoc</node>
+    <node x="854.5727272727272" y="878.0">Persons.ChristopherRobin.Door</node>
+    <node x="325.5727272727272" y="310.0">Persons.Tiger</node>
+    <node x="708.0" y="1066.0">Objects.inForest.Cones</node>
+    <node x="950.0" y="1468.0">Objects.inHome.Cafeteria</node>
+    <node x="1305.5727272727272" y="542.0">Persons.WinnieThePooh</node>
+    <node x="1217.0" y="1066.0">NumberOfFurniture</node>
+    <node x="197.9999999999999" y="45.0">Moves.MovesInHome</node>
+    <node x="184.0" y="1236.0">Objects.inHome.Cup</node>
+    <node x="777.0" y="1468.0">Objects.inForest.ForestArea</node>
+    <node x="0.0" y="1236.0">Objects.inForest.Cart</node>
+    <node x="916.0" y="1066.0">Objects.inHome.Chair</node>
+    <node x="833.5727272727272" y="497.0">Persons.ChristopherRobin</node>
+    <node x="385.0" y="1468.0">Moves.MovesInArea</node>
+    <node x="399.0" y="1066.0">Objects.inForest.Tree</node>
+    <node x="0.0" y="1468.0">Main</node>
+    <node x="572.0" y="1468.0">Location</node>
+    <node x="93.5" y="1066.0">Moves.ForObjects</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Persons.Piglet" target="Persons.Person">
       <point x="54.0" y="-105.0" />
-      <point x="15.75" y="105.0" />
+      <point x="759.5727272727272" y="290.0" />
+      <point x="964.0727272727271" y="290.0" />
+      <point x="-15.75" y="105.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Moves.MovesInHome">
-      <point x="-94.5" y="-182.0" />
-      <point x="96.07272727272732" y="290.0" />
-      <point x="63.0" y="290.0" />
+      <point x="-31.5" y="-193.0" />
+      <point x="140.5727272727272" y="240.0" />
+      <point x="260.9999999999999" y="240.0" />
       <point x="-63.0" y="60.0" />
     </edge>
     <edge source="Persons.Piglet" target="Moves.ChangeLoc">
       <point x="-54.0" y="-105.0" />
-      <point x="906.0727272727273" y="260.0" />
-      <point x="713.2727272727273" y="260.0" />
-      <point x="43.19999999999999" y="38.0" />
+      <point x="0.0" y="38.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInForest">
-      <point x="-31.5" y="-248.0" />
-      <point x="438.5727272727273" y="240.0" />
-      <point x="405.5" y="240.0" />
+      <point x="-94.5" y="-259.0" />
+      <point x="357.0727272727272" y="230.0" />
+      <point x="133.5" y="230.0" />
       <point x="44.5" y="38.0" />
     </edge>
     <edge source="Persons.Tiger" target="Persons.Person">
-      <point x="94.5" y="-248.0" />
-      <point x="564.5727272727273" y="280.0" />
-      <point x="951.0727272727273" y="280.0" />
+      <point x="94.5" y="-259.0" />
+      <point x="546.0727272727272" y="280.0" />
+      <point x="932.5727272727271" y="280.0" />
       <point x="-47.25" y="105.0" />
     </edge>
     <edge source="Persons.Kyung" target="Moves.ChangeLoc">
       <point x="-54.0" y="-105.0" />
-      <point x="1142.0727272727272" y="250.0" />
-      <point x="756.4727272727273" y="250.0" />
+      <point x="1123.5727272727272" y="250.0" />
+      <point x="737.9727272727272" y="250.0" />
       <point x="86.39999999999998" y="38.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.MovesInHome">
-      <point x="-94.5" y="-248.0" />
-      <point x="375.5727272727273" y="230.0" />
-      <point x="189.0" y="230.0" />
+      <point x="-31.5" y="-259.0" />
+      <point x="420.0727272727272" y="240.0" />
+      <point x="386.9999999999999" y="240.0" />
       <point x="63.0" y="60.0" />
     </edge>
     <edge source="Persons.ChristopherRobin" target="Moves.ChangeLoc">
-      <point x="-54.0" y="-72.0" />
-      <point x="0.0" y="38.0" />
+      <point x="-54.000000000000114" y="-72.0" />
+      <point x="887.5727272727271" y="260.0" />
+      <point x="694.7727272727271" y="260.0" />
+      <point x="43.19999999999993" y="38.0" />
     </edge>
     <edge source="Persons.ChristopherRobin" target="Persons.Person">
-      <point x="54.0" y="-72.0" />
-      <point x="778.0727272727273" y="290.0" />
-      <point x="982.5727272727273" y="290.0" />
-      <point x="-15.75" y="105.0" />
+      <point x="53.999999999999886" y="-72.0" />
+      <point x="15.75" y="105.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Moves.MovesInForest">
-      <point x="-31.5" y="-182.0" />
-      <point x="159.07272727272732" y="240.0" />
-      <point x="316.5" y="240.0" />
+      <point x="-94.5" y="-193.0" />
+      <point x="77.5727272727272" y="290.0" />
+      <point x="44.5" y="290.0" />
       <point x="-44.5" y="38.0" />
     </edge>
     <edge source="Persons.Kyung" target="Persons.Person">
       <point x="54.0" y="-105.0" />
-      <point x="1250.0727272727272" y="240.0" />
-      <point x="1045.5727272727272" y="240.0" />
-      <point x="47.25" y="105.0" />
+      <point x="1231.5727272727272" y="240.0" />
+      <point x="1027.072727272727" y="240.0" />
+      <point x="47.249999999999886" y="105.0" />
     </edge>
     <edge source="Objects.inHome.Cup" target="Moves.ForObjects">
       <point x="0.0" y="-93.5" />
-      <point x="85.0" y="1167.0" />
-      <point x="137.5" y="1167.0" />
-      <point x="-41.0" y="60.0" />
+      <point x="269.0" y="1211.0" />
+      <point x="216.5" y="1211.0" />
+      <point x="41.0" y="60.0" />
     </edge>
     <edge source="Persons.WinnieThePooh" target="Persons.Person">
       <point x="0.0" y="-27.0" />
-      <point x="1411.5727272727272" y="230.0" />
-      <point x="1077.0727272727272" y="230.0" />
-      <point x="78.75" y="105.0" />
+      <point x="1393.0727272727272" y="230.0" />
+      <point x="1058.572727272727" y="230.0" />
+      <point x="78.74999999999989" y="105.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Persons.Person">
-      <point x="94.5" y="-182.0" />
-      <point x="285.0727272727273" y="270.0" />
-      <point x="919.5727272727273" y="270.0" />
+      <point x="94.5" y="-193.0" />
+      <point x="266.5727272727272" y="270.0" />
+      <point x="901.0727272727271" y="270.0" />
       <point x="-78.75" y="105.0" />
     </edge>
     <edge source="Persons.ChristopherRobin.Door" target="Persons.ChristopherRobin">
-      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="-71.5" />
       <point x="0.0" y="72.0" />
     </edge>
     <edge source="Persons.LittleRu" target="Moves.ChangeLoc">
-      <point x="31.5" y="-182.0" />
-      <point x="222.07272727272732" y="250.0" />
-      <point x="583.6727272727273" y="250.0" />
+      <point x="31.5" y="-193.0" />
+      <point x="203.5727272727272" y="250.0" />
+      <point x="565.1727272727272" y="250.0" />
       <point x="-86.39999999999998" y="38.0" />
     </edge>
     <edge source="Persons.Tiger" target="Moves.ChangeLoc">
-      <point x="31.5" y="-248.0" />
-      <point x="501.5727272727273" y="260.0" />
-      <point x="626.8727272727274" y="260.0" />
-      <point x="-43.19999999999999" y="38.0" />
+      <point x="31.5" y="-259.0" />
+      <point x="483.0727272727272" y="260.0" />
+      <point x="608.3727272727272" y="260.0" />
+      <point x="-43.200000000000045" y="38.0" />
     </edge>
     <edge source="Objects.inForest.Cart" target="Moves.ForObjects">
       <point x="0.0" y="-93.5" />
-      <point x="272.0" y="1167.0" />
-      <point x="219.5" y="1167.0" />
-      <point x="41.0" y="60.0" />
+      <point x="82.0" y="1211.0" />
+      <point x="134.5" y="1211.0" />
+      <point x="-41.0" y="60.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.40939597315436244" x="703.0" y="735.0" />
-  <SelectedNodes>
-    <node>Persons.ChristopherRobin</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.4345006485084306" x="740.5" y="761.0" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
