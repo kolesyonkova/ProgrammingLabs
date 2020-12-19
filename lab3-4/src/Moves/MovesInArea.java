@@ -1,4 +1,4 @@
-package Moves;
+package moves;
 
 public interface MovesInArea {
     String getName();

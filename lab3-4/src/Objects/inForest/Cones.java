@@ -1,4 +1,4 @@
-package Objects.inForest;
+package objects.inForest;
 
 public class Cones {
     private String thrown;

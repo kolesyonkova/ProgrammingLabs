@@ -1,7 +1,6 @@
-package Objects.inForest;
+package objects.inForest;
 
-import Moves.ForObjects;
-import Persons.Person;
+import moves.ForObjects;
 
 public class Cart implements ForObjects {
     private boolean isCart = true;

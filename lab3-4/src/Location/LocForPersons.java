@@ -1,4 +1,4 @@
-package Location;
+package location;
 
 public enum LocForPersons {
     HOME,

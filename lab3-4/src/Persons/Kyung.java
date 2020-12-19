@@ -1,8 +1,8 @@
-package Persons;
+package persons;
 
-import Location.LocForPersons;
-import Moves.ChangeLoc;
-import Objects.inHome.Cup;
+import location.LocForPersons;
+import moves.ChangeLoc;
+import objects.inHome.Cup;
 
 public class Kyung extends Person implements ChangeLoc {
     public Kyung(String name) {

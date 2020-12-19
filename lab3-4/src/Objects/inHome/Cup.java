@@ -1,7 +1,7 @@
-package Objects.inHome;
+package objects.inHome;
 
-import Moves.ForObjects;
-import Persons.Person;
+import moves.ForObjects;
+import persons.Person;
 
 public class Cup implements ForObjects {
     private boolean isEmpty;

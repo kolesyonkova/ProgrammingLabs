@@ -1,8 +1,8 @@
-package Persons;
+package persons;
 
-import Location.LocForPersons;
-import Moves.ChangeLoc;
-import Objects.inHome.Dinner;
+import location.LocForPersons;
+import moves.ChangeLoc;
+import objects.inHome.Dinner;
 
 public class ChristopherRobin extends Person implements ChangeLoc {
     public ChristopherRobin(String name) {

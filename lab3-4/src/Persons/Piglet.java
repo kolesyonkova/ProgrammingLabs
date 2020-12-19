@@ -1,7 +1,7 @@
-package Persons;
+package persons;
 
-import Location.LocForPersons;
-import Moves.ChangeLoc;
+import location.LocForPersons;
+import moves.ChangeLoc;
 
 public class Piglet extends Person implements ChangeLoc {
     private boolean isslightlyBehind = false;

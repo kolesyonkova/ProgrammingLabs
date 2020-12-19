@@ -1,6 +1,4 @@
-package Objects.inHome;
-
-import Persons.Person;
+package objects.inHome;
 
 public class Cafeteria {
     /*public static Cup createCup(Person p){

@@ -1,6 +1,6 @@
-package Objects.inForest;
+package objects.inForest;
 
-import Persons.Person;
+import persons.Person;
 
 public class Tree {
     private String name;

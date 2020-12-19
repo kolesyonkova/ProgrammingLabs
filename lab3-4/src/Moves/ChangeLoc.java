@@ -1,6 +1,6 @@
-package Moves;
+package moves;
 
-import Location.LocForPersons;
+import location.LocForPersons;
 
 public interface ChangeLoc {
     void changeLoc(LocForPersons e);

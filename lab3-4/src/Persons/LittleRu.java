@@ -1,14 +1,14 @@
-package Persons;
+package persons;
 
-import Location.LocForPersons;
-import Moves.ChangeLoc;
-import Moves.MovesInForest;
-import Moves.MovesInHome;
-import Objects.inForest.Cart;
-import Objects.inForest.Cones;
-import Objects.inHome.Dinner;
+import location.LocForPersons;
+import moves.ChangeLoc;
+import moves.MovesInForest;
+import moves.MovesInHome;
+import objects.inForest.Cart;
+import objects.inForest.Cones;
+import objects.inHome.Dinner;
 
-import static Objects.inHome.Chair.beThrown;
+import static objects.inHome.Chair.beThrown;
 
 
 public class LittleRu extends Person implements MovesInHome, MovesInForest, ChangeLoc {

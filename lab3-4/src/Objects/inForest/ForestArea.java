@@ -1,6 +1,4 @@
-package Objects.inForest;
-
-import Persons.Person;
+package objects.inForest;
 
 public class ForestArea {
     /*public static Tree pine=new Tree("Сосна");

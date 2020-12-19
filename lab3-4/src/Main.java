@@ -1,14 +1,14 @@
-import Moves.MovesInArea;
-import Objects.inForest.Tree;
-import Objects.inHome.Cup;
-import Objects.inHome.Dinner;
-import Persons.*;
+import moves.MovesInArea;
+import objects.inForest.Tree;
+import objects.inHome.Cup;
+import objects.inHome.Dinner;
+import persons.*;
 
-import Location.LocForPersons;
+import location.LocForPersons;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int count=1;
+        int count = 1;
         int count1 = 2;
         if (count < 0 || count1 < 0) {
             throw new NumberOfFurniture("Отрицательное количество мебели");
