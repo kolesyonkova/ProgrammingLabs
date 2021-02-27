@@ -37,4 +37,14 @@ public class Chapter {
     public void setWorld(String world) {
         this.world = world;
     }
+
+    @Override
+    public String toString() {
+        return "Chapter{" +
+                "name='" + name + '\'' +
+                ", parentLegion='" + parentLegion + '\'' +
+                ", marinesCount=" + marinesCount +
+                ", world='" + world + '\'' +
+                '}';
+    }
 }

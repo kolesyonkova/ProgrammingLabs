@@ -1,0 +1,9 @@
+Вася, 12,8, 122,3, Получил пулю в плечо, MANREAPER, chapter=data.Chapter@7ef20235}
+Петя, 22,13,100,2, Три ордена за мир!,POWER_BLADE, chapter=data.Chapter@7ef20235}
+Вова, 45, 9,98,1, WOW, POWER_FIST, chapter=data.Chapter@7ef20235}
+End
+
+
+
+
+Вова, coordinates=data.Coordinates@16b98e56, creationDate=2021-02-27, health=12, heartCount=3, achievements='WOW', meleeWeapon=MANREAPER, chapter=data.Chapter@7ef20235}

@@ -1,9 +1,18 @@
 package commands;
 
-public class ShowCommand implements Command {
+import managers.CollectionManager;
+
+public class ShowCommand extends AbstractCommand implements Command {
+    private CollectionManager collectionManager;
+    public ShowCommand(CollectionManager collectionManager) {
+        super("show command", "Выводит все элементы коллекции");
+        this.collectionManager=collectionManager;
+    }
+
     @Override
     public void execute() {
         System.out.println("Hello from ShowCommand");
+        collectionManager.showCollection();
     }
 }
 //TODO: доделать команду

@@ -2,6 +2,7 @@ package managers;
 
 import data.SpaceMarine;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class CollectionManager {
@@ -22,18 +23,15 @@ public class CollectionManager {
         }
         return 1L;
     }
-//    public Long getHealth(){
-//        Long health = 1L;
-//        if(!marineStack.empty()){
-//        for (SpaceMarine marines : marineStack) {
-//            health=health+marines.getHealth();
-//        }}
-//        return health;
 
-    //}
     public void showCollection() {
-        for (SpaceMarine marines : marineStack) {
-            System.out.println(marines);
+        try {
+
+            for (SpaceMarine marines : marineStack) {
+                System.out.println(marines);
+            }
+        } catch (EmptyStackException e) {
+            System.out.println("Пустая коллекциия, обратитесь к ней после добавления элементов");
         }
     }
 }

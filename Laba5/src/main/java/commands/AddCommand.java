@@ -4,19 +4,30 @@ import data.SpaceMarine;
 import managers.Asker;
 import managers.CollectionManager;
 
+import java.util.ArrayDeque;
+
 public class AddCommand extends AbstractCommand implements Command {
-    CollectionManager collectionManager;
-    Asker asker;
+    private CollectionManager collectionManager;
+    private Asker asker;
+    private String[] data;
 
     public AddCommand(CollectionManager collectionManager, Asker asker) {
-        super("name", "description");
-        this.collectionManager=collectionManager;
-        this.asker=asker;
+        super("add command", "Добавляет объекты в коллекцию");
+        this.collectionManager = collectionManager;
+        this.asker = asker;
     }
 
-    @Override
-    public  void execute() {
+    public void execute(ArrayDeque<String> arrayDeque) {
+        data = arrayDeque.getFirst().trim().split(",");
+        for (String i : data
+        ) {
+            System.out.println(i.trim());
+        }
+    }
 
+
+    @Override
+    public void execute() {
         collectionManager.addToCollection(new SpaceMarine(
                 collectionManager.generateId(),
                 asker.askName(),
