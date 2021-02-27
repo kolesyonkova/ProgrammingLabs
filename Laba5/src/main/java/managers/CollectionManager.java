@@ -23,7 +23,9 @@ public class CollectionManager {
         }
         return 1L;
     }
-
+    public void loadCollectionFromStartFile(){
+        marineStack = fileManager.loader();
+    }
     public void showCollection() {
         try {
 

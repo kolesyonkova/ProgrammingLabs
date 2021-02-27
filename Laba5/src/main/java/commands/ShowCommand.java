@@ -11,8 +11,7 @@ public class ShowCommand extends AbstractCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Hello from ShowCommand");
         collectionManager.showCollection();
     }
 }
-//TODO: доделать команду
+//TODO: доделать try/catch

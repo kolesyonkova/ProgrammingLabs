@@ -3,7 +3,6 @@ package managers;
 import data.Chapter;
 import data.Coordinates;
 import data.MeleeWeapon;
-import data.SpaceMarine;
 import exceptions.MustBeNotEmptyException;
 
 import java.time.LocalDate;
@@ -18,24 +17,57 @@ public class Asker {
     public Asker(Scanner userScanner) {
         this.userScanner = userScanner;
     }
+
     public Chapter askChapter() {
-        Chapter chapter = new Chapter();
+        Chapter chapter = new Chapter(askChapterName(), askChapterLegion(),askChapterMarinesCount() , askChapterWorld());
+        return chapter;
+    }
+
+    public Long askChapterMarinesCount() {
+        Long marinesCount=0L;
+        System.out.println("Введите количество морских пехотинцев: ");
         try {
-            String name;
-            System.out.println("Введите имя главы: ");
-            name = userScanner.nextLine();
-            if (name.equals("")) throw new MustBeNotEmptyException();
-            chapter.setName(name);
-            System.out.println("Введите родительский легион: ");
-            chapter.setParentLegion(userScanner.nextLine());
-            System.out.println("Введите мир: ");
-            chapter.setWorld(userScanner.nextLine());
-            System.out.println("Введите количество морских пехотинцев: ");
-            chapter.setMarinesCount(userScanner.nextLong());
+            marinesCount=userScanner.nextLong();
         } catch (Exception e) {
             System.out.println("Ошибочка вышла");
         }
-        return chapter;
+        return marinesCount;
+    }
+
+    public String askChapterWorld() {
+        String world = "";
+        System.out.println("Введите мир: ");
+        try {
+            world = userScanner.nextLine();
+            if (world.equals("")) throw new MustBeNotEmptyException();
+        } catch (Exception e) {
+            System.out.println("Ошибочка вышла");
+        }
+        return world;
+    }
+
+    public String askChapterLegion() {
+        String parentLegion = "";
+        System.out.println("Введите имя главы: ");
+        try {
+            parentLegion = userScanner.nextLine();
+            if (parentLegion.equals("")) throw new MustBeNotEmptyException();
+        } catch (Exception e) {
+            System.out.println("Ошибочка вышла");
+        }
+        return parentLegion;
+    }
+
+    public String askChapterName() {
+        String name = "";
+        System.out.println("Введите имя главы: ");
+        try {
+            name = userScanner.nextLine();
+            if (name.equals("")) throw new MustBeNotEmptyException();
+        } catch (Exception e) {
+            System.out.println("Ошибочка вышла");
+        }
+        return name;
     }
 
     public Integer askHeartCount() {

@@ -17,15 +17,6 @@ public class AddCommand extends AbstractCommand implements Command {
         this.asker = asker;
     }
 
-    public void execute(ArrayDeque<String> arrayDeque) {
-        data = arrayDeque.getFirst().trim().split(",");
-        for (String i : data
-        ) {
-            System.out.println(i.trim());
-        }
-    }
-
-
     @Override
     public void execute() {
         collectionManager.addToCollection(new SpaceMarine(

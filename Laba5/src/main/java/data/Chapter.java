@@ -6,6 +6,13 @@ public class Chapter {
     private Long marinesCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000
     private String world; //Поле может быть null
 
+    public Chapter(String name, String parentLegion, Long marinesCount, String world) {
+        this.name = name;
+        this.parentLegion = parentLegion;
+        this.marinesCount = marinesCount;
+        this.world = world;
+    }
+
     public String getName() {
         return name;
     }

@@ -15,12 +15,9 @@ public class ConsoleManager {
         this.fileManager = fileManager;
     }
 
-    public void startFirstPut() {
-        commandManager.addCollection(fileManager.reader());
-    }
-
     public void userMode() {
         String[] userCommand;
+
         do {
             System.out.println("Введите команду: ");
             userCommand = userScanner.nextLine().trim().split(" ", 2);

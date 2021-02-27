@@ -26,10 +26,6 @@ public class CommandManager {
         addCommand.execute();
     }
 
-    public void addCollection(ArrayDeque<String> data) {
-        addCommand.execute(data);
-    }
-
     public void showCollection() {
         showCommand.execute();
     }

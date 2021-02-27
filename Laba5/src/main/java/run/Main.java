@@ -17,7 +17,7 @@ public class Main {
         CollectionManager collectionManager=new CollectionManager(fileManager);
         CommandManager commandManager = new CommandManager(new AddCommand(collectionManager,asker), new ClearCommand(),new ShowCommand(collectionManager));
         ConsoleManager consoleManager = new ConsoleManager(userScanner, commandManager, fileManager);
-        consoleManager.startFirstPut();
+        collectionManager.loadCollectionFromStartFile();
         consoleManager.userMode();
     }
 }
