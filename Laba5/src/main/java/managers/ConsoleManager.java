@@ -22,8 +22,7 @@ public class ConsoleManager {
     }
 
     public void userMode() {
-        String[] userCommand = {"", ""};
-
+        String[] userCommand;
         while (true) {
             System.out.println("Введите команду: ");
             userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
@@ -35,7 +34,7 @@ public class ConsoleManager {
     }
 
     public void scriptMode(String argument) {
-        String[] userCommand = {"", ""};
+        String[] userCommand;
         scriptStack.add(argument);
         try (Scanner scriptScanner = new Scanner(new File(argument))) {
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
@@ -86,6 +85,7 @@ public class ConsoleManager {
                     commandManager.updateCollection(userCommand[1]);
                     break;
                 case "remove_by_id":
+                    commandManager.removeById(userCommand[1]);
                     break;
                 case "clear":
                     commandManager.clearCollection(userCommand[1]);
@@ -100,8 +100,10 @@ public class ConsoleManager {
                     commandManager.exitCommand(userCommand[1]);
                     break;
                 case "remove_first":
+                    commandManager.removeFirstCommand(userCommand[1]);
                     break;
                 case "remove_greater":
+                    commandManager.removeGreaterCommand(userCommand[1]);
                     break;
                 case "history":
                     commandManager.getHistory(userCommand[1]);

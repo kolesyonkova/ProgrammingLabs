@@ -9,7 +9,7 @@ import java.util.Stack;
 public class FileManager {
     String path;
     Stack<SpaceMarine> stackFromFile = new Stack<>();
-    ArrayList<String> ar = new ArrayList<String>();
+    ArrayList<String> ar = new ArrayList<>();
     AscerForStartFIle ascerForStartFIle;
 
     public FileManager(String path) {
@@ -17,13 +17,13 @@ public class FileManager {
     }
 
     public void saveCollection(Stack<SpaceMarine> stack) {
-        try (PrintWriter outFile = new PrintWriter(new File("myCollection.txt"));) {
-            for (SpaceMarine i:stack
-                 ) {
+        try (PrintWriter outFile = new PrintWriter(new File("myCollection.txt"))) {
+            for (SpaceMarine i : stack
+            ) {
                 outFile.println(i);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Файл не найден. Повторите попытку позже");
         }
     }
 
@@ -35,8 +35,8 @@ public class FileManager {
             while ((reader = br.readLine()) != null) {
 
                 String[] nm = reader.split(",");
-                for (int i = 0; i < nm.length; i++) {
-                    ar.add(nm[i].trim());
+                for (String s : nm) {
+                    ar.add(s.trim());
                 }
                 if (ar.size() != 11) {
                     throw new Exception();
@@ -52,12 +52,5 @@ public class FileManager {
             System.out.println("something wrong");
         }
         return stackFromFile;
-    }
-
-
-    @Override
-    public String toString() {
-        String string = "FileManager (класс для работы с загрузочным файлом)";
-        return string;
     }
 }

@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Objects;
+
 public class Chapter {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private String parentLegion;
@@ -18,6 +20,22 @@ public class Chapter {
         if (parentLegion.equals("")) {
             parentLegion = "отсутсвует";
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Chapter chapter = (Chapter) o;
+        return Objects.equals(name, chapter.name) &&
+                Objects.equals(parentLegion, chapter.parentLegion) &&
+                Objects.equals(marinesCount, chapter.marinesCount) &&
+                Objects.equals(world, chapter.world);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, parentLegion, marinesCount, world);
     }
 
     @Override

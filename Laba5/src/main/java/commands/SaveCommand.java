@@ -28,4 +28,3 @@ public class SaveCommand extends AbstractCommand implements Command {
         }
     }
 }
-//TODO: доделать команду

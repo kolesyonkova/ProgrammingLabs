@@ -1,13 +1,36 @@
 package commands;
 
-public class RemoveFirstCommand extends AbstractCommand implements Command{
-    public RemoveFirstCommand() {
+import exceptions.EmptyCollection;
+import exceptions.WrongArgumentException;
+import managers.CollectionManager;
+
+public class RemoveFirstCommand extends AbstractCommand implements Command {
+    private CollectionManager collectionManager;
+    private int sizeCollection;
+
+    public RemoveFirstCommand(CollectionManager collectionManager) {
         super("remove_first", "удалить первый элемент из коллекции");
+        this.collectionManager = collectionManager;
     }
 
     @Override
     public void execute(String argument) {
-        System.out.println("Hello from RemoveFirstCommand");
+        sizeCollection = collectionManager.getSizeCollection() - 1;
+        try {
+            if (!argument.isEmpty()) {
+                throw new WrongArgumentException();
+            }
+            if (collectionManager.collectionIsEmpty()) {
+                throw new EmptyCollection();
+            }
+            collectionManager.deleteFirst();
+            System.out.println("Удаление первого бойца окончено!");
+        } catch (WrongArgumentException exception) {
+            System.out.println("Используйте: '" + getName() + "'");
+        } catch (EmptyCollection e) {
+            System.out.println("Коллекция пуста, поэтому Вы не удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+        } catch (Exception e) {
+            System.out.println("Что-то пошло не так. Повторите ввод.");
+        }
     }
 }
-//TODO: доделать команду

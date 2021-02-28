@@ -32,6 +32,13 @@ public class CollectionManager {
     public int getSizeCollection(){
         return marineStack.size();
     }
+    public void removeGreaterCommand(SpaceMarine compareMarine){
+        tmpMarine.addAll(0, marineStack);
+        marineStack.clear();
+        tmpMarine.removeIf(spaceMarine -> spaceMarine.compareTo(compareMarine) > 0);
+        marineStack.addAll(0,tmpMarine);
+        tmpMarine.clear();
+    }
     public boolean collectionIsEmpty(){
         return marineStack.isEmpty();
     }
@@ -41,13 +48,26 @@ public class CollectionManager {
         }
         return 0L;
     }
-
+    public void deleteFirst(){
+        tmpMarine.addAll(0, marineStack);
+        tmpMarine.remove(0);
+        marineStack.clear();
+        marineStack.addAll(0,tmpMarine);
+        tmpMarine.clear();
+    }
     public void loadCollectionFromStartFile() {
         marineStack = fileManager.loader();
         initializationDate = LocalDate.now();
 
     }
 
+    public void removeById(Long id){
+        tmpMarine.addAll(0, marineStack);
+        marineStack.clear();
+        tmpMarine.remove(Integer.parseInt(String.valueOf(id)));
+        marineStack.addAll(0,tmpMarine);
+        tmpMarine.clear();
+    }
 
     public Stack<SpaceMarine> getMarineStack() {
         return marineStack;

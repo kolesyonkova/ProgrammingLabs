@@ -25,4 +25,3 @@ public class ShowCommand extends AbstractCommand implements Command {
         }
     }
 }
-//TODO: доделать try/catch

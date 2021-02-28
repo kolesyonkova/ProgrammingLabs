@@ -26,4 +26,3 @@ public class InfoCommand extends AbstractCommand implements Command {
     }
 }
 
-//TODO: доделать команду

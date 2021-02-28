@@ -22,8 +22,9 @@ public class CommandManager {
     private RemoveGreaterCommand removeGreaterCommand;
     private UpdateCommand updateCommand;
     private ExitCommand exitCommand;
+    private RemoveById removeById;
 
-    public CommandManager(AddCommand addCommand, ClearCommand clearCommand, GroupCountingByIdCommand groupCountingByIdCommand, ShowCommand showCommand, SaveCommand saveCommand, HelpCommand helpCommand, HistoryCommand historyCommand, InfoCommand infoCommand, RemoveAllByHealthCommand removeAllByHealthCommand, RemoveAnyByAchievementsCommand removeAnyByAchievementsCommand, RemoveFirstCommand removeFirstCommand, RemoveGreaterCommand removeGreaterCommand, UpdateCommand updateCommand, ExitCommand exitCommand) {
+    public CommandManager(AddCommand addCommand, ClearCommand clearCommand, GroupCountingByIdCommand groupCountingByIdCommand, ShowCommand showCommand, SaveCommand saveCommand, HelpCommand helpCommand, HistoryCommand historyCommand, InfoCommand infoCommand, RemoveAllByHealthCommand removeAllByHealthCommand, RemoveAnyByAchievementsCommand removeAnyByAchievementsCommand, RemoveFirstCommand removeFirstCommand, RemoveGreaterCommand removeGreaterCommand, UpdateCommand updateCommand, ExitCommand exitCommand, RemoveById removeById) {
         this.addCommand = addCommand;
         this.clearCommand = clearCommand;
         this.groupCountingByIdCommand = groupCountingByIdCommand;
@@ -38,6 +39,7 @@ public class CommandManager {
         this.removeGreaterCommand = removeGreaterCommand;
         this.updateCommand = updateCommand;
         this.exitCommand = exitCommand;
+        this.removeById = removeById;
 
         commandManagerArrayList.add(addCommand);
         commandManagerArrayList.add(clearCommand);
@@ -53,6 +55,7 @@ public class CommandManager {
         commandManagerArrayList.add(removeGreaterCommand);
         commandManagerArrayList.add(updateCommand);
         commandManagerArrayList.add(exitCommand);
+        commandManagerArrayList.add(removeById);
     }
 
     public void saveCollection(String argument) {
@@ -87,6 +90,10 @@ public class CommandManager {
         }
     }
 
+    public void removeFirstCommand(String argument) {
+        removeFirstCommand.execute(argument);
+    }
+
     public void clearCollection(String argument) {
         clearCommand.execute(argument);
     }
@@ -102,6 +109,14 @@ public class CommandManager {
                 }
             }
         }
+    }
+
+    public void removeGreaterCommand(String argument) {
+        removeGreaterCommand.execute(argument);
+    }
+
+    public void removeById(String argument) {
+        removeById.execute(argument);
     }
 
     public void info(String argument) {
