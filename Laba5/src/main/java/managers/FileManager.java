@@ -1,23 +1,32 @@
 package managers;
 
-import data.Chapter;
-import data.Coordinates;
-import data.MeleeWeapon;
 import data.SpaceMarine;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class FileManager {
     String path;
     Stack<SpaceMarine> stackFromFile = new Stack<>();
     ArrayList<String> ar = new ArrayList<String>();
     AscerForStartFIle ascerForStartFIle;
+
     public FileManager(String path) {
         this.path = path;
     }
+
+    public void saveCollection(Stack<SpaceMarine> stack) {
+        try (PrintWriter outFile = new PrintWriter(new File("myCollection.txt"));) {
+            for (SpaceMarine i:stack
+                 ) {
+                outFile.println(i);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public Stack<SpaceMarine> loader() {
         try (FileInputStream fstream = new FileInputStream(path)) {
@@ -33,7 +42,7 @@ public class FileManager {
                     throw new Exception();
                 }
 
-                ascerForStartFIle=new AscerForStartFIle(ar);
+                ascerForStartFIle = new AscerForStartFIle(ar);
                 stackFromFile.push(ascerForStartFIle.startFunc());
                 ar.clear();
             }

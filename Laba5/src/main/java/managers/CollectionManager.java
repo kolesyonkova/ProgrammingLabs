@@ -2,10 +2,12 @@ package managers;
 
 import data.SpaceMarine;
 
+import java.time.LocalDate;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class CollectionManager {
+    private LocalDate initializationDate;
     private Stack<SpaceMarine> marineStack = new Stack<>();
     private FileManager fileManager;
 
@@ -23,9 +25,18 @@ public class CollectionManager {
         }
         return 1L;
     }
-    public void loadCollectionFromStartFile(){
+
+    public void loadCollectionFromStartFile() {
         marineStack = fileManager.loader();
+        initializationDate = LocalDate.now();
+
     }
+
+
+    public Stack<SpaceMarine> getMarineStack() {
+        return marineStack;
+    }
+
     public void showCollection() {
         try {
 

@@ -2,6 +2,7 @@ package run;
 
 import commands.AddCommand;
 import commands.ClearCommand;
+import commands.SaveCommand;
 import commands.ShowCommand;
 import managers.*;
 
@@ -15,7 +16,7 @@ public class Main {
         FileManager fileManager = new FileManager(path);
         Asker asker = new Asker(userScanner);
         CollectionManager collectionManager=new CollectionManager(fileManager);
-        CommandManager commandManager = new CommandManager(new AddCommand(collectionManager,asker), new ClearCommand(),new ShowCommand(collectionManager));
+        CommandManager commandManager = new CommandManager(new AddCommand(collectionManager,asker), new ClearCommand(),new ShowCommand(collectionManager),new SaveCommand(collectionManager,fileManager));
         ConsoleManager consoleManager = new ConsoleManager(userScanner, commandManager, fileManager);
         collectionManager.loadCollectionFromStartFile();
         consoleManager.userMode();

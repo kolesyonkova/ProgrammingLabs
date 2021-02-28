@@ -30,50 +30,18 @@ public class SpaceMarine {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public LocalDate getCreationDate() {
-        return creationDate;
-    }
-
-    public long getHealth() {
-        return health;
-    }
-
-    public Integer getHeartCount() {
-        return heartCount;
-    }
-
-    public String getAchievements() {
-        return achievements;
-    }
-
-    public MeleeWeapon getMeleeWeapon() {
-        return meleeWeapon;
-    }
-
-    public Chapter getChapter() {
-        return chapter;
-    }
 
     @Override
     public String toString() {
-        return "SpaceMarine{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", health=" + health +
-                ", heartCount=" + heartCount +
-                ", achievements='" + achievements + '\'' +
-                ", meleeWeapon=" + meleeWeapon +
-                ", chapter=" + chapter +
-                '}';
+        return
+                        "Солдат №" + id + "\n" +
+                        "Имя: " + name + "\n" +
+                        "координаты: " + coordinates + "\n" +
+                        "Дата создания: " + creationDate + "\n" +
+                        "Здоровье: " + health + "\n" +
+                        "Количество сердечных сокращений: " + heartCount + "\n" +
+                        "Достижения: " + achievements + "\n" +
+                        "Оружие ближнего боя: " + meleeWeapon + "\n" +
+                        chapter;
     }
 }

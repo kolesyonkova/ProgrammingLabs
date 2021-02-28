@@ -1,8 +1,12 @@
 package commands;
 
-public class RemoveFirstCommand implements Command{
+public class RemoveFirstCommand extends AbstractCommand implements Command{
+    public RemoveFirstCommand() {
+        super("remove_first", "удалить первый элемент из коллекции");
+    }
+
     @Override
-    public void execute() {
+    public void execute(String argument) {
         System.out.println("Hello from RemoveFirstCommand");
     }
 }

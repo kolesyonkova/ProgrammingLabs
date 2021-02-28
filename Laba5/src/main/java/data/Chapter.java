@@ -11,47 +11,21 @@ public class Chapter {
         this.parentLegion = parentLegion;
         this.marinesCount = marinesCount;
         this.world = world;
+        checkParentLegion();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getParentLegion() {
-        return parentLegion;
-    }
-
-    public void setParentLegion(String parentLegion) {
-        this.parentLegion = parentLegion;
-    }
-
-    public Long getMarinesCount() {
-        return marinesCount;
-    }
-
-    public void setMarinesCount(Long marinesCount) {
-        this.marinesCount = marinesCount;
-    }
-
-    public String getWorld() {
-        return world;
-    }
-
-    public void setWorld(String world) {
-        this.world = world;
+    public void checkParentLegion() {
+        if (parentLegion.equals("")) {
+            parentLegion = "отсутсвует";
+        }
     }
 
     @Override
     public String toString() {
-        return "Chapter{" +
-                "name='" + name + '\'' +
-                ", parentLegion='" + parentLegion + '\'' +
-                ", marinesCount=" + marinesCount +
-                ", world='" + world + '\'' +
-                '}';
+        return
+                "Имя главы: " + name + "\n" +
+                        "Легион: " + parentLegion + "\n" +
+                        "Количество морских пехотинцев: " + marinesCount + "\n" +
+                        "Мир: " + world;
     }
 }

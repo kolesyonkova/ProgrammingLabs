@@ -2,7 +2,7 @@ package commands;
 
 public class UpdateCommand implements Command {
     @Override
-    public void execute() {
+    public void execute(String argument) {
         System.out.println("Hello from UpdateCommand ");
     }
 }

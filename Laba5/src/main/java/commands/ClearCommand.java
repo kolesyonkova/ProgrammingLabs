@@ -1,9 +1,13 @@
 package commands;
 
-public class ClearCommand implements Command{
+public class ClearCommand extends AbstractCommand implements Command{
+    public ClearCommand() {
+        super("clear", "очистить коллекцию");
+    }
+
     @Override
-    public void execute() {
-        System.out.println("Hello from AddCommand");
+    public void execute(String argument) {
+        System.out.println("Hello from ClearCommand");
         //TODO: доделать команду
     }
 }
