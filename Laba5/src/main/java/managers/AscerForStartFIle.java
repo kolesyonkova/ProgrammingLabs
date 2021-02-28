@@ -16,7 +16,7 @@ public class AscerForStartFIle {
         this.ar = ar;
     }
 
-    private static Long index = 0L;
+    private static Long index = -1L;
 
     public SpaceMarine startFunc() {
         index += 1L;

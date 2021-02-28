@@ -1,13 +1,55 @@
 package commands;
 
+import data.SpaceMarine;
+import exceptions.EmptyCollection;
+import exceptions.IncorrectId;
+import exceptions.WrongArgumentException;
+import managers.Asker;
+import managers.CollectionManager;
+
 public class UpdateCommand extends AbstractCommand implements Command {
-    public UpdateCommand() {
+    private CollectionManager collectionManager;
+    private Asker asker;
+    private int sizeCollection;
+
+    public UpdateCommand(CollectionManager collectionManager, Asker asker) {
         super("update id", "обновить значение элемента коллекции, id которого равен заданному");
+        this.collectionManager = collectionManager;
+        this.asker = asker;
     }
 
     @Override
     public void execute(String argument) {
-        System.out.println("Hello from UpdateCommand ");
+        sizeCollection = collectionManager.getSizeCollection()-1;
+        try {
+            if (collectionManager.collectionIsEmpty()) {
+                throw new EmptyCollection();
+            }
+            if (argument.isEmpty()) {
+                throw new WrongArgumentException();
+            }
+            if (Long.parseLong(argument) < 0 || Integer.parseInt(argument) > sizeCollection) {
+                throw new IncorrectId();
+            }
+            collectionManager.updateCollection(new SpaceMarine(
+                    Long.parseLong(argument) + 1,
+                    asker.askName(),
+                    asker.askCoordinates(),
+                    asker.askLocalDate(),
+                    asker.askHealth(),
+                    asker.askHeartCount(),
+                    asker.askAchievements(),
+                    asker.askMeleeWeapon(),
+                    asker.askChapter()), Long.parseLong(argument));
+            System.out.println("Обновление бойца окончено!");
+        } catch (WrongArgumentException exception) {
+            System.out.println("Используйте: '" + getName() + "'");
+        } catch (IncorrectId e) {
+            System.out.println("Айди солдата должен лежать в диапозоне [0;" + sizeCollection + "]");
+        } catch (EmptyCollection e) {
+            System.out.println("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");
+        } catch (Exception e) {
+            System.out.println("Что-то пошло не так. Повторите ввод.");
+        }
     }
 }
-//TODO: доделать команду

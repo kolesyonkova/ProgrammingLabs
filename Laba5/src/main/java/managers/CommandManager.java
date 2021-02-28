@@ -1,12 +1,13 @@
 package managers;
 
 import commands.*;
-import exceptions.WrongArgumentException;
 
 import java.util.ArrayList;
 
 public class CommandManager {
-    private ArrayList<Command> commandManagerArrayList = new ArrayList<>();
+    private final int HISTORY_SIZE = 8;
+    protected ArrayList<Command> commandManagerArrayList = new ArrayList<>();
+    private ArrayList<String> commandsHistory = new ArrayList<>();
     private AddCommand addCommand;
     private ClearCommand clearCommand;
     private GroupCountingByIdCommand groupCountingByIdCommand;
@@ -36,7 +37,7 @@ public class CommandManager {
         this.removeFirstCommand = removeFirstCommand;
         this.removeGreaterCommand = removeGreaterCommand;
         this.updateCommand = updateCommand;
-        this.exitCommand=exitCommand;
+        this.exitCommand = exitCommand;
 
         commandManagerArrayList.add(addCommand);
         commandManagerArrayList.add(clearCommand);
@@ -57,31 +58,66 @@ public class CommandManager {
     public void saveCollection(String argument) {
         saveCommand.execute(argument);
     }
-    public void exitCommand(String argument){
+
+    public void exitCommand(String argument) {
         exitCommand.execute(argument);
     }
+
     public void addCollection(String argument) {
         addCommand.execute(argument);
+    }
+
+    public void updateCollection(String argument) {
+        updateCommand.execute(argument);
     }
 
     public void showCollection(String argument) {
         showCommand.execute(argument);
     }
 
+    public void getHistory(String argument) {
+        if (argument.equals("")) {
+            historyCommand.execute(argument);
+            for (String command : commandsHistory
+            ) {
+                System.out.println(command);
+            }
+        } else {
+            historyCommand.execute(argument);
+        }
+    }
+
     public void clearCollection(String argument) {
         clearCommand.execute(argument);
     }
-    public void info(String argument){
+
+    public void addToHistory(String argument) {
+        for (Command command : commandManagerArrayList
+        ) {
+            if (command.getName().split(" ")[0].equals(argument)) {
+                if (commandsHistory.size() > HISTORY_SIZE) {
+                    commandsHistory.remove(0);
+                } else {
+                    commandsHistory.add(argument);
+                }
+            }
+        }
+    }
+
+    public void info(String argument) {
         infoCommand.execute(argument);
     }
+
     public void help(String argument) {
-        if(argument.equals("")){
-        helpCommand.execute(argument);
-        for (Command command:commandManagerArrayList
-             ) {
-            System.out.println(command);
+        if (argument.equals("")) {
+            helpCommand.execute(argument);
+            for (Command command : commandManagerArrayList
+            ) {
+                System.out.println(command);
+            }
+        } else {
+            helpCommand.execute(argument);
         }
-        }else {helpCommand.execute(argument);}
     }
 
     @Override

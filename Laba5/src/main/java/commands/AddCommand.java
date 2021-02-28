@@ -35,6 +35,8 @@ public class AddCommand extends AbstractCommand implements Command {
             System.out.println("Создание бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
+        }catch (Exception e) {
+            System.out.println("Что-то пошло не так. Повторите ввод.");
         }
     }
 }

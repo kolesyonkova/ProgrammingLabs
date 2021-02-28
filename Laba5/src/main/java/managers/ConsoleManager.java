@@ -29,6 +29,7 @@ public class ConsoleManager {
             userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
             userCommand[1] = userCommand[1].trim();
             startCommand(userCommand);
+            commandManager.addToHistory(userCommand[0]);
 
         }
     }
@@ -82,6 +83,7 @@ public class ConsoleManager {
                     commandManager.info(userCommand[1]);
                     break;
                 case "update":
+                    commandManager.updateCollection(userCommand[1]);
                     break;
                 case "remove_by_id":
                     break;
@@ -102,6 +104,7 @@ public class ConsoleManager {
                 case "remove_greater":
                     break;
                 case "history":
+                    commandManager.getHistory(userCommand[1]);
                     break;
                 case "remove_all_by_health":
                     break;

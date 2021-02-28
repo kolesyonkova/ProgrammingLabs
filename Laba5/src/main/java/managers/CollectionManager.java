@@ -3,6 +3,7 @@ package managers;
 import data.SpaceMarine;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
@@ -10,6 +11,7 @@ public class CollectionManager {
     private LocalDate initializationDate;
     private LocalDate lastUpdate;
     private Stack<SpaceMarine> marineStack = new Stack<>();
+    private ArrayList<SpaceMarine> tmpMarine=new ArrayList<>();
     private FileManager fileManager;
 
     public CollectionManager(FileManager fileManager) {
@@ -20,12 +22,24 @@ public class CollectionManager {
         marineStack.push(spaceMarine);
         lastUpdate = LocalDate.now();
     }
-
+    public void updateCollection(SpaceMarine spaceMarine,Long id){
+            tmpMarine.addAll(0, marineStack);
+            marineStack.clear();
+            tmpMarine.set(Integer.parseInt(String.valueOf(id)),spaceMarine);
+            marineStack.addAll(0,tmpMarine);
+            tmpMarine.clear();
+    }
+    public int getSizeCollection(){
+        return marineStack.size();
+    }
+    public boolean collectionIsEmpty(){
+        return marineStack.isEmpty();
+    }
     public Long generateId() {
         if (!marineStack.empty()) {
             return marineStack.peek().getId() + 1;
         }
-        return 1L;
+        return 0L;
     }
 
     public void loadCollectionFromStartFile() {
