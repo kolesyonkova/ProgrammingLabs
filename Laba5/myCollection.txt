@@ -1,3 +1,36 @@
-SpaceMarine{id=1, name='Вася', coordinates=Coordinates{x=12.0, y=8}, creationDate=2021-02-28, health=122, heartCount=3, achievements='Получил пулю в плечо', meleeWeapon=MANREAPER, chapter=Chapter{name='Кенни', parentLegion='МИР', marinesCount=100, world='РОгоз'}}
-SpaceMarine{id=2, name='Петя', coordinates=Coordinates{x=22.0, y=13}, creationDate=2021-02-28, health=100, heartCount=2, achievements='Три ордена за мир!', meleeWeapon=MANREAPER, chapter=Chapter{name='КенниТТО', parentLegion='МИР2', marinesCount=100, world='Фигаро'}}
-SpaceMarine{id=3, name='Вова', coordinates=Coordinates{x=45.0, y=9}, creationDate=2021-02-28, health=98, heartCount=1, achievements='WOW', meleeWeapon=MANREAPER, chapter=Chapter{name='Флортикс', parentLegion='МИР1', marinesCount=100, world='Мыыый'}}
+Солдат №1
+Имя: Вася
+координаты: x=12.0 y=8
+Дата создания: 2021-02-28
+Здоровье: 122
+Количество сердечных сокращений: 3
+Достижения: Получил пулю в плечо
+Оружие ближнего боя: MANREAPER
+Имя главы: Кенни
+Легион: МИР
+Количество морских пехотинцев: 100
+Мир: РОгоз
+Солдат №2
+Имя: Петя
+координаты: x=22.0 y=13
+Дата создания: 2021-02-28
+Здоровье: 100
+Количество сердечных сокращений: 2
+Достижения: Три ордена за мир!
+Оружие ближнего боя: POWER_BLADE
+Имя главы: КенниТТО
+Легион: МИР2
+Количество морских пехотинцев: 100
+Мир: Фигаро
+Солдат №3
+Имя: Вова
+координаты: x=45.0 y=9
+Дата создания: 2021-02-28
+Здоровье: 98
+Количество сердечных сокращений: 1
+Достижения: WOW
+Оружие ближнего боя: POWER_FIST
+Имя главы: Флортикс
+Легион: МИР1
+Количество морских пехотинцев: 100
+Мир: Мыыый

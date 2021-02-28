@@ -1,13 +1,10 @@
 package commands;
 
 import exceptions.WrongArgumentException;
-import managers.CollectionManager;
 
-public class ClearCommand extends AbstractCommand implements Command{
-    CollectionManager collectionManager;
-    public ClearCommand(CollectionManager collectionManager) {
-        super("clear", "очистить коллекцию");
-        this.collectionManager=collectionManager;
+public class ExitCommand extends AbstractCommand implements Command {
+    public ExitCommand() {
+        super("exit", " завершить программу (без сохранения в файл)");
     }
 
     @Override
@@ -16,8 +13,8 @@ public class ClearCommand extends AbstractCommand implements Command{
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
-            collectionManager.clearCollection();
-            System.out.println("Колеекция успешно очищена!");
+            System.out.println("Программа успешно завершена!");
+            System.exit(0);
         } catch (WrongArgumentException e) {
             System.out.println("Используйте: '" + getName() + "'");
         } catch (Exception e) {

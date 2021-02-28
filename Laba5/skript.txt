@@ -1,2 +1,4 @@
 show
 save
+clear
+show

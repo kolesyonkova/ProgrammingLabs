@@ -232,7 +232,7 @@ public class Asker {
         String weapon;
         while (true) {
             try {
-                System.out.println("Выберите оружие ближнего боя. На выбор: \n MANREAPER,\n" +
+                System.out.println("Выберите оружие ближнего боя. На выбор: \nMANREAPER,\n" +
                         "POWER_BLADE,\n" +
                         "POWER_FIST");
                 weapon = userScanner.nextLine();
@@ -252,4 +252,3 @@ public class Asker {
         return meleeWeapon;
     }
 }
-//TODO: наложить условия на аскеры, обработать try/catch

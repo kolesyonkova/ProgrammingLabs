@@ -16,35 +16,31 @@ public class AscerForStartFIle {
         this.ar = ar;
     }
 
-    private static Long index=0L;
-    public SpaceMarine startFunc(){
-        index+=1L;
-        return new SpaceMarine(index,askName(),askCoordinates(),askDate(),askHealth(),askHeartCounts(),askAchievements(),askMeleeWeapon(),askChapter());
+    private static Long index = 0L;
+
+    public SpaceMarine startFunc() {
+        index += 1L;
+        return new SpaceMarine(index, askName(), askCoordinates(), askDate(), askHealth(), askHeartCounts(), askAchievements(), askMeleeWeapon(), askChapter());
     }
+
     public MeleeWeapon askMeleeWeapon() {
         MeleeWeapon meleeWeapon = MeleeWeapon.MANREAPER;
-        String weapon="";
+        String weapon = "";
         try {
-            weapon=ar.get(0);
+            weapon = ar.get(0);
             ar.remove(0);
+            meleeWeapon = MeleeWeapon.valueOf(weapon);
             if (weapon.equals("")) throw new MustBeNotEmptyException();
-        if (weapon.equals(MeleeWeapon.MANREAPER)) {
-            meleeWeapon = MeleeWeapon.MANREAPER;
-        }
-        if (weapon.equals(MeleeWeapon.POWER_BLADE)) {
-            meleeWeapon = MeleeWeapon.POWER_BLADE;
-        }
-        if (weapon.equals(MeleeWeapon.POWER_FIST)) {
-            meleeWeapon = MeleeWeapon.POWER_FIST;
-        }}catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Ошибочка вышла");
         }
         return meleeWeapon;
     }
-    public String askAchievements(){
+
+    public String askAchievements() {
         String achievements = "";
         try {
-            achievements= ar.get(0);
+            achievements = ar.get(0);
             if (achievements.equals("")) throw new MustBeNotEmptyException();
             ar.remove(0);
         } catch (Exception e) {
@@ -52,46 +48,51 @@ public class AscerForStartFIle {
         }
         return achievements;
     }
-    public Integer askHeartCounts(){
-        Integer counts=0;
+
+    public Integer askHeartCounts() {
+        Integer counts = 0;
         try {
-            counts=Integer.parseInt(ar.get(0));
+            counts = Integer.parseInt(ar.get(0));
             ar.remove(0);
         } catch (Exception e) {
             System.out.println("Ошибочка вышла");
         }
         return counts;
     }
-    public Long askHealth(){
-        Long health=0L;
+
+    public Long askHealth() {
+        Long health = 0L;
         try {
-            health=Long.parseLong(ar.get(0));
+            health = Long.parseLong(ar.get(0));
             ar.remove(0);
         } catch (Exception e) {
             System.out.println("Ошибочка вышла");
         }
         return health;
     }
-    public LocalDate askDate(){
+
+    public LocalDate askDate() {
         return LocalDate.now();
     }
-    public Coordinates askCoordinates(){
+
+    public Coordinates askCoordinates() {
         Double x = 0D;
-        Integer y=0;
+        Integer y = 0;
         try {
-            x= Double.parseDouble(ar.get(0));
+            x = Double.parseDouble(ar.get(0));
             ar.remove(0);
-            y=Integer.parseInt(ar.get(0));
+            y = Integer.parseInt(ar.get(0));
             ar.remove(0);
         } catch (Exception e) {
             System.out.println("Ошибочка вышла");
         }
-        return new Coordinates(x,y);
+        return new Coordinates(x, y);
     }
-    public String askName(){
+
+    public String askName() {
         String name = "";
         try {
-            name= ar.get(0);
+            name = ar.get(0);
             if (name.equals("")) throw new MustBeNotEmptyException();
             ar.remove(0);
         } catch (Exception e) {
@@ -99,15 +100,16 @@ public class AscerForStartFIle {
         }
         return name;
     }
+
     public Chapter askChapter() {
-        Chapter chapter = new Chapter(askChapterName(), askChapterLegion(),askChapterMarinesCount() , askChapterWorld());
+        Chapter chapter = new Chapter(askChapterName(), askChapterLegion(), askChapterMarinesCount(), askChapterWorld());
         return chapter;
     }
 
     public Long askChapterMarinesCount() {
-        Long marinesCount=0L;
+        Long marinesCount = 0L;
         try {
-            marinesCount=Long.parseLong( ar.get(0));
+            marinesCount = Long.parseLong(ar.get(0));
             ar.remove(0);
         } catch (Exception e) {
             System.out.println("Ошибочка вышла");
@@ -118,7 +120,7 @@ public class AscerForStartFIle {
     public String askChapterWorld() {
         String world = "";
         try {
-            world =  ar.get(0);
+            world = ar.get(0);
             ar.remove(0);
             if (world.equals("")) throw new MustBeNotEmptyException();
         } catch (Exception e) {
@@ -142,7 +144,7 @@ public class AscerForStartFIle {
     public String askChapterName() {
         String name = "";
         try {
-            name =  ar.get(0);
+            name = ar.get(0);
             ar.remove(0);
             if (name.equals("")) throw new MustBeNotEmptyException();
         } catch (Exception e) {

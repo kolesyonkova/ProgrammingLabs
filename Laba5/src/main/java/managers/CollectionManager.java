@@ -8,6 +8,7 @@ import java.util.Stack;
 
 public class CollectionManager {
     private LocalDate initializationDate;
+    private LocalDate lastUpdate;
     private Stack<SpaceMarine> marineStack = new Stack<>();
     private FileManager fileManager;
 
@@ -17,6 +18,7 @@ public class CollectionManager {
 
     public void addToCollection(SpaceMarine spaceMarine) {
         marineStack.push(spaceMarine);
+        lastUpdate = LocalDate.now();
     }
 
     public Long generateId() {
@@ -37,14 +39,34 @@ public class CollectionManager {
         return marineStack;
     }
 
+    public void infoCollection() {
+        System.out.println("Тип коллекции : " + marineStack.getClass());
+        System.out.println("Количество элементов в коллекции : " + marineStack.size());
+        System.out.println("Дата создания: " + initializationDate);
+        if (!(lastUpdate == null)) {
+            System.out.println("Дата последнего обновления : " + lastUpdate);
+        } else {
+            System.out.println("Дата последнего обновления : ещё не обновлялась");
+        }
+    }
+    public void clearCollection(){
+        for (int i = 0; i <= marineStack.size()+1; i++) {
+            marineStack.pop();
+        }
+        lastUpdate=LocalDate.now();
+    }
     public void showCollection() {
         try {
-
+            if(marineStack.size()>0){
             for (SpaceMarine marines : marineStack) {
                 System.out.println(marines);
+            }}else {
+                System.out.println("Коллекция пуста");
             }
         } catch (EmptyStackException e) {
             System.out.println("Пустая коллекциия, обратитесь к ней после добавления элементов");
+        } catch (Exception e) {
+            System.out.println("Что-то пошло не так. Повторите ввод.");
         }
     }
 }

@@ -24,13 +24,13 @@ public class ConsoleManager {
     public void userMode() {
         String[] userCommand = {"", ""};
 
-        do {
+        while (true) {
             System.out.println("Введите команду: ");
             userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
             userCommand[1] = userCommand[1].trim();
             startCommand(userCommand);
 
-        } while (!userCommand[0].equals("exit"));
+        }
     }
 
     public void scriptMode(String argument) {
@@ -60,7 +60,7 @@ public class ConsoleManager {
         } catch (ScriptRecursionException e) {
             System.out.println("Скрипты не могут вызываться рекурсивно!");
         } finally {
-            scriptStack.remove(scriptStack.size() -1);
+            scriptStack.remove(scriptStack.size() - 1);
         }
     }
 
@@ -73,17 +73,20 @@ public class ConsoleManager {
                     commandManager.addCollection(userCommand[1]);
                     break;
                 case "help":
+                    commandManager.help(userCommand[1]);
                     break;
                 case "show":
                     commandManager.showCollection(userCommand[1]);
                     break;
                 case "info":
+                    commandManager.info(userCommand[1]);
                     break;
                 case "update":
                     break;
                 case "remove_by_id":
                     break;
                 case "clear":
+                    commandManager.clearCollection(userCommand[1]);
                     break;
                 case "save":
                     commandManager.saveCollection(userCommand[1]);
@@ -92,6 +95,7 @@ public class ConsoleManager {
                     scriptMode(userCommand[1]);
                     break;
                 case "exit":
+                    commandManager.exitCommand(userCommand[1]);
                     break;
                 case "remove_first":
                     break;
