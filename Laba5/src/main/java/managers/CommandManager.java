@@ -3,7 +3,9 @@ package managers;
 import commands.*;
 
 import java.util.ArrayList;
-
+/**
+ * Operates with the commands.
+ */
 public class CommandManager {
     private final int HISTORY_SIZE = 8;
     protected ArrayList<Command> commandManagerArrayList = new ArrayList<>();
@@ -58,26 +60,44 @@ public class CommandManager {
         commandManagerArrayList.add(removeById);
     }
 
+    /**
+     * Start execute of 'save' command.
+     */
     public void saveCollection(String argument) {
         saveCommand.execute(argument);
     }
 
+    /**
+     * Start execute of 'exit' command.
+     */
     public void exitCommand(String argument) {
         exitCommand.execute(argument);
     }
 
+    /**
+     * Start execute of 'add' command.
+     */
     public void addCollection(String argument) {
         addCommand.execute(argument);
     }
 
+    /**
+     * Start execute of 'update' command.
+     */
     public void updateCollection(String argument) {
         updateCommand.execute(argument);
     }
 
+    /**
+     * Start execute of 'show' command.
+     */
     public void showCollection(String argument) {
         showCommand.execute(argument);
     }
 
+    /**
+     * Show history of commands.
+     */
     public void getHistory(String argument) {
         if (argument.equals("")) {
             historyCommand.execute(argument);
@@ -90,14 +110,23 @@ public class CommandManager {
         }
     }
 
+    /**
+     * Start execute of 'remove_first' command.
+     */
     public void removeFirstCommand(String argument) {
         removeFirstCommand.execute(argument);
     }
 
+    /**
+     * Start execute of 'clear' command.
+     */
     public void clearCollection(String argument) {
         clearCommand.execute(argument);
     }
 
+    /**
+     * Add command to history.
+     */
     public void addToHistory(String argument) {
         for (Command command : commandManagerArrayList
         ) {
@@ -111,14 +140,21 @@ public class CommandManager {
         }
     }
 
+    /**
+     * Start execute of 'remove_greater' command.
+     */
     public void removeGreaterCommand(String argument) {
         removeGreaterCommand.execute(argument);
     }
-
+    /**
+     * Start execute of 'remove_all_by_health' command.
+     */
     public void removeAllByHealthCommand(String argument) {
         removeAllByHealthCommand.execute(argument);
     }
-
+    /**
+     * Start execute of 'remove_by_id' command.
+     */
     public void removeById(String argument) {
         removeById.execute(argument);
     }

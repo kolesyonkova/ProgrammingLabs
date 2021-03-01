@@ -6,11 +6,17 @@ import managers.CollectionManager;
 public class InfoCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
 
+    /**
+     * Command 'info'. Displays information about the collection.
+     */
     public InfoCommand(CollectionManager collectionManager) {
         super("info", " вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'info' command.
+     */
     @Override
     public void execute(String argument) {
         try {

@@ -3,13 +3,20 @@ package commands;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
-public class ClearCommand extends AbstractCommand implements Command{
+/**
+ * Command 'clear'. Clears the collection.
+ */
+public class ClearCommand extends AbstractCommand implements Command {
     CollectionManager collectionManager;
+
     public ClearCommand(CollectionManager collectionManager) {
         super("clear", "очистить коллекцию");
-        this.collectionManager=collectionManager;
+        this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'clear' command.
+     */
     @Override
     public void execute(String argument) {
         try {

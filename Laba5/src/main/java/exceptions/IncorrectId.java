@@ -1,4 +1,7 @@
 package exceptions;
 
-public class IncorrectId extends Exception{
+/**
+ * It's threw when incorrect id.
+ */
+public class IncorrectId extends Exception {
 }

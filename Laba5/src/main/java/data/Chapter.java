@@ -1,7 +1,8 @@
 package data;
 
-import java.util.Objects;
-
+/**
+ * Chapter with marines.
+ */
 public class Chapter {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private String parentLegion;
@@ -14,11 +15,18 @@ public class Chapter {
         this.marinesCount = marinesCount;
         this.world = world;
         checkParentLegion();
+        checkWorld();
     }
 
     public void checkParentLegion() {
         if (parentLegion.equals("")) {
             parentLegion = "отсутсвует";
+        }
+    }
+
+    public void checkWorld() {
+        if (world.equals("")) {
+            world = "не задан";
         }
     }
 

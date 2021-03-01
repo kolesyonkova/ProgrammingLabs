@@ -1,6 +1,8 @@
 package data;
 
-import java.util.Objects;
+/**
+ * Coordinates of marine.
+ */
 
 public class Coordinates {
     private Double x; //Значение поля должно быть больше -56, Поле не может быть null
@@ -13,7 +15,7 @@ public class Coordinates {
 
     @Override
     public int hashCode() {
-        return x.hashCode()+y.hashCode();
+        return x.hashCode() + y.hashCode();
     }
 
     @Override

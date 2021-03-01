@@ -31,7 +31,7 @@ public class CollectionManager {
         tmpMarine.set(Integer.parseInt(String.valueOf(id)), spaceMarine);
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+        lastUpdate = LocalDate.now();
     }
 
     public int getSizeCollection() {
@@ -44,14 +44,15 @@ public class CollectionManager {
         tmpMarine.removeIf(spaceMarine -> spaceMarine.compareTo(compareMarine) > 0);
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+        lastUpdate = LocalDate.now();
     }
 
-    public void groupCountingById(){
+    public void groupCountingById() {
         Map<Long, Long> groupById = marineStack.stream().collect(
                 Collectors.groupingBy(SpaceMarine::getId, Collectors.counting()));
-        for(Map.Entry<Long, Long> item : groupById.entrySet()){
-            System.out.println("Айди "+item.getKey() + " содержит  - " + item.getValue()+" элемент");}
+        for (Map.Entry<Long, Long> item : groupById.entrySet()) {
+            System.out.println("Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент");
+        }
     }
 
     public void removeAllByHealth(long health) {
@@ -60,7 +61,7 @@ public class CollectionManager {
         tmpMarine.removeIf(marine -> health == marine.getHealth());
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+        lastUpdate = LocalDate.now();
     }
 
     public boolean collectionIsEmpty() {
@@ -73,11 +74,12 @@ public class CollectionManager {
         }
         return 0L;
     }
-    public void removeAnyByAchievements(String argument){
+
+    public void removeAnyByAchievements(String argument) {
         tmpMarine.addAll(0, marineStack);
-        for (SpaceMarine marine:tmpMarine
-             ) {
-            if(marine.getAchievements().equals(argument)){
+        for (SpaceMarine marine : tmpMarine
+        ) {
+            if (marine.getAchievements().equals(argument)) {
                 tmpMarine.remove(marine);
                 break;
             }
@@ -85,15 +87,16 @@ public class CollectionManager {
         marineStack.clear();
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+        lastUpdate = LocalDate.now();
     }
+
     public void removeFirst() {
         tmpMarine.addAll(0, marineStack);
         tmpMarine.remove(0);
         marineStack.clear();
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+        lastUpdate = LocalDate.now();
     }
 
     public void loadCollectionFromStartFile() {
@@ -102,13 +105,17 @@ public class CollectionManager {
 
     }
 
-    public void removeById(Long id) {
-        tmpMarine.addAll(0, marineStack);
-        marineStack.clear();
-        tmpMarine.remove(Integer.parseInt(String.valueOf(id)));
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
-        lastUpdate=LocalDate.now();
+    public SpaceMarine getById(Long id) {
+        for (SpaceMarine marine : marineStack) {
+            if (marine.getId().equals(id)) {
+                return marine;
+            }
+        }
+        return null;
+    }
+
+    public void removeFromCollection(SpaceMarine marine) {
+        marineStack.remove(marine);
     }
 
     public Stack<SpaceMarine> getMarineStack() {

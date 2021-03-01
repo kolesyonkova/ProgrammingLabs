@@ -1,4 +1,7 @@
 package exceptions;
 
-public class EmptyCollection extends Exception{
+/**
+ * It's threw when collection is empty.
+ */
+public class EmptyCollection extends Exception {
 }

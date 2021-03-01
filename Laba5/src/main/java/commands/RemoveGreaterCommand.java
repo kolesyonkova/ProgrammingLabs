@@ -6,6 +6,9 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+/**
+ * Command 'remove_greater'. Removes all element from the collection that exceed the specified value.
+ */
 public class RemoveGreaterCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
     private Asker asker;
@@ -16,6 +19,9 @@ public class RemoveGreaterCommand extends AbstractCommand implements Command {
         this.asker = asker;
     }
 
+    /**
+     * Execute of 'remove_greate' command.
+     */
     @Override
     public void execute(String argument) {
         try {

@@ -3,6 +3,9 @@ package commands;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+/**
+ * Command 'show'. Shows information about all elements of the collection.
+ */
 public class ShowCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
 
@@ -11,6 +14,9 @@ public class ShowCommand extends AbstractCommand implements Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'show' command.
+     */
     @Override
     public void execute(String argument) {
         try {

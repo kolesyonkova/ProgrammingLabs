@@ -1,4 +1,7 @@
 package exceptions;
 
-public class WrongArgumentException extends Exception{
+/**
+ * It's threw when incorrect argument.
+ */
+public class WrongArgumentException extends Exception {
 }

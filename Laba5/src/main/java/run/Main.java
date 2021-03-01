@@ -5,7 +5,10 @@ import managers.*;
 
 import java.util.Scanner;
 
-
+/**
+ * Main application class. Creates all instances and runs the program.
+ * @author Колесенкова Екатерина P3112
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner userScanner = new Scanner(System.in);

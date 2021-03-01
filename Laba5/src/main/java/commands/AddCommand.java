@@ -5,6 +5,9 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+/**
+ * This is command 'add'. Adds a new element to collection.
+ */
 public class AddCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
     private Asker asker;
@@ -15,6 +18,9 @@ public class AddCommand extends AbstractCommand implements Command {
         this.asker = asker;
     }
 
+    /**
+     * Execute of 'add' command.
+     */
     @Override
     public void execute(String argument) {
         try {
@@ -35,7 +41,7 @@ public class AddCommand extends AbstractCommand implements Command {
             System.out.println("Создание бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
     }

@@ -2,11 +2,17 @@ package commands;
 
 import exceptions.WrongArgumentException;
 
+/**
+ * Command 'history'. Displays the latest commands.
+ */
 public class HistoryCommand extends AbstractCommand implements Command {
     public HistoryCommand() {
         super("history", "вывести последние 9 команд (без их аргументов)");
     }
 
+    /**
+     * Execute of 'history' command.
+     */
     @Override
     public void execute(String argument) {
         try {

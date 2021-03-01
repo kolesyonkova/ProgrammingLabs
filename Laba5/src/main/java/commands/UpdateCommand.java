@@ -7,6 +7,9 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+/**
+ * Command 'update'. Updates the information about selected marine.
+ */
 public class UpdateCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
     private Asker asker;
@@ -18,9 +21,12 @@ public class UpdateCommand extends AbstractCommand implements Command {
         this.asker = asker;
     }
 
+    /**
+     * Execute of 'update' command.
+     */
     @Override
     public void execute(String argument) {
-        sizeCollection = collectionManager.getSizeCollection()-1;
+        sizeCollection = collectionManager.getSizeCollection() - 1;
         try {
             if (argument.isEmpty()) {
                 throw new WrongArgumentException();
@@ -44,9 +50,9 @@ public class UpdateCommand extends AbstractCommand implements Command {
             System.out.println("Обновление бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
-        }catch (NumberFormatException exception) {
-            System.out.println("Айди должен быть представлен числом!");}
-        catch (IncorrectId e) {
+        } catch (NumberFormatException exception) {
+            System.out.println("Айди должен быть представлен числом!");
+        } catch (IncorrectId e) {
             System.out.println("Айди солдата должен лежать в диапозоне [0;" + sizeCollection + "]");
         } catch (EmptyCollection e) {
             System.out.println("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");

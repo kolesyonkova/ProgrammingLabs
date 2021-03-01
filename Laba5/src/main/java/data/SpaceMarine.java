@@ -3,6 +3,9 @@ package data;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Main character. Is stored in the collection.
+ */
 public class SpaceMarine implements Comparable<SpaceMarine> {
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -12,7 +15,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
     private Integer heartCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 3
     private String achievements; //Поле может быть null
     private MeleeWeapon meleeWeapon; //Поле не может быть null
-    private Chapter chapter; //Поле может быть null
+    private Chapter chapter; //Поле не может быть null
 
     public SpaceMarine(Long id, String name, Coordinates coordinates, LocalDate creationDate, long health, Integer heartCount, String achievements, MeleeWeapon meleeWeapon, Chapter chapter) {
         this.id = id;
@@ -27,11 +30,12 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         checkAchievements();
     }
 
-    public void checkAchievements(){
+    public void checkAchievements() {
         if (achievements.equals("")) {
             achievements = "отсутсвуют";
         }
     }
+
     public Long getId() {
         return id;
     }

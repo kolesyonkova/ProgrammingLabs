@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Operates command input.
+ */
 public class ConsoleManager {
     CommandManager commandManager;
     FileManager fileManager;
@@ -21,6 +24,9 @@ public class ConsoleManager {
         this.fileManager = fileManager;
     }
 
+    /**
+     * Mode for work with commands from user input.
+     */
     public void userMode() {
         String[] userCommand;
         while (true) {
@@ -33,6 +39,9 @@ public class ConsoleManager {
         }
     }
 
+    /**
+     * Mode for work with commands from a script.
+     */
     public void scriptMode(String argument) {
         String[] userCommand;
         scriptStack.add(argument);
@@ -64,7 +73,9 @@ public class ConsoleManager {
         }
     }
 
-
+    /**
+     * Selects and start command execute.
+     */
     public void startCommand(String[] userCommand) {
         try {
             switch (userCommand[0]) {

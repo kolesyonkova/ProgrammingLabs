@@ -5,6 +5,9 @@ import exceptions.LowHealthException;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+/**
+ * Command 'remove_all_by_health'. Remove from the collection all items whose health field value is equivalent to the specified one.
+ */
 public class RemoveAllByHealthCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
 
@@ -13,6 +16,9 @@ public class RemoveAllByHealthCommand extends AbstractCommand implements Command
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'remove_all_by_health' command.
+     */
     @Override
     public void execute(String argument) {
         try {

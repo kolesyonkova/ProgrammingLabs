@@ -7,6 +7,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * Operates the file for saving/loading collection.
+ */
 public class FileManager {
     String path;
     Stack<SpaceMarine> stackFromFile = new Stack<>();
@@ -17,6 +20,9 @@ public class FileManager {
         this.path = path;
     }
 
+    /**
+     * Writes collection to a file.
+     */
     public void saveCollection(Stack<SpaceMarine> stack) {
         try (PrintWriter outFile = new PrintWriter(new File("myCollection.txt"))) {
             for (SpaceMarine i : stack
@@ -28,6 +34,11 @@ public class FileManager {
         }
     }
 
+    /**
+     * Reads collection from a file and then loads her.
+     *
+     * @return Read collection.
+     */
 
     public Stack<SpaceMarine> loader() {
         try (FileInputStream fstream = new FileInputStream(path)) {
@@ -43,7 +54,7 @@ public class FileManager {
                 }
                 ascerForStartFIle = new AscerForStartFIle(ar);
                 SpaceMarine pushingObject = ascerForStartFIle.startFunc();
-                if (!(pushingObject ==null))stackFromFile.push(pushingObject);
+                if (!(pushingObject == null)) stackFromFile.push(pushingObject);
                 ar.clear();
             }
         } catch (FileNotFoundException exception) {

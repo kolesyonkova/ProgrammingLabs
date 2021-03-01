@@ -4,6 +4,9 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+/**
+ * Command 'group_counting_by_id'. Groups the collection items by the value of the id field and outputs the number of items in each group.
+ */
 public class GroupCountingByIdCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
 
@@ -12,6 +15,9 @@ public class GroupCountingByIdCommand extends AbstractCommand implements Command
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'group_counting_by_id' command.
+     */
     @Override
     public void execute(String argument) {
         try {

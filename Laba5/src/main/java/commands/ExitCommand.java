@@ -2,11 +2,17 @@ package commands;
 
 import exceptions.WrongArgumentException;
 
+/**
+ * Command 'exit'. Exits the program.
+ */
 public class ExitCommand extends AbstractCommand implements Command {
     public ExitCommand() {
         super("exit", " завершить программу (без сохранения в файл)");
     }
 
+    /**
+     * Execute of 'exit' command.
+     */
     @Override
     public void execute(String argument) {
         try {

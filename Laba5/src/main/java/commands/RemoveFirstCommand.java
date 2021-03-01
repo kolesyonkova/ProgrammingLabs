@@ -4,18 +4,22 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+/**
+ * Command 'remove_first'. Deletes the first element from the collection.
+ */
 public class RemoveFirstCommand extends AbstractCommand implements Command {
     private CollectionManager collectionManager;
-    private int sizeCollection;
 
     public RemoveFirstCommand(CollectionManager collectionManager) {
         super("remove_first", "удалить первый элемент из коллекции");
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'remove_first' command.
+     */
     @Override
     public void execute(String argument) {
-        sizeCollection = collectionManager.getSizeCollection() - 1;
         try {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();

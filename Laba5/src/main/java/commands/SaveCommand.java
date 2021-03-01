@@ -4,6 +4,9 @@ import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 import managers.FileManager;
 
+/**
+ * Command 'save'. Saves the collection to a file.
+ */
 public class SaveCommand extends AbstractCommand implements Command {
     CollectionManager collectionManager;
     FileManager fileManager;
@@ -14,6 +17,9 @@ public class SaveCommand extends AbstractCommand implements Command {
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Execute of 'save' command.
+     */
     @Override
     public void execute(String argument) {
         try {
