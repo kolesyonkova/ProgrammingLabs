@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AscerForStartFIle {
-    private ArrayList<String> ar = new ArrayList<String>();
+    private ArrayList<String> ar;
 
     public AscerForStartFIle(ArrayList<String> ar) {
         this.ar = ar;
@@ -25,7 +25,7 @@ public class AscerForStartFIle {
 
     public MeleeWeapon askMeleeWeapon() {
         MeleeWeapon meleeWeapon = MeleeWeapon.MANREAPER;
-        String weapon = "";
+        String weapon;
         try {
             weapon = ar.get(0);
             ar.remove(0);
@@ -102,8 +102,7 @@ public class AscerForStartFIle {
     }
 
     public Chapter askChapter() {
-        Chapter chapter = new Chapter(askChapterName(), askChapterLegion(), askChapterMarinesCount(), askChapterWorld());
-        return chapter;
+        return new Chapter(askChapterName(), askChapterLegion(), askChapterMarinesCount(), askChapterWorld());
     }
 
     public Long askChapterMarinesCount() {

@@ -23,7 +23,7 @@ public class RemoveFirstCommand extends AbstractCommand implements Command {
             if (collectionManager.collectionIsEmpty()) {
                 throw new EmptyCollection();
             }
-            collectionManager.deleteFirst();
+            collectionManager.removeFirst();
             System.out.println("Удаление первого бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");

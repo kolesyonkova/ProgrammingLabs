@@ -47,9 +47,17 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
                 Objects.equals(chapter, that.chapter);
     }
 
+    public long getHealth() {
+        return health;
+    }
+
+    public String getAchievements() {
+        return achievements;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, coordinates, creationDate, health, heartCount, achievements, meleeWeapon, chapter);
+        return (int) (coordinates.hashCode() + health + heartCount.hashCode() + chapter.hashCode());
     }
 
     @Override
@@ -69,6 +77,6 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     @Override
     public int compareTo(SpaceMarine compareMarine) {
-            return this.hashCode()-compareMarine.hashCode();
+        return this.hashCode() - compareMarine.hashCode();
     }
 }

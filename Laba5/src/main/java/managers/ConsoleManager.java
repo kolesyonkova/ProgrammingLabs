@@ -109,8 +109,10 @@ public class ConsoleManager {
                     commandManager.getHistory(userCommand[1]);
                     break;
                 case "remove_all_by_health":
+                    commandManager.removeAllByHealthCommand(userCommand[1]);
                     break;
                 case "remove_any_by_achievements":
+                    commandManager.removeAnyByAchievements(userCommand[1]);
                     break;
                 case "group_counting_by_id":
                     break;
@@ -119,8 +121,6 @@ public class ConsoleManager {
             }
         } catch (ExceptionInInitializerError e) {
             System.out.println("Что-то пошло не так");
-
-
         }
     }
 

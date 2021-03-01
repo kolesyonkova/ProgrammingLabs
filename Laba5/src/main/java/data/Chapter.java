@@ -23,19 +23,8 @@ public class Chapter {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Chapter chapter = (Chapter) o;
-        return Objects.equals(name, chapter.name) &&
-                Objects.equals(parentLegion, chapter.parentLegion) &&
-                Objects.equals(marinesCount, chapter.marinesCount) &&
-                Objects.equals(world, chapter.world);
-    }
-
-    @Override
     public int hashCode() {
-        return Objects.hash(name, parentLegion, marinesCount, world);
+        return marinesCount.hashCode();
     }
 
     @Override

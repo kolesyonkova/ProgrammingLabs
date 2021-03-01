@@ -115,6 +115,10 @@ public class CommandManager {
         removeGreaterCommand.execute(argument);
     }
 
+    public void removeAllByHealthCommand(String argument) {
+        removeAllByHealthCommand.execute(argument);
+    }
+
     public void removeById(String argument) {
         removeById.execute(argument);
     }
@@ -122,7 +126,9 @@ public class CommandManager {
     public void info(String argument) {
         infoCommand.execute(argument);
     }
-
+    public void removeAnyByAchievements(String argument){
+        removeAnyByAchievementsCommand.execute(argument);
+    }
     public void help(String argument) {
         if (argument.equals("")) {
             helpCommand.execute(argument);

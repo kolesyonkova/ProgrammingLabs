@@ -235,7 +235,7 @@ public class Asker {
                 System.out.println("Выберите оружие ближнего боя. На выбор: \nMANREAPER,\n" +
                         "POWER_BLADE,\n" +
                         "POWER_FIST");
-                weapon = userScanner.nextLine();
+                weapon = userScanner.nextLine().trim();
                 if (weapon.equals("")) {
                     throw new MustBeNotEmptyException();
                 }
