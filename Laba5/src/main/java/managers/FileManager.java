@@ -45,22 +45,27 @@ public class FileManager {
             String reader;
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             while ((reader = br.readLine()) != null) {
-                String[] nm = reader.split(",");
-                for (String s : nm) {
-                    ar.add(s.trim());
+                try {
+                    ar.clear();
+                    String[] nm = reader.split(",");
+                    for (String s : nm) {
+                        ar.add(s.trim());
+                    }
+                    if (ar.size() != 11) {
+                        throw new EmptyCollection();
+                    }
+                    ascerForStartFIle = new AscerForStartFIle(ar);
+                    SpaceMarine pushingObject = ascerForStartFIle.startFunc();
+                    if (!(pushingObject == null)) stackFromFile.push(pushingObject);
+                    ar.clear();
+                } catch (EmptyCollection e) {
+                    System.out.println("В данной строке недостаточно аргументов для создания объекта");
+                } catch (Exception e) {
+                    System.out.println("something wrong");
                 }
-                if (ar.size() != 11) {
-                    throw new EmptyCollection();
-                }
-                ascerForStartFIle = new AscerForStartFIle(ar);
-                SpaceMarine pushingObject = ascerForStartFIle.startFunc();
-                if (!(pushingObject == null)) stackFromFile.push(pushingObject);
-                ar.clear();
             }
         } catch (FileNotFoundException exception) {
             System.out.println("Загрузочный файл не найден!");
-        } catch (EmptyCollection e) {
-            System.out.println("В данной строке недостаточно аргументов для создания объекта");
         } catch (Exception e) {
             System.out.println("something wrong");
         }

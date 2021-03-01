@@ -41,7 +41,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
     }
 
     public boolean isEmpty() {
-        return (this.name == null ||this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null|| this.meleeWeapon == null ||this.chapter == null);
+        return (this.name == null ||this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null|| this.meleeWeapon == null ||this.chapter == null||this.health==0L);
     }
 
     @Override

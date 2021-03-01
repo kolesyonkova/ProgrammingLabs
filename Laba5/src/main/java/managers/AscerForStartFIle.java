@@ -105,7 +105,7 @@ public class AscerForStartFIle {
             }
         } catch (Exception e) {
             System.out.println("В загрузочном файле неверно определено здоровье. данный объект не будет создан");
-            return null;
+            return 0L;
         }
         return health;
     }
