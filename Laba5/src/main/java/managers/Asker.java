@@ -53,6 +53,9 @@ public class Asker {
                 System.out.println("Некорректный формат, повторите ввод.");
             } catch (InputMismatchException e) {
                 System.out.println("Неверные данные. Повторите ввод.");
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод");
             }
@@ -72,6 +75,9 @@ public class Asker {
                 System.out.println("Введите мир: ");
                 world = userScanner.nextLine();
                 break;
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод");
             }
@@ -89,7 +95,10 @@ public class Asker {
         System.out.println("Введите имя Легиона: ");
         try {
             parentLegion = userScanner.nextLine();
-        } catch (Exception e) {
+        } catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
+            }catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод");
         }
         return parentLegion;
@@ -108,6 +117,9 @@ public class Asker {
                 name = userScanner.nextLine();
                 if (name.equals("")) throw new MustBeNotEmptyException();
                 break;
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (MustBeNotEmptyException e) {
                 System.out.println("Поле не может быть пустым. Повторите ввод.");
             } catch (Exception e) {
@@ -136,7 +148,10 @@ public class Asker {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
-            } catch (NumberOfHeartCountsException e) {
+            } catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
+            }catch (NumberOfHeartCountsException e) {
                 System.out.println("Число серднечный сокращений должно быть в диапозоне от 1 до 3. Повторите ввод. ");
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
@@ -157,6 +172,9 @@ public class Asker {
                 System.out.println("Введите достижения: ");
                 str = userScanner.nextLine().trim();
                 break;
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
@@ -181,6 +199,9 @@ public class Asker {
                     throw new WrongArgumentException();
                 }
                 break;
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
             } catch (WrongArgumentException e) {
@@ -209,6 +230,9 @@ public class Asker {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
@@ -255,6 +279,9 @@ public class Asker {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
+            }catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (LowHealthException e) {
                 System.out.println("Здоровье не может быть меньше 1");
             } catch (Exception e) {
@@ -270,7 +297,7 @@ public class Asker {
      * @return marine's name
      */
     public String askName() {
-        String name;
+        String name = null;
         while (true) {
             try {
                 System.out.println("Введите имя: ");
@@ -278,7 +305,8 @@ public class Asker {
                 if (name.equals("")) throw new MustBeNotEmptyException();
                 break;
             } catch (NoSuchElementException exception) {
-                System.out.println("Имя не распознано!");
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
             } catch (MustBeNotEmptyException exception) {
                 System.out.println("Имя не может быть пустым!");
             } catch (IllegalStateException exception) {
@@ -312,7 +340,10 @@ public class Asker {
                 break;
             } catch (MustBeNotEmptyException e) {
                 System.out.println("Поле не должно быть пустым");
-            } catch (IllegalArgumentException e) {
+            } catch (NoSuchElementException exception) {
+                System.out.println("Пользовательский ввод не обнаружен!");
+                System.exit(0);
+            }catch (IllegalArgumentException e) {
                 System.out.println("Неверный ввод. Повторите попытку");
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");

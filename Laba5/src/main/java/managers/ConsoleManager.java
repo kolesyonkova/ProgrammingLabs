@@ -29,13 +29,18 @@ public class ConsoleManager {
      */
     public void userMode() {
         String[] userCommand;
-        while (true) {
-            System.out.println("Введите команду: ");
-            userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
-            userCommand[1] = userCommand[1].trim();
-            startCommand(userCommand);
-            commandManager.addToHistory(userCommand[0]);
-
+        try {
+            while (true) {
+                System.out.println("Введите команду: ");
+                userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
+                userCommand[1] = userCommand[1].trim();
+                startCommand(userCommand);
+                commandManager.addToHistory(userCommand[0]);
+            }
+        } catch (NoSuchElementException exception) {
+            System.out.println("Пользовательский ввод не обнаружен!");
+        } catch (IllegalStateException exception) {
+            System.out.println("Непредвиденная ошибка!");
         }
     }
 

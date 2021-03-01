@@ -5,6 +5,8 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+import java.util.NoSuchElementException;
+
 /**
  * This is command 'add'. Adds a new element to collection.
  */
@@ -41,6 +43,8 @@ public class AddCommand extends AbstractCommand implements Command {
             System.out.println("Создание бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
+        }catch (NoSuchElementException exception) {
+            System.out.println("Пользовательский ввод не обнаружен!");
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
