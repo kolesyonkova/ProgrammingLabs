@@ -158,16 +158,27 @@ public class CommandManager {
     public void removeById(String argument) {
         removeById.execute(argument);
     }
-
+    /**
+     * Start execute of 'info' command.
+     */
     public void info(String argument) {
         infoCommand.execute(argument);
     }
+    /**
+     * Start execute of 'remove_any_by_achievements' command.
+     */
     public void removeAnyByAchievements(String argument){
         removeAnyByAchievementsCommand.execute(argument);
     }
+    /**
+     * Start execute of 'group_counting_by_id' command.
+     */
     public void groupCountingByIdCommand(String argument){
         groupCountingByIdCommand.execute(argument);
     }
+    /**
+     * Show command and description of command.
+     */
     public void help(String argument) {
         if (argument.equals("")) {
             helpCommand.execute(argument);
@@ -189,5 +200,3 @@ public class CommandManager {
     }
 
 }
-
-//TODO: доделать тут методы для команд

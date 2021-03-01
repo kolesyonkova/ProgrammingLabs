@@ -9,6 +9,9 @@ import exceptions.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Ask from start file a marine's values.
+ */
 public class AscerForStartFIle {
     private ArrayList<String> ar;
 
@@ -18,11 +21,21 @@ public class AscerForStartFIle {
 
     private static Long index = -1L;
 
+    /**
+     * function for create marine
+     *
+     * @return new marine
+     */
     public SpaceMarine startFunc() {
         index += 1L;
         return new SpaceMarine(index, askName(), askCoordinates(), askDate(), askHealth(), askHeartCounts(), askAchievements(), askMeleeWeapon(), askChapter());
     }
 
+    /**
+     * ask marine's melee weapon
+     *
+     * @return melee weapon
+     */
     public MeleeWeapon askMeleeWeapon() {
         MeleeWeapon meleeWeapon;
         String weapon;
@@ -38,6 +51,11 @@ public class AscerForStartFIle {
         return meleeWeapon;
     }
 
+    /**
+     * ask achievements
+     *
+     * @return achievements
+     */
     public String askAchievements() {
         String achievements;
         try {
@@ -50,6 +68,11 @@ public class AscerForStartFIle {
         return achievements;
     }
 
+    /**
+     * ask heart count
+     *
+     * @return heart count
+     */
     public Integer askHeartCounts() {
         Integer counts = 0;
         try {
@@ -65,6 +88,11 @@ public class AscerForStartFIle {
         return counts;
     }
 
+    /**
+     * ask health of marine
+     *
+     * @return marine's health
+     */
     public Long askHealth() {
         Long health;
         try {
@@ -80,10 +108,20 @@ public class AscerForStartFIle {
         return health;
     }
 
+    /**
+     * output local date
+     *
+     * @return local date
+     */
     public LocalDate askDate() {
         return LocalDate.now();
     }
 
+    /**
+     * ask X,Y coordinates
+     *
+     * @return x, y coordinates
+     */
     public Coordinates askCoordinates() {
         Double x;
         Integer y;
@@ -102,6 +140,11 @@ public class AscerForStartFIle {
         return new Coordinates(x, y);
     }
 
+    /**
+     * ask name of marine
+     *
+     * @return marine's name
+     */
     public String askName() {
         String name = "";
         try {
@@ -115,10 +158,20 @@ public class AscerForStartFIle {
         return name;
     }
 
+    /**
+     * asks about chapter
+     *
+     * @return new chapter
+     */
     public Chapter askChapter() {
         return new Chapter(askChapterName(), askChapterLegion(), askChapterMarinesCount(), askChapterWorld());
     }
 
+    /**
+     * ask how much marines
+     *
+     * @return count of marines
+     */
     public Long askChapterMarinesCount() {
         Long marinesCount;
         try {
@@ -134,6 +187,11 @@ public class AscerForStartFIle {
         return marinesCount;
     }
 
+    /**
+     * ask chapter world
+     *
+     * @return chapter world
+     */
     public String askChapterWorld() {
         String world;
         try {
@@ -146,6 +204,11 @@ public class AscerForStartFIle {
         return world;
     }
 
+    /**
+     * ask chapter parent Legion
+     *
+     * @return parent Legion
+     */
     public String askChapterLegion() {
         String parentLegion = "";
         try {
@@ -158,6 +221,11 @@ public class AscerForStartFIle {
         return parentLegion;
     }
 
+    /**
+     * ask chapter name
+     *
+     * @return chapter name
+     */
     public String askChapterName() {
         String name;
         try {

@@ -10,6 +10,9 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Ask from user a marine's values.
+ */
 public class Asker {
     private final Scanner userScanner;
     private LocalDate localDate;
@@ -18,10 +21,20 @@ public class Asker {
         this.userScanner = userScanner;
     }
 
+    /**
+     * asks about chapter
+     *
+     * @return new chapter
+     */
     public Chapter askChapter() {
         return new Chapter(askChapterName(), askChapterLegion(), askChapterMarinesCount(), askChapterWorld());
     }
 
+    /**
+     * ask how much marines
+     *
+     * @return count of marines
+     */
     public Long askChapterMarinesCount() {
         Long marinesCount;
         String tmp;
@@ -47,6 +60,11 @@ public class Asker {
         return marinesCount;
     }
 
+    /**
+     * ask chapter world
+     *
+     * @return chapter world
+     */
     public String askChapterWorld() {
         String world;
         while (true) {
@@ -61,6 +79,11 @@ public class Asker {
         return world;
     }
 
+    /**
+     * ask chapter parent Legion
+     *
+     * @return parent Legion
+     */
     public String askChapterLegion() {
         String parentLegion = "";
         System.out.println("Введите имя Легиона: ");
@@ -72,6 +95,11 @@ public class Asker {
         return parentLegion;
     }
 
+    /**
+     * ask chapter name
+     *
+     * @return chapter name
+     */
     public String askChapterName() {
         String name;
         while (true) {
@@ -89,6 +117,11 @@ public class Asker {
         return name;
     }
 
+    /**
+     * ask heart count
+     *
+     * @return heart count
+     */
     public Integer askHeartCount() {
         String tmp;
         Integer heartCount;
@@ -112,6 +145,11 @@ public class Asker {
         return heartCount;
     }
 
+    /**
+     * ask achievements
+     *
+     * @return achievements
+     */
     public String askAchievements() {
         String str;
         while (true) {
@@ -126,6 +164,11 @@ public class Asker {
         return str;
     }
 
+    /**
+     * ask X coordinate
+     *
+     * @return x coordinate
+     */
     public Double askX() {
         String tmp;
         Double x;
@@ -134,15 +177,15 @@ public class Asker {
                 System.out.println("Введите координату Х: ");
                 tmp = userScanner.nextLine().trim();
                 x = Double.parseDouble(tmp);
-                if(x<=-56){throw new WrongArgumentException();
+                if (x <= -56) {
+                    throw new WrongArgumentException();
                 }
                 break;
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
-            }catch (WrongArgumentException e){
+            } catch (WrongArgumentException e) {
                 System.out.println("Значение Х должно быть больше -56.");
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
         }
@@ -150,6 +193,11 @@ public class Asker {
 
     }
 
+    /**
+     * ask Y coordinate
+     *
+     * @return y coordinate
+     */
     public Integer askY() {
         String tmp;
         Integer y;
@@ -169,15 +217,30 @@ public class Asker {
 
     }
 
+    /**
+     * returns coordinates
+     *
+     * @return new coordinates(x,y)
+     */
     public Coordinates askCoordinates() {
         return new Coordinates(askX(), askY());
     }
 
+    /**
+     * output local date
+     *
+     * @return local date
+     */
     public LocalDate askLocalDate() {
         localDate = LocalDate.now();
         return localDate;
     }
 
+    /**
+     * ask health of marine
+     *
+     * @return marine's health
+     */
     public Long askHealth() {
         String tmp;
         Long health;
@@ -201,6 +264,11 @@ public class Asker {
         return health;
     }
 
+    /**
+     * ask name of marine
+     *
+     * @return marine's name
+     */
     public String askName() {
         String name;
         while (true) {
@@ -216,13 +284,18 @@ public class Asker {
             } catch (IllegalStateException exception) {
                 System.out.println("Непредвиденная ошибка!");
                 System.exit(0);
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
         }
         return name;
     }
 
+    /**
+     * ask marine's melee weapon
+     *
+     * @return melee weapon
+     */
     public MeleeWeapon askMeleeWeapon() {
         MeleeWeapon meleeWeapon;
         String weapon;
