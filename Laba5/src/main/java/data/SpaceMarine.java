@@ -40,6 +40,10 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         return id;
     }
 
+    public boolean isEmpty() {
+        return (this.name == null ||this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null|| this.meleeWeapon == null ||this.chapter == null);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -28,8 +28,10 @@ public class AscerForStartFIle {
      */
     public SpaceMarine startFunc() {
         index += 1L;
-        return new SpaceMarine(index, askName(), askCoordinates(), askDate(), askHealth(), askHeartCounts(), askAchievements(), askMeleeWeapon(), askChapter());
-    }
+        SpaceMarine marine= new SpaceMarine(index, askName(), askCoordinates(), askDate(), askHealth(), askHeartCounts(), askAchievements(), askMeleeWeapon(), askChapter());
+        if(marine.isEmpty()){return null;}
+        return marine;
+        }
 
     /**
      * ask marine's melee weapon
