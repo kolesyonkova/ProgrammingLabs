@@ -115,6 +115,7 @@ public class ConsoleManager {
                     commandManager.removeAnyByAchievements(userCommand[1]);
                     break;
                 case "group_counting_by_id":
+                    commandManager.groupCountingByIdCommand(userCommand[1]);
                     break;
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");

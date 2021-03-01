@@ -129,6 +129,9 @@ public class CommandManager {
     public void removeAnyByAchievements(String argument){
         removeAnyByAchievementsCommand.execute(argument);
     }
+    public void groupCountingByIdCommand(String argument){
+        groupCountingByIdCommand.execute(argument);
+    }
     public void help(String argument) {
         if (argument.equals("")) {
             helpCommand.execute(argument);

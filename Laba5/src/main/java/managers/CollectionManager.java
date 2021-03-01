@@ -5,7 +5,9 @@ import data.SpaceMarine;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
+import java.util.Map;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 public class CollectionManager {
     private LocalDate initializationDate;
@@ -43,6 +45,13 @@ public class CollectionManager {
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate=LocalDate.now();
+    }
+
+    public void groupCountingById(){
+        Map<Long, Long> groupById = marineStack.stream().collect(
+                Collectors.groupingBy(SpaceMarine::getId, Collectors.counting()));
+        for(Map.Entry<Long, Long> item : groupById.entrySet()){
+            System.out.println("Айди "+item.getKey() + " содержит  - " + item.getValue()+" элемент");}
     }
 
     public void removeAllByHealth(long health) {
