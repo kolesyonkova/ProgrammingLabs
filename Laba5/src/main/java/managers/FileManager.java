@@ -1,6 +1,7 @@
 package managers;
 
 import data.SpaceMarine;
+import exceptions.EmptyCollection;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -33,22 +34,23 @@ public class FileManager {
             String reader;
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             while ((reader = br.readLine()) != null) {
-
                 String[] nm = reader.split(",");
                 for (String s : nm) {
                     ar.add(s.trim());
                 }
                 if (ar.size() != 11) {
-                    throw new Exception();
+                    throw new EmptyCollection();
                 }
-
                 ascerForStartFIle = new AscerForStartFIle(ar);
-                stackFromFile.push(ascerForStartFIle.startFunc());
+                SpaceMarine pushingObject = ascerForStartFIle.startFunc();
+                if (!(pushingObject ==null))stackFromFile.push(pushingObject);
                 ar.clear();
             }
-
-        } catch (
-                Exception e) {
+        } catch (FileNotFoundException exception) {
+            System.out.println("Загрузочный файл не найден!");
+        } catch (EmptyCollection e) {
+            System.out.println("В данной строке недостаточно аргументов для создания объекта");
+        } catch (Exception e) {
             System.out.println("something wrong");
         }
         return stackFromFile;

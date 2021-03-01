@@ -3,10 +3,7 @@ package managers;
 import data.Chapter;
 import data.Coordinates;
 import data.MeleeWeapon;
-import exceptions.LowHealthException;
-import exceptions.MustBeNotEmptyException;
-import exceptions.NumberOfHeartCountsException;
-import exceptions.NumberOfMarinesException;
+import exceptions.*;
 
 import java.time.LocalDate;
 import java.util.InputMismatchException;
@@ -56,10 +53,7 @@ public class Asker {
             try {
                 System.out.println("Введите мир: ");
                 world = userScanner.nextLine();
-                if (world.equals("")) throw new MustBeNotEmptyException();
                 break;
-            } catch (MustBeNotEmptyException e) {
-                System.out.println("Поле не может быть пустым. Повторите ввод.");
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод");
             }
@@ -79,7 +73,7 @@ public class Asker {
     }
 
     public String askChapterName() {
-        String name = "";
+        String name;
         while (true) {
             try {
                 System.out.println("Введите имя главы: ");
@@ -124,12 +118,7 @@ public class Asker {
             try {
                 System.out.println("Введите достижения: ");
                 str = userScanner.nextLine().trim();
-                if (str.equals("")) {
-                    throw new MustBeNotEmptyException();
-                }
                 break;
-            } catch (MustBeNotEmptyException e) {
-                System.out.println("Поле не может быть пустым. Повторите ввод.");
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
@@ -145,10 +134,15 @@ public class Asker {
                 System.out.println("Введите координату Х: ");
                 tmp = userScanner.nextLine().trim();
                 x = Double.parseDouble(tmp);
+                if(x<=-56){throw new WrongArgumentException();
+                }
                 break;
-            } catch (NumberFormatException e) {
+            }catch (NumberFormatException e) {
                 System.out.println("Некорректный формат, повторите ввод.");
-            } catch (Exception e) {
+            }catch (WrongArgumentException e){
+                System.out.println("Значение Х должно быть больше -56.");
+            }
+            catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите ввод.");
             }
         }
@@ -222,6 +216,8 @@ public class Asker {
             } catch (IllegalStateException exception) {
                 System.out.println("Непредвиденная ошибка!");
                 System.exit(0);
+            }catch (Exception e) {
+                System.out.println("Что-то пошло не так. Повторите ввод.");
             }
         }
         return name;

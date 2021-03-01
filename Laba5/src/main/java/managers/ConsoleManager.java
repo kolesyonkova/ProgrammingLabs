@@ -67,7 +67,6 @@ public class ConsoleManager {
 
     public void startCommand(String[] userCommand) {
         try {
-            //TODO: доделать свитч
             switch (userCommand[0]) {
                 case "add":
                     commandManager.addCollection(userCommand[1]);

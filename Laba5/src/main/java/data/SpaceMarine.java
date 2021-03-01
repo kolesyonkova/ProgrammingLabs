@@ -24,9 +24,14 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         this.achievements = achievements;
         this.meleeWeapon = meleeWeapon;
         this.chapter = chapter;
+        checkAchievements();
     }
 
-
+    public void checkAchievements(){
+        if (achievements.equals("")) {
+            achievements = "отсутсвуют";
+        }
+    }
     public Long getId() {
         return id;
     }
