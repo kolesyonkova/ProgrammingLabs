@@ -134,9 +134,7 @@ public class CollectionManager {
     }
 
     public void clearCollection() {
-        for (int i = 0; i <= marineStack.size() + 1; i++) {
-            marineStack.pop();
-        }
+        marineStack.clear();
         lastUpdate = LocalDate.now();
     }
 

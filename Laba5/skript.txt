@@ -1,4 +1,5 @@
 show
 save
 clear
+execute_script skript.txt
 show
