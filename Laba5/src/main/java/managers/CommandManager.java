@@ -3,6 +3,7 @@ package managers;
 import commands.*;
 
 import java.util.ArrayList;
+
 /**
  * Operates with the commands.
  */
@@ -133,9 +134,8 @@ public class CommandManager {
             if (command.getName().split(" ")[0].equals(argument)) {
                 if (commandsHistory.size() > HISTORY_SIZE) {
                     commandsHistory.remove(0);
-                } else {
-                    commandsHistory.add(argument);
                 }
+                commandsHistory.add(argument);
             }
         }
     }
@@ -146,36 +146,42 @@ public class CommandManager {
     public void removeGreaterCommand(String argument) {
         removeGreaterCommand.execute(argument);
     }
+
     /**
      * Start execute of 'remove_all_by_health' command.
      */
     public void removeAllByHealthCommand(String argument) {
         removeAllByHealthCommand.execute(argument);
     }
+
     /**
      * Start execute of 'remove_by_id' command.
      */
     public void removeById(String argument) {
         removeById.execute(argument);
     }
+
     /**
      * Start execute of 'info' command.
      */
     public void info(String argument) {
         infoCommand.execute(argument);
     }
+
     /**
      * Start execute of 'remove_any_by_achievements' command.
      */
-    public void removeAnyByAchievements(String argument){
+    public void removeAnyByAchievements(String argument) {
         removeAnyByAchievementsCommand.execute(argument);
     }
+
     /**
      * Start execute of 'group_counting_by_id' command.
      */
-    public void groupCountingByIdCommand(String argument){
+    public void groupCountingByIdCommand(String argument) {
         groupCountingByIdCommand.execute(argument);
     }
+
     /**
      * Show command and description of command.
      */

@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class ConsoleManager {
     CommandManager commandManager;
     FileManager fileManager;
+    private int counter;
     private Scanner userScanner;
     private List<String> scriptStack = new ArrayList<>();
 
@@ -34,11 +35,15 @@ public class ConsoleManager {
                 System.out.println("Введите команду: ");
                 userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
+                if(userCommand[0].equals("net")) System.exit(0);
                 startCommand(userCommand);
                 commandManager.addToHistory(userCommand[0]);
             }
         } catch (NoSuchElementException exception) {
             System.out.println("Пользовательский ввод не обнаружен!");
+            System.out.println("Вы точно хотите завершить программу?");
+            System.out.println("Введите net, if exit");
+            userMode();
         } catch (IllegalStateException exception) {
             System.out.println("Непредвиденная ошибка!");
         }
@@ -62,7 +67,7 @@ public class ConsoleManager {
                 System.out.println(String.join(" ", userCommand));
                 if (userCommand[0].equals("execute_script")) {
                     for (String script : scriptStack) {
-                        if (userCommand[1].equals(script)) throw new ScriptRecursionException();
+                        if (userCommand[1].equals(script)){counter+=1; if (counter>3){throw new ScriptRecursionException();}}
                     }
                 }
                 startCommand(userCommand);
@@ -73,6 +78,7 @@ public class ConsoleManager {
             System.out.println("Файл со скриптом пуст!");
         } catch (ScriptRecursionException e) {
             System.out.println("Скрипты не могут вызываться рекурсивно!");
+            userMode();
         } finally {
             scriptStack.remove(scriptStack.size() - 1);
         }

@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner userScanner = new Scanner(System.in);
-        String path = "data.csv";
-        FileManager fileManager = new FileManager(path);
+        final String myenv = "WC_FILE";
+        FileManager fileManager = new FileManager(myenv);
         Asker asker = new Asker(userScanner);
         CollectionManager collectionManager = new CollectionManager(fileManager);
         CommandManager commandManager = new CommandManager(new AddCommand(collectionManager, asker), new ClearCommand(collectionManager), new GroupCountingByIdCommand(collectionManager), new ShowCommand(collectionManager), new SaveCommand(collectionManager, fileManager), new HelpCommand(), new HistoryCommand(), new InfoCommand(collectionManager), new RemoveAllByHealthCommand(collectionManager), new RemoveAnyByAchievementsCommand(collectionManager), new RemoveFirstCommand(collectionManager), new RemoveGreaterCommand(collectionManager, asker), new UpdateCommand(collectionManager, asker), new ExitCommand(), new RemoveById(collectionManager));
