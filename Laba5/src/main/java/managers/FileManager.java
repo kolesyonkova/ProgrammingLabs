@@ -1,10 +1,7 @@
 package managers;
 
 import data.SpaceMarine;
-import exceptions.CanNotExecuteException;
 import exceptions.EmptyCollection;
-import exceptions.UnReadException;
-import exceptions.UnWriteException;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,32 +22,35 @@ public class FileManager {
         this.file = new File(System.getenv(myenv));
     }
 
-    public void checkRights(File file) {
-        if (!file.canExecute()) try {
-            throw new CanNotExecuteException();
-        } catch (CanNotExecuteException e) {
-            System.out.println("Can not execute");
-        }
-        if (!file.canExecute()) try {
-            throw new UnReadException();
-        } catch (UnReadException e) {
-            System.out.println("Can not read");
-        }
-        if (!file.canWrite()) {
-            try {
-                throw new UnWriteException();
-            } catch (UnWriteException e) {
-                System.out.println("can not write");
-            }
-        }
-    }
+//    public void checkRights(File file) {
+//        if (!file.canExecute()) try {
+//            throw new UnReadException();
+//        } catch (UnReadException e) {
+//            System.out.println("Can not read");
+//        }
+//        if (!file.canWrite()) {
+//            try {
+//                throw new UnWriteException();
+//            } catch (UnWriteException e) {
+//                System.out.println("can not write");
+//            }
+//        }
+//        if (!file.canExecute()) try {
+//            throw new CanNotExecuteException();
+//        } catch (CanNotExecuteException e) {
+//            System.out.println("Can not execute");
+//        }
+//    }
 
     /**
      * Writes collection to a file.
      */
     public void saveCollection(Stack<SpaceMarine> stack) {
         if (System.getenv(myenv) != null) {
-            checkRights(file);
+            if (!file.canWrite()) {
+                System.out.println("Недостаточно прав для записи в файл. Добавьте права на запись и запустите программу вновь");
+                System.exit(0);
+            }
             try (PrintWriter outFile = new PrintWriter(new File(System.getenv(myenv)))) {
                 for (SpaceMarine i : stack
                 ) {
@@ -61,7 +61,10 @@ public class FileManager {
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так. Повторите попытку позже");
             }
-        } else System.out.println("Системная переменная с загрузочным файлом не найдена!");
+        } else {
+            System.out.println("Системная переменная с загрузочным файлом не найдена! Исправьте и запустите программу снова");
+            System.exit(0);
+        }
     }
 
 
@@ -73,7 +76,10 @@ public class FileManager {
 
     public Stack<SpaceMarine> loader() {
         if (System.getenv(myenv) != null) {
-
+            if (!file.canRead()) {
+                System.out.println("Недостаточно прав для чтения данных из файла. Добавьте права на чтение и запустите программу вновь");
+                System.exit(0);
+            }
             try (FileInputStream fstream = new FileInputStream(System.getenv(myenv))) {
                 String reader;
                 BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
@@ -99,10 +105,14 @@ public class FileManager {
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("Файл не найден.");
+                System.exit(0);
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Что-то пошло не так. Перезапустите программу.");
             }
-        } else System.out.println("Системная переменная с загрузочным файлом не найдена!");
+        } else {
+            System.out.println("Системная переменная с загрузочным файлом не найдена! Исправьте и запустите программу снова");
+            System.exit(0);
+        }
         return stackFromFile;
     }
 }
