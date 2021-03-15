@@ -36,9 +36,8 @@ public class ConsoleManager {
                 System.out.println("Введите команду: ");
                 userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
-                if (userCommand[0].equals("net")) System.exit(0);
-                startCommand(userCommand);
                 commandManager.addToHistory(userCommand[0]);
+                startCommand(userCommand);
             }
         } catch (NoSuchElementException exception) {
             System.out.println("Введён конец файла! Завершаю программу.");
@@ -60,7 +59,9 @@ public class ConsoleManager {
             if (file.exists() && !file.canRead()) {
                 isReadable = false;
                 throw new NoAccessToFileException();
-            }else {isReadable=true;}
+            } else if (file.exists()) {
+                isReadable = true;
+            }
         } catch (NoAccessToFileException e) {
             System.out.println("Добавьте файлу права на чтение! И попробуйте снова!");
         }
