@@ -86,6 +86,7 @@ public class ConsoleManager {
                             }
                         }
                     }
+                    commandManager.addToHistory(userCommand[0]);
                     startCommand(userCommand);
                 } while (scriptScanner.hasNextLine());
             } catch (FileNotFoundException exception) {
