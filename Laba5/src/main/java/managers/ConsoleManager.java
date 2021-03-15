@@ -1,5 +1,6 @@
 package managers;
 
+import exceptions.NoAccessToFileException;
 import exceptions.ScriptRecursionException;
 
 import java.io.File;
@@ -35,15 +36,13 @@ public class ConsoleManager {
                 System.out.println("Введите команду: ");
                 userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
-                if(userCommand[0].equals("net")) System.exit(0);
+                if (userCommand[0].equals("net")) System.exit(0);
                 startCommand(userCommand);
                 commandManager.addToHistory(userCommand[0]);
             }
         } catch (NoSuchElementException exception) {
-            System.out.println("Пользовательский ввод не обнаружен!");
-            System.out.println("Вы точно хотите завершить программу?");
-            System.out.println("Введите net, if exit");
-            userMode();
+            System.out.println("Введён конец файла! Завершаю программу.");
+            System.exit(0);
         } catch (IllegalStateException exception) {
             System.out.println("Непредвиденная ошибка!");
         }
@@ -54,33 +53,52 @@ public class ConsoleManager {
      */
     public void scriptMode(String argument) {
         String[] userCommand;
+        boolean isReadable = true;
         scriptStack.add(argument);
-        try (Scanner scriptScanner = new Scanner(new File(argument))) {
-            if (!scriptScanner.hasNext()) throw new NoSuchElementException();
-            do {
-                userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
-                userCommand[1] = userCommand[1].trim();
-                while (scriptScanner.hasNextLine() && userCommand[0].isEmpty()) {
+        File file = new File(argument);
+        try {
+            if (file.exists() && !file.canRead()) {
+                isReadable = false;
+                throw new NoAccessToFileException();
+            }else {isReadable=true;}
+        } catch (NoAccessToFileException e) {
+            System.out.println("Добавьте файлу права на чтение! И попробуйте снова!");
+        }
+        if (isReadable) {
+            try (Scanner scriptScanner = new Scanner(new File(argument))) {
+                if (!scriptScanner.hasNext()) throw new NoSuchElementException();
+                do {
                     userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                     userCommand[1] = userCommand[1].trim();
-                }
-                System.out.println(String.join(" ", userCommand));
-                if (userCommand[0].equals("execute_script")) {
-                    for (String script : scriptStack) {
-                        if (userCommand[1].equals(script)){counter+=1; if (counter>3){throw new ScriptRecursionException();}}
+                    while (scriptScanner.hasNextLine() && userCommand[0].isEmpty()) {
+                        userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
+                        userCommand[1] = userCommand[1].trim();
                     }
-                }
-                startCommand(userCommand);
-            } while (scriptScanner.hasNextLine());
-        } catch (FileNotFoundException exception) {
-            System.out.println("Файл со скриптом не найден!");
-        } catch (NoSuchElementException exception) {
-            System.out.println("Файл со скриптом пуст!");
-        } catch (ScriptRecursionException e) {
-            System.out.println("Скрипты не могут вызываться рекурсивно!");
-            userMode();
-        } finally {
-            scriptStack.remove(scriptStack.size() - 1);
+                    System.out.println(String.join(" ", userCommand));
+                    if (userCommand[0].equals("execute_script")) {
+                        for (String script : scriptStack) {
+                            if (userCommand[1].equals(script)) {
+                                counter += 1;
+                                if (counter > 3) {
+                                    throw new ScriptRecursionException();
+                                }
+                            }
+                        }
+                    }
+                    startCommand(userCommand);
+                } while (scriptScanner.hasNextLine());
+            } catch (FileNotFoundException exception) {
+                System.out.println("Файл со скриптом не найден!");
+            } catch (NoSuchElementException exception) {
+                System.out.println("Файл со скриптом пуст!");
+            } catch (ScriptRecursionException e) {
+                System.out.println("Скрипты не могут вызываться рекурсивно!");
+                userMode();
+            } catch (Exception e) {
+                System.out.println("Что-то пошло не так. Перезапустите программу");
+            } finally {
+                scriptStack.remove(scriptStack.size() - 1);
+            }
         }
     }
 
