@@ -13,7 +13,7 @@ import java.util.Stack;
 public class FileManager {
     String myenv;
     String mainFile;
-    Boolean boo = true;
+    Boolean isWritable = true;
     Boolean isNed = false;
     Stack<SpaceMarine> stackFromFile = new Stack<>();
     ArrayList<String> ar = new ArrayList<>();
@@ -54,6 +54,10 @@ public class FileManager {
 //            System.out.println("Can not execute");
 //        }
 //    }
+
+    /**
+     * Writes collection to a file, when main file unavailable
+     */
     public void saveCollection2(Stack<SpaceMarine> stack) {
         try (PrintWriter outFile = new PrintWriter(new File("tmp.csv"))) {
             isNed = true;
@@ -69,9 +73,11 @@ public class FileManager {
         }
     }
 
+    /**
+     * Merges the temporary file with the main.
+     */
     public Stack<SpaceMarine> merger() {
         Stack<SpaceMarine> spaceMarines = new Stack<>();
-        spaceMarines.clear();
         if (isNed) {
             isNed = false;
             spaceMarines.addAll(tmpMarineFromSave2);
@@ -85,19 +91,19 @@ public class FileManager {
      * Writes collection to a file.
      */
     public void saveCollection(Stack<SpaceMarine> stack) {
-        boo = true;
+        isWritable = true;
         if (System.getenv(myenv) != null) {
             if (file.exists() && !file.canWrite()) {
                 System.out.println("Недостаточно прав для записи в файл. Добавьте права на запись");
                 System.out.println("Создам временный файл на сохранение коллекции.");
                 saveCollection2(stack);
-                boo = false;
+                isWritable = false;
             } else if (!file.exists()) {
                 System.out.println("Создам временный файл на сохранение коллекции.");
                 saveCollection2(stack);
-                boo = false;
+                isWritable = false;
             }
-            if (boo) {
+            if (isWritable) {
                 try (PrintWriter outFile = new PrintWriter(new File(System.getenv(myenv)))) {
                     tmpMarineFromSave.addAll(stack);
                     stack = merger();
