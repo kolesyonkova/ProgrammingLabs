@@ -49,7 +49,7 @@ public class UpdateCommand extends AbstractCommand implements Command {
                     asker.askChapter()), Long.parseLong(argument));
             System.out.println("Обновление бойца окончено!");
         } catch (WrongArgumentException exception) {
-            System.out.println("Используйте: '" + getName() + "'");
+            System.out.println("Используйте: '" + getName() + "' id");
         } catch (NumberFormatException exception) {
             System.out.println("Айди должен быть представлен числом!");
         } catch (IncorrectId e) {

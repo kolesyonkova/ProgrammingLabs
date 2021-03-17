@@ -54,8 +54,8 @@ public class ConsoleManager {
         String[] userCommand;
         boolean isReadable = true;
         scriptStack.add(argument);
-        File file = new File(argument);
         try {
+            File file = new File(argument);
             if (file.exists() && !file.canRead()) {
                 isReadable = false;
                 throw new NoAccessToFileException();

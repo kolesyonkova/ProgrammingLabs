@@ -35,7 +35,7 @@ public class RemoveById extends AbstractCommand implements Command {
             collectionManager.removeFromCollection(marineToRemove);
             System.out.println("Удаление бойца окончено!");
         } catch (WrongArgumentException exception) {
-            System.out.println("Используйте: '" + getName() + "'");
+            System.out.println("Используйте: '" + getName() + "' id");
         } catch (NumberFormatException exception) {
             System.out.println("Айди должен быть представлен числом!");
         } catch (MarineNotFoundException exception) {

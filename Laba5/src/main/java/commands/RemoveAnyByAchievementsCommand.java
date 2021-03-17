@@ -30,7 +30,7 @@ public class RemoveAnyByAchievementsCommand extends AbstractCommand implements C
             collectionManager.removeAnyByAchievements(argument);
             System.out.println("Удаление окончено!");
         } catch (WrongArgumentException exception) {
-            System.out.println("Используйте: '" + getName() + "'");
+            System.out.println("Используйте: '" + getName() + "' achievements");
         } catch (EmptyCollection e) {
             System.out.println("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
         } catch (Exception e) {

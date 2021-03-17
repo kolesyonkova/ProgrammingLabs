@@ -90,6 +90,6 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     @Override
     public int compareTo(SpaceMarine compareMarine) {
-        return this.hashCode() - compareMarine.hashCode();
+        return (int) (this.getHealth() - compareMarine.getHealth());
     }
 }

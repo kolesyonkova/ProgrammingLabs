@@ -11,7 +11,7 @@ public class HelpCommand extends AbstractCommand implements Command {
     }
 
     /**
-     * Execute of 'exit' command.
+     * Execute of 'help' command.
      */
     @Override
     public void execute(String argument) {

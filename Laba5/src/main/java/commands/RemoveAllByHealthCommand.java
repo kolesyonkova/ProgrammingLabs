@@ -34,7 +34,7 @@ public class RemoveAllByHealthCommand extends AbstractCommand implements Command
             collectionManager.removeAllByHealth(Long.parseLong(argument));
             System.out.println("Удаление окончено!");
         } catch (WrongArgumentException exception) {
-            System.out.println("Используйте: '" + getName() + "'");
+            System.out.println("Используйте: '" + getName() + "' health");
         } catch (NumberFormatException exception) {
             System.out.println("Здоровье должны быть представлено числом!");
         } catch (LowHealthException e) {

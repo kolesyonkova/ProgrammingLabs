@@ -20,7 +20,7 @@ public class RemoveGreaterCommand extends AbstractCommand implements Command {
     }
 
     /**
-     * Execute of 'remove_greate' command.
+     * Execute of 'remove_greater' command.
      */
     @Override
     public void execute(String argument) {
@@ -42,7 +42,7 @@ public class RemoveGreaterCommand extends AbstractCommand implements Command {
                     asker.askMeleeWeapon(),
                     asker.askChapter()));
         } catch (WrongArgumentException e) {
-            System.out.println("Используйте: '" + getName() + "'");
+            System.out.println("Используйте: '" + getName() + "' {element}");
         } catch (EmptyCollection e) {
             System.out.println("Коллекция пуста. Чтобы удалить превосходящие элементы, добавьте их");
         } catch (Exception e) {

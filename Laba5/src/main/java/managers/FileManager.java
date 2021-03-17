@@ -12,15 +12,20 @@ import java.util.Stack;
  */
 public class FileManager {
     String myenv;
+    String mainFile;
+    Boolean boo = true;
+    Boolean isNed = false;
     Stack<SpaceMarine> stackFromFile = new Stack<>();
     ArrayList<String> ar = new ArrayList<>();
     AscerForStartFIle ascerForStartFIle;
+    private ArrayList<SpaceMarine> tmpMarineFromSave2 = new ArrayList<>();
+    private ArrayList<SpaceMarine> tmpMarineFromSave = new ArrayList<>();
     File file;
 
     public FileManager(String path) {
         this.myenv = path;
+        this.mainFile = path;
         try {
-
             this.file = new File(System.getenv(myenv));
         } catch (NullPointerException e) {
             System.out.println("Системная переменная с загрузочным файлом не найдена! Добавьте её и попробуйте вновь");
@@ -30,7 +35,7 @@ public class FileManager {
         }
     }
 
-//    public void checkRights(File file) {
+    //    public void checkRights(File file) {
 //        if (!file.canExecute()) try {
 //            throw new UnReadException();
 //        } catch (UnReadException e) {
@@ -49,29 +54,69 @@ public class FileManager {
 //            System.out.println("Can not execute");
 //        }
 //    }
+    public void saveCollection2(Stack<SpaceMarine> stack) {
+        try (PrintWriter outFile = new PrintWriter(new File("tmp.csv"))) {
+            isNed = true;
+            tmpMarineFromSave2.addAll(stack);
+            for (SpaceMarine i : stack
+            ) {
+                outFile.println(i + ", ");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден. Повторите попытку позже60");
+        } catch (Exception e) {
+            System.out.println("Что-то пошло не так. Повторите попытку позже");
+        }
+    }
+
+    public Stack<SpaceMarine> merger() {
+        Stack<SpaceMarine> spaceMarines = new Stack<>();
+        spaceMarines.clear();
+        if (isNed) {
+            isNed = false;
+            spaceMarines.addAll(tmpMarineFromSave2);
+            return spaceMarines;
+        }
+        spaceMarines.addAll(tmpMarineFromSave);
+        return spaceMarines;
+    }
 
     /**
      * Writes collection to a file.
      */
     public void saveCollection(Stack<SpaceMarine> stack) {
+        boo = true;
         if (System.getenv(myenv) != null) {
-            if (!file.canWrite()) {
-                System.out.println("Недостаточно прав для записи в файл. Добавьте права на запись и запустите программу вновь");
-                System.exit(0);
+            if (file.exists() && !file.canWrite()) {
+                System.out.println("Недостаточно прав для записи в файл. Добавьте права на запись");
+                System.out.println("Создам временный файл на сохранение коллекции.");
+                saveCollection2(stack);
+                boo = false;
+            } else if (!file.exists()) {
+                System.out.println("Создам временный файл на сохранение коллекции.");
+                saveCollection2(stack);
+                boo = false;
             }
-            try (PrintWriter outFile = new PrintWriter(new File(System.getenv(myenv)))) {
-                for (SpaceMarine i : stack
-                ) {
-                    outFile.println(i + ", ");
+            if (boo) {
+                try (PrintWriter outFile = new PrintWriter(new File(System.getenv(myenv)))) {
+                    tmpMarineFromSave.addAll(stack);
+                    stack = merger();
+                    for (SpaceMarine i : stack
+                    ) {
+                        outFile.println(i + ", ");
+                    }
+                    tmpMarineFromSave.clear();
+                    tmpMarineFromSave2.clear();
+                    isNed = false;
+                } catch (FileNotFoundException e) {
+                    System.out.println("Файл не найден. Повторите попытку позже");
+                } catch (Exception e) {
+                    System.out.println("Что-то пошло не так. Повторите попытку позже");
                 }
-            } catch (FileNotFoundException e) {
-                System.out.println("Файл не найден. Повторите попытку позже");
-            } catch (Exception e) {
-                System.out.println("Что-то пошло не так. Повторите попытку позже");
+            } else {
+                System.out.println("Файл, кот орый содержится в загрузочной прееменной недоступен.");
+
             }
-        } else {
-            System.out.println("Системная переменная с загрузочным файлом не найдена! Исправьте и запустите программу снова");
-            System.exit(0);
         }
     }
 
@@ -84,7 +129,7 @@ public class FileManager {
 
     public Stack<SpaceMarine> loader() {
         if (System.getenv(myenv) != null) {
-            if (!file.canRead()) {
+            if (file.exists() && !file.canRead()) {
                 System.out.println("Недостаточно прав для чтения данных из файла. Добавьте права на чтение и запустите программу вновь");
                 System.exit(0);
             }
@@ -112,7 +157,7 @@ public class FileManager {
                     }
                 }
             } catch (FileNotFoundException e) {
-                System.out.println("Файл не найден.");
+                System.out.println("Файл не найден. Добавьте файл и запустите программу заново!");
                 System.exit(0);
             } catch (IOException e) {
                 System.out.println("Что-то пошло не так. Перезапустите программу.");
