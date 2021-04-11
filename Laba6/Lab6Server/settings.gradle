@@ -1,0 +1,3 @@
+rootProject.name = 'Lab6Server'
+include 'src'
+
