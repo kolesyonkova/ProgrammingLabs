@@ -5,10 +5,13 @@ import exceptions.LowHealthException;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'remove_all_by_health'. Remove from the collection all items whose health field value is equivalent to the specified one.
  */
-public class RemoveAllByHealthCommand extends AbstractCommand implements Command {
+public class RemoveAllByHealthCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     public RemoveAllByHealthCommand(CollectionManager collectionManager) {

@@ -6,10 +6,13 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'remove_greater'. Removes all element from the collection that exceed the specified value.
  */
-public class RemoveGreaterCommand extends AbstractCommand implements Command {
+public class RemoveGreaterCommand extends AbstractCommand implements Command , Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
     private Asker asker;
 

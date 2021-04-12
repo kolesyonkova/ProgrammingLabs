@@ -3,10 +3,13 @@ package commands;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'clear'. Clears the collection.
  */
-public class ClearCommand extends AbstractCommand implements Command {
+public class ClearCommand extends AbstractCommand implements Command , Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     CollectionManager collectionManager;
 
     public ClearCommand(CollectionManager collectionManager) {

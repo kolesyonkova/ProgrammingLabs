@@ -2,10 +2,13 @@ package commands;
 
 import exceptions.WrongArgumentException;
 
+import java.io.Serializable;
+
 /**
  * Command 'help'. Displays help for available commands.
  */
-public class HelpCommand extends AbstractCommand implements Command {
+public class HelpCommand extends AbstractCommand implements Command , Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     public HelpCommand() {
         super("help", "вывести справку по доступным командам");
     }

@@ -3,7 +3,10 @@ package commands;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
-public class InfoCommand extends AbstractCommand implements Command {
+import java.io.Serializable;
+
+public class InfoCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     /**

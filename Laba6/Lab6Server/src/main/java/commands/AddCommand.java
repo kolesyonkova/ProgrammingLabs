@@ -5,12 +5,14 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 
 /**
  * This is command 'add'. Adds a new element to collection.
  */
-public class AddCommand extends AbstractCommand implements Command {
+public class AddCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
     private Asker asker;
 

@@ -4,10 +4,13 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'remove_first'. Deletes the first element from the collection.
  */
-public class RemoveFirstCommand extends AbstractCommand implements Command {
+public class RemoveFirstCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     public RemoveFirstCommand(CollectionManager collectionManager) {

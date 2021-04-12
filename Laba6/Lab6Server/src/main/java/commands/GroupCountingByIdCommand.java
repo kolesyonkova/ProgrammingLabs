@@ -4,10 +4,13 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'group_counting_by_id'. Groups the collection items by the value of the id field and outputs the number of items in each group.
  */
-public class GroupCountingByIdCommand extends AbstractCommand implements Command {
+public class GroupCountingByIdCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     public GroupCountingByIdCommand(CollectionManager collectionManager) {

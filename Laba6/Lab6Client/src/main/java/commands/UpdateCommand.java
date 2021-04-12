@@ -7,10 +7,13 @@ import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'update'. Updates the information about selected marine.
  */
-public class UpdateCommand extends AbstractCommand implements Command {
+public class UpdateCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
     private Asker asker;
     private int sizeCollection;

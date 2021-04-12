@@ -6,10 +6,13 @@ import exceptions.MarineNotFoundException;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'remove_by_id'. Removes the element by its ID.
  */
-public class RemoveById extends AbstractCommand implements Command {
+public class RemoveById extends AbstractCommand implements Command , Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     public RemoveById(CollectionManager collectionManager) {

@@ -93,16 +93,8 @@ public class CommandManager {
     /**
      * Show history of commands.
      */
-    public void getHistory(String argument) {
-        if (argument.equals("")) {
-            historyCommand.execute(argument);
-            for (String command : commandsHistory
-            ) {
-                System.out.println(command);
-            }
-        } else {
-            historyCommand.execute(argument);
-        }
+    public void getHistory(String argument) throws IOException, ClassNotFoundException {
+        client.writeToServerCommand(historyCommand, argument);
     }
 
     /**
@@ -115,8 +107,8 @@ public class CommandManager {
     /**
      * Start execute of 'clear' command.
      */
-    public void clearCollection(String argument) {
-        clearCommand.execute(argument);
+    public void clearCollection(String argument) throws IOException, ClassNotFoundException {
+        client.writeToServerCommand(clearCommand,argument);
     }
 
     /**
@@ -158,8 +150,8 @@ public class CommandManager {
     /**
      * Start execute of 'info' command.
      */
-    public void info(String argument) {
-        infoCommand.execute(argument);
+    public void info(String argument) throws IOException, ClassNotFoundException {
+        client.writeToServerCommand(infoCommand,argument);
     }
 
     /**
@@ -172,23 +164,15 @@ public class CommandManager {
     /**
      * Start execute of 'group_counting_by_id' command.
      */
-    public void groupCountingByIdCommand(String argument) {
-        groupCountingByIdCommand.execute(argument);
+    public void groupCountingByIdCommand(String argument) throws IOException, ClassNotFoundException {
+        client.writeToServerCommand(groupCountingByIdCommand,argument);
     }
 
     /**
      * Show command and description of command.
      */
-    public void help(String argument) {
-        if (argument.equals("")) {
-            helpCommand.execute(argument);
-            for (Command command : commandManagerArrayList
-            ) {
-                System.out.println(command);
-            }
-        } else {
-            helpCommand.execute(argument);
-        }
+    public void help(String argument) throws IOException, ClassNotFoundException {
+        client.writeToServerCommand(helpCommand,argument);
     }
 
     @Override

@@ -4,10 +4,13 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 
+import java.io.Serializable;
+
 /**
  * Command 'remove_any_by_achievements'. Removes one element from the collection whose achievements field value is equivalent to the specified one
  */
-public class RemoveAnyByAchievementsCommand extends AbstractCommand implements Command {
+public class RemoveAnyByAchievementsCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     private CollectionManager collectionManager;
 
     public RemoveAnyByAchievementsCommand(CollectionManager collectionManager) {

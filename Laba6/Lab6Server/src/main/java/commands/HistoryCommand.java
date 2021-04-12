@@ -2,10 +2,13 @@ package commands;
 
 import exceptions.WrongArgumentException;
 
+import java.io.Serializable;
+
 /**
  * Command 'history'. Displays the latest commands.
  */
-public class HistoryCommand extends AbstractCommand implements Command {
+public class HistoryCommand extends AbstractCommand implements Command, Serializable {
+    private static final long serialVersionUID = 8983558202217591746L;
     public HistoryCommand() {
         super("history", "вывести последние 9 команд (без их аргументов)");
     }

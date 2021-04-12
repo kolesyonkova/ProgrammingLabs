@@ -56,7 +56,6 @@ public class ConsoleManager {
                     commandManager.help(userCommand[1]);
                     break;
                 case "show":
-                    System.out.println("Я тут в шоу");
                     commandManager.showCollection(userCommand[1]);
                     break;
                 case "info":
