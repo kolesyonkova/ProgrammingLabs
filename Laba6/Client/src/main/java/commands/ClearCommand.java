@@ -24,7 +24,6 @@ public class ClearCommand extends AbstractCommand implements Command {
                 throw new WrongArgumentException();
             }
             collectionManager.clearCollection();
-            System.out.println("Колеекция успешно очищена!");
         } catch (WrongArgumentException e) {
             System.out.println("Используйте: '" + getName() + "'");
         } catch (Exception e) {

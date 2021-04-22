@@ -85,15 +85,19 @@ public class CollectionManager {
     /**
      * removes marines which one had same health
      *
-     * @param health- health of marine
+     * @param health - health of marine
+     * @return
      */
-    public void removeAllByHealth(long health) {
+    public String removeAllByHealth(long health) {
         tmpMarine.addAll(0, marineStack);
         marineStack.clear();
         tmpMarine.removeIf(marine -> health == marine.getHealth());
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate = LocalDate.now();
+        String answer="Удаление окончено!";
+        System.out.println("Удаление окончено!");
+        return answer;
     }
 
     /**
@@ -192,32 +196,47 @@ public class CollectionManager {
 
     /**
      * output information about collection
+     *
+     * @return
      */
-    public void infoCollection() {
+    public String infoCollection() {
+        String answer = "";
         System.out.println("Тип коллекции : " + marineStack.getClass());
+        answer = answer + "Тип коллекции : " + marineStack.getClass() + "\n";
         System.out.println("Количество элементов в коллекции : " + marineStack.size());
+        answer = answer + "Количество элементов в коллекции : " + marineStack.size() + "\n";
         System.out.println("Дата создания: " + initializationDate);
+        answer = answer + "Дата создания: " + initializationDate + "\n";
         if (!(lastUpdate == null)) {
             System.out.println("Дата последнего обновления : " + lastUpdate);
+            answer = answer + "Дата последнего обновления : " + lastUpdate + "\n";
         } else {
             System.out.println("Дата последнего обновления : ещё не обновлялась");
+            answer = answer + "Дата последнего обновления : ещё не обновлялась" + "\n";
         }
+        return answer;
     }
 
     /**
      * clear collection
+     *
+     * @return
      */
-    public void clearCollection() {
+    public String clearCollection() {
+        String ans = "";
         marineStack.clear();
         lastUpdate = LocalDate.now();
+        ans = "Коллекция очищена!";
+        return ans;
     }
 
     /**
      * show collection
+     *
      * @return
      */
     public String showCollection() {
-        String answer="";
+        String answer = "";
         try {
             if (marineStack.size() > 0) {
                 for (SpaceMarine marines : marineStack) {
@@ -226,6 +245,7 @@ public class CollectionManager {
                 }
             } else {
                 System.out.println("Коллекция пуста");
+                answer = "Коллекция пуста!";
             }
             return answer;
         } catch (EmptyStackException e) {

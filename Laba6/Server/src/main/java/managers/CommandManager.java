@@ -91,6 +91,7 @@ public class CommandManager {
 
     /**
      * Start execute of 'show' command.
+     *
      * @return
      */
     public void showCollection(String argument) {
@@ -99,17 +100,22 @@ public class CommandManager {
 
     /**
      * Show history of commands.
+     *
+     * @return
      */
-    public void getHistory(String argument) {
+    public String getHistory(String argument) {
+        String answer = "";
         if (argument.equals("")) {
             historyCommand.execute(argument);
             for (String command : commandsHistory
             ) {
                 System.out.println(command);
+                answer = answer + command + "\n";
             }
         } else {
             historyCommand.execute(argument);
         }
+        return answer;
     }
 
     /**

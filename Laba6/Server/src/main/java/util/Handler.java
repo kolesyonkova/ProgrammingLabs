@@ -27,7 +27,8 @@ public class Handler {
 
     public static ExchangeClass startCommand(ExchangeClass exchangeClass) {
         try {
-            switch (exchangeClass.getName()) {
+            commandManager.addToHistory(exchangeClass.getName());
+            switch (exchangeClass.getName().trim()) {
                 case "add":
                     collectionManager.addToCollection(exchangeClass.getSpaceMarine());
                     exchangeClass.setAnswer("Элемент успешно добавлен в коллецию");
@@ -37,6 +38,18 @@ public class Handler {
                     break;
                 case "show":
                     exchangeClass.setAnswer(collectionManager.showCollection());
+                    break;
+                case "clear":
+                    exchangeClass.setAnswer(collectionManager.clearCollection());
+                    break;
+                case "info":
+                    exchangeClass.setAnswer(collectionManager.infoCollection());
+                    break;
+                case "history":
+                    exchangeClass.setAnswer(commandManager.getHistory(exchangeClass.getArgument()));
+                    break;
+                case "remove_all_by_health":
+                    exchangeClass.setAnswer(collectionManager.removeAllByHealth(Long.parseLong(exchangeClass.getArgument())));
                     break;
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");

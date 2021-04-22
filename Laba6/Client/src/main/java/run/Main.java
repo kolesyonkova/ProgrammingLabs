@@ -4,6 +4,7 @@ import commands.*;
 import managers.*;
 import util.Client;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Scanner;
  * @author Колесенкова Екатерина P3112
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Client.start();
         Scanner userScanner = new Scanner(System.in);
         final String myenv = "WC_FILE";

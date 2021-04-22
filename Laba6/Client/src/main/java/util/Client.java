@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
 public class Client {
-    private static int valueOfByteBuffer=65536;
+    private static int valueOfByteBuffer = 65536;
     private static SocketChannel client;
     private static ByteBuffer data;
 
@@ -16,7 +16,6 @@ public class Client {
         try {
             System.out.println("Starting client...");
             client = SocketChannel.open(new InetSocketAddress("localhost", 8089));
-            String request = "some request";
             data = ByteBuffer.allocate(valueOfByteBuffer);
         } catch (IOException e) {
             e.printStackTrace();

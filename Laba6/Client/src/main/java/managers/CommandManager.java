@@ -101,16 +101,8 @@ public class CommandManager {
     /**
      * Show history of commands.
      */
-    public void getHistory(String argument) {
-        if (argument.equals("")) {
-            historyCommand.execute(argument);
-            for (String command : commandsHistory
-            ) {
-                System.out.println(command);
-            }
-        } else {
-            historyCommand.execute(argument);
-        }
+    public void getHistory(String argument) throws IOException, ClassNotFoundException {
+        Client.readyToExchange("history", "", null);
     }
 
     /**

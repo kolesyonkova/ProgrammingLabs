@@ -19,14 +19,14 @@ import java.util.Set;
 
 public class Server {
     private static Selector selector = null;
-    private static int valueOfByteBuffer=65536;
+    private static int valueOfByteBuffer = 65536;
     Handler handler;
 
     public Server(Scanner userScanner, String myenv, CollectionManager collectionManager, FileManager fileManager, Asker asker, CommandManager commandManager) {
-        this.handler=new Handler(userScanner,myenv,collectionManager,fileManager,asker,commandManager);
+        this.handler = new Handler(userScanner, myenv, collectionManager, fileManager, asker, commandManager);
     }
 
-    public void start() throws ClassNotFoundException {
+    public void start() {
         try {
             selector = Selector.open();
             ServerSocketChannel socket = ServerSocketChannel.open();
@@ -61,34 +61,52 @@ public class Server {
     private static void handleAccept(ServerSocketChannel mySocket,
                                      SelectionKey key) throws IOException {
 
-        System.out.println("Connection Accepted...");
+        System.out.println("Соединение Принято...");
         SocketChannel client = mySocket.accept();
         client.configureBlocking(false);
         client.register(selector, SelectionKey.OP_READ);
     }
 
-    private void handleRead(SelectionKey key)
-            throws IOException, ClassNotFoundException {
-        System.out.println("Reading...");
+    private void handleRead(SelectionKey key) {
+        System.out.println("Чтение...");
         SocketChannel client = (SocketChannel) key.channel();
         ByteBuffer byteBuffer = ByteBuffer.allocate(valueOfByteBuffer);
-        client.read(byteBuffer);
-        ExchangeClass exchangeClass =deserialize(byteBuffer.array());
-        System.out.println(exchangeClass);
-        Exchanger.setExchangeClass(Handler.startCommand(exchangeClass));
-        client.register(selector, SelectionKey.OP_WRITE);
+        try {
+            client.read(byteBuffer);
+            ExchangeClass exchangeClass = deserialize(byteBuffer.array());
+            System.out.println(exchangeClass);
+            Exchanger.setExchangeClass(Handler.startCommand(exchangeClass));
+            client.register(selector, SelectionKey.OP_WRITE);
+        } catch (IOException | ClassNotFoundException e) {
+            try {
+                client.close();
+            } catch (IOException e1) {
+                System.out.println("Что-то пошло не так. Server Handle Read.");
+            }
+            System.out.println("Клиент отключился");
+        }
     }
 
-    private void handleWrite(SelectionKey key)
-            throws IOException {
-        System.out.println("Writing...");
+
+    private void handleWrite(SelectionKey key) {
+        System.out.println("Запись...");
         SocketChannel client = (SocketChannel) key.channel();
         ByteBuffer buffer = ByteBuffer.allocate(valueOfByteBuffer);
-        buffer.put(serialize(Exchanger.getExchangeClass()));
-        buffer.flip();
-        client.write(buffer);
-        client.register(selector, SelectionKey.OP_READ);
+        try {
+            buffer.put(serialize(Exchanger.getExchangeClass()));
+            buffer.flip();
+            client.write(buffer);
+            client.register(selector, SelectionKey.OP_READ);
+        } catch (IOException e) {
+            try {
+                client.close();
+            } catch (IOException e1) {
+                System.out.println("Что-то пошло не так. Server Handle Read.");
+            }
+            System.out.println("Клиент отключился");
+        }
     }
+
     public byte[] serialize(Object obj) throws IOException {
         try (ByteArrayOutputStream b = new ByteArrayOutputStream()) {
             try (ObjectOutputStream o = new ObjectOutputStream(b)) {

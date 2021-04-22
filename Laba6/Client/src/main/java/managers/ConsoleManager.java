@@ -30,7 +30,7 @@ public class ConsoleManager {
     /**
      * Mode for work with commands from user input.
      */
-    public void userMode() {
+    public void userMode() throws IOException, ClassNotFoundException {
         String[] userCommand;
         try {
             while (true) {
@@ -51,7 +51,7 @@ public class ConsoleManager {
     /**
      * Mode for work with commands from a script.
      */
-    public void scriptMode(String argument) {
+    public void scriptMode(String argument) throws IOException, ClassNotFoundException {
         String[] userCommand;
         boolean isReadable = true;
         scriptStack.add(argument);

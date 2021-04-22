@@ -89,12 +89,8 @@ public class CollectionManager {
      *
      * @param health- health of marine
      */
-    public void removeAllByHealth(long health) {
-        tmpMarine.addAll(0, marineStack);
-        marineStack.clear();
-        tmpMarine.removeIf(marine -> health == marine.getHealth());
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+    public void removeAllByHealth(String health) throws IOException, ClassNotFoundException {
+        Client.readyToExchange("remove_all_by_health", health, null);
         lastUpdate = LocalDate.now();
     }
 
@@ -196,22 +192,15 @@ public class CollectionManager {
     /**
      * output information about collection
      */
-    public void infoCollection() {
-        System.out.println("Тип коллекции : " + marineStack.getClass());
-        System.out.println("Количество элементов в коллекции : " + marineStack.size());
-        System.out.println("Дата создания: " + initializationDate);
-        if (!(lastUpdate == null)) {
-            System.out.println("Дата последнего обновления : " + lastUpdate);
-        } else {
-            System.out.println("Дата последнего обновления : ещё не обновлялась");
-        }
+    public void infoCollection() throws IOException, ClassNotFoundException {
+        Client.readyToExchange("info", "", null);
     }
 
     /**
      * clear collection
      */
-    public void clearCollection() {
-        marineStack.clear();
+    public void clearCollection() throws IOException, ClassNotFoundException {
+        Client.readyToExchange("clear", "", null);
         lastUpdate = LocalDate.now();
     }
 
