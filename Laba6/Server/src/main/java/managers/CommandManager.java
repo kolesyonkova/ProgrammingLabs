@@ -25,7 +25,7 @@ public class CommandManager {
     private RemoveGreaterCommand removeGreaterCommand;
     private UpdateCommand updateCommand;
     private ExitCommand exitCommand;
-    private RemoveById removeById;
+    public RemoveById removeById;
 
     public CommandManager(AddCommand addCommand, ClearCommand clearCommand, GroupCountingByIdCommand groupCountingByIdCommand, ShowCommand showCommand, SaveCommand saveCommand, HelpCommand helpCommand, HistoryCommand historyCommand, InfoCommand infoCommand, RemoveAllByHealthCommand removeAllByHealthCommand, RemoveAnyByAchievementsCommand removeAnyByAchievementsCommand, RemoveFirstCommand removeFirstCommand, RemoveGreaterCommand removeGreaterCommand, UpdateCommand updateCommand, ExitCommand exitCommand, RemoveById removeById) {
         this.addCommand = addCommand;
@@ -163,6 +163,7 @@ public class CommandManager {
 
     /**
      * Start execute of 'remove_by_id' command.
+     * @return
      */
     public void removeById(String argument) {
         removeById.execute(argument);

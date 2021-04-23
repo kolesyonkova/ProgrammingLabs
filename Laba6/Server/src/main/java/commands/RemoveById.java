@@ -19,9 +19,11 @@ public class RemoveById extends AbstractCommand implements Command {
 
     /**
      * Execute of 'remove_by_id' command.
+     *
+     * @return
      */
     @Override
-    public void execute(String argument) {
+    public String execute(String argument) {
         try {
             if (argument.isEmpty()) {
                 throw new WrongArgumentException();
@@ -32,18 +34,20 @@ public class RemoveById extends AbstractCommand implements Command {
             Long id = Long.parseLong(argument);
             SpaceMarine marineToRemove = collectionManager.getById(id);
             if (marineToRemove == null) throw new MarineNotFoundException();
-            collectionManager.removeFromCollection(marineToRemove);
-            System.out.println("Удаление бойца окончено!");
+            return collectionManager.removeFromCollection(marineToRemove);
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "' id");
         } catch (NumberFormatException exception) {
             System.out.println("Айди должен быть представлен числом!");
         } catch (MarineNotFoundException exception) {
             System.out.println("Бойца с таким айди в коллекции нет!");
+            return "Бойца с таким айди в коллекции нет!";
         } catch (EmptyCollection e) {
             System.out.println("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+            return "Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию";
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
+        return "Что-то пошло не так! Remove_by_id";
     }
 }

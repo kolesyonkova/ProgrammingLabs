@@ -17,9 +17,10 @@ public class RemoveFirstCommand extends AbstractCommand implements Command {
 
     /**
      * Execute of 'remove_first' command.
+     * @return
      */
     @Override
-    public void execute(String argument) {
+    public String execute(String argument) {
         try {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
@@ -28,7 +29,6 @@ public class RemoveFirstCommand extends AbstractCommand implements Command {
                 throw new EmptyCollection();
             }
             collectionManager.removeFirst();
-            System.out.println("Удаление первого бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
         } catch (EmptyCollection e) {
@@ -36,5 +36,6 @@ public class RemoveFirstCommand extends AbstractCommand implements Command {
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
+        return argument;
     }
 }

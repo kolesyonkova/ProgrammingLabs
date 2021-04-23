@@ -73,13 +73,19 @@ public class CollectionManager {
 
     /**
      * create groups based on id
+     *
+     * @return
      */
-    public void groupCountingById() {
+    public String groupCountingById() {
+        String answer = "";
         Map<Long, Long> groupById = marineStack.stream().collect(
                 Collectors.groupingBy(SpaceMarine::getId, Collectors.counting()));
         for (Map.Entry<Long, Long> item : groupById.entrySet()) {
             System.out.println("Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент");
+            answer += "Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент" + "\n";
+
         }
+        return answer;
     }
 
     /**
@@ -95,7 +101,7 @@ public class CollectionManager {
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate = LocalDate.now();
-        String answer="Удаление окончено!";
+        String answer = "Удаление окончено!";
         System.out.println("Удаление окончено!");
         return answer;
     }
@@ -143,14 +149,20 @@ public class CollectionManager {
 
     /**
      * removes first element of collection
+     *
+     * @return
      */
-    public void removeFirst() {
+    public String removeFirst() {
+        String answer = "";
         tmpMarine.addAll(0, marineStack);
         tmpMarine.remove(0);
         marineStack.clear();
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
+        System.out.println("Удаление первого бойца окончено!");
+        answer = "Удаление первого бойца окончено!";
         lastUpdate = LocalDate.now();
+        return answer;
     }
 
     /**
@@ -179,10 +191,13 @@ public class CollectionManager {
     /**
      * remove marine from collection
      *
-     * @param marine- removed marine
+     * @param marine - removed marine
+     * @return
      */
-    public void removeFromCollection(SpaceMarine marine) {
+    public String removeFromCollection(SpaceMarine marine) {
         marineStack.remove(marine);
+        System.out.println("Удаление бойца окончено!");
+        return "Удаление бойца окончено!";
     }
 
     /**

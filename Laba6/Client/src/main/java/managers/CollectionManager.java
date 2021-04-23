@@ -6,9 +6,7 @@ import util.Client;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 /**
  * Class for operation on collection.
@@ -76,12 +74,8 @@ public class CollectionManager {
     /**
      * create groups based on id
      */
-    public void groupCountingById() {
-        Map<Long, Long> groupById = marineStack.stream().collect(
-                Collectors.groupingBy(SpaceMarine::getId, Collectors.counting()));
-        for (Map.Entry<Long, Long> item : groupById.entrySet()) {
-            System.out.println("Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент");
-        }
+    public void groupCountingById() throws IOException, ClassNotFoundException {
+        Client.readyToExchange("group_counting_by_id ", "", null);
     }
 
     /**
@@ -138,12 +132,9 @@ public class CollectionManager {
     /**
      * removes first element of collection
      */
-    public void removeFirst() {
-        tmpMarine.addAll(0, marineStack);
-        tmpMarine.remove(0);
-        marineStack.clear();
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+    public void removeFirst() throws IOException, ClassNotFoundException {
+        Client.readyToExchange("remove_first", "", null);
+
         lastUpdate = LocalDate.now();
     }
 

@@ -17,9 +17,10 @@ public class RemoveAnyByAchievementsCommand extends AbstractCommand implements C
 
     /**
      * Execute of 'remove_any_by_achievements' command.
+     * @return
      */
     @Override
-    public void execute(String argument) {
+    public String execute(String argument) {
         try {
             if (argument.isEmpty()) {
                 throw new WrongArgumentException();
@@ -36,6 +37,7 @@ public class RemoveAnyByAchievementsCommand extends AbstractCommand implements C
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
+        return argument;
     }
 }
 //TODO: доделать команду

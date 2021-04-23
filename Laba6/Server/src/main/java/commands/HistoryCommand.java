@@ -12,9 +12,10 @@ public class HistoryCommand extends AbstractCommand implements Command {
 
     /**
      * Execute of 'history' command.
+     * @return
      */
     @Override
-    public void execute(String argument) {
+    public String execute(String argument) {
         try {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
@@ -24,5 +25,6 @@ public class HistoryCommand extends AbstractCommand implements Command {
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
+        return argument;
     }
 }

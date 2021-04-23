@@ -51,6 +51,15 @@ public class Handler {
                 case "remove_all_by_health":
                     exchangeClass.setAnswer(collectionManager.removeAllByHealth(Long.parseLong(exchangeClass.getArgument())));
                     break;
+                case "remove_first":
+                    exchangeClass.setAnswer(collectionManager.removeFirst());
+                    break;
+                case "group_counting_by_id":
+                    exchangeClass.setAnswer(collectionManager.groupCountingById());
+                    break;
+                case "remove_by_id":
+                    exchangeClass.setAnswer(commandManager.removeById.execute(exchangeClass.getArgument()));
+                    break;
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");
             }
