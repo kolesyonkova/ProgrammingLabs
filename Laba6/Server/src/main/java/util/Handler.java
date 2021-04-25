@@ -30,6 +30,7 @@ public class Handler {
             commandManager.addToHistory(exchangeClass.getName());
             switch (exchangeClass.getName().trim()) {
                 case "add":
+                    exchangeClass.getSpaceMarine().setId(collectionManager.generateId());
                     collectionManager.addToCollection(exchangeClass.getSpaceMarine());
                     exchangeClass.setAnswer("Элемент успешно добавлен в коллецию");
                     break;
@@ -59,6 +60,29 @@ public class Handler {
                     break;
                 case "remove_by_id":
                     exchangeClass.setAnswer(commandManager.removeById.execute(exchangeClass.getArgument()));
+                    break;
+                case "update":
+                    if (collectionManager.collectionIsEmpty()) {
+                        exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");
+                    } else if (Long.parseLong(exchangeClass.getArgument()) < 0 || Integer.parseInt(exchangeClass.getArgument()) > collectionManager.getSizeCollection() - 1) {
+                        exchangeClass.setAnswer("Айди солдата должен лежать в диапозоне [0;" + (collectionManager.getSizeCollection() - 1) + "]");
+                    } else {
+                        exchangeClass.getSpaceMarine().setId(Long.valueOf(exchangeClass.getArgument()));
+                        exchangeClass.setAnswer(collectionManager.updateCollection(exchangeClass.getSpaceMarine(), Long.valueOf(exchangeClass.getArgument())));
+                    }
+                case "remove_any_by_achievements":
+                    if (collectionManager.collectionIsEmpty()) {
+                        exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+                    } else
+                        exchangeClass.setAnswer(collectionManager.removeAnyByAchievements(exchangeClass.getArgument()));
+                    break;
+                case "remove_greater":
+                    if (collectionManager.getSizeCollection() == 0) {
+                        exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+                    } else {
+                        exchangeClass.getSpaceMarine().setId(collectionManager.generateId());
+                        exchangeClass.setAnswer(collectionManager.removeGreaterCommand(exchangeClass.getSpaceMarine()));
+                    }
                     break;
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");

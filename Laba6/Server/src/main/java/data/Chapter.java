@@ -1,9 +1,12 @@
 package data;
 
+import java.io.Serializable;
+
 /**
  * Chapter with marines.
  */
-public class Chapter {
+public class Chapter implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String name; //Поле не может быть null, Строка не может быть пустой
     private String parentLegion;
     private Long marinesCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000

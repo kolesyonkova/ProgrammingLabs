@@ -32,6 +32,22 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
         checkAchievements();
     }
 
+    public SpaceMarine(String name, Coordinates coordinates, LocalDate creationDate, long health, Integer heartCount, String achievements, MeleeWeapon meleeWeapon, Chapter chapter) {
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.health = health;
+        this.heartCount = heartCount;
+        this.achievements = achievements;
+        this.meleeWeapon = meleeWeapon;
+        this.chapter = chapter;
+        checkAchievements();
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void checkAchievements() {
         if (achievements.equals("")) {
             achievements = "отсутсвуют";
@@ -43,7 +59,7 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     }
 
     public boolean isEmpty() {
-        return (this.name == null ||this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null|| this.meleeWeapon == null ||this.chapter == null||this.health==0L);
+        return (this.name == null || this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null || this.meleeWeapon == null || this.chapter == null || this.health == 0L);
     }
 
     @Override

@@ -1,11 +1,10 @@
 package commands;
 
 import data.SpaceMarine;
-import exceptions.EmptyCollection;
-import exceptions.IncorrectId;
 import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
+import util.Client;
 
 /**
  * Command 'update'. Updates the information about selected marine.
@@ -31,14 +30,28 @@ public class UpdateCommand extends AbstractCommand implements Command {
             if (argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
-            if (collectionManager.collectionIsEmpty()) {
-                throw new EmptyCollection();
+//            if (collectionManager.collectionIsEmpty()) {
+//                throw new EmptyCollection();
+//            }
+//            if (Long.parseLong(argument) < 0 || Integer.parseInt(argument) > sizeCollection) {
+//                throw new IncorrectId();
+//            }
+            try {
+                Long.parseLong(argument);
+            } catch (NumberFormatException e) {
+                throw new NumberFormatException();
             }
-            if (Long.parseLong(argument) < 0 || Integer.parseInt(argument) > sizeCollection) {
-                throw new IncorrectId();
-            }
-            collectionManager.updateCollection(new SpaceMarine(
-                    Long.parseLong(argument) + 1,
+//            collectionManager.updateCollection(new SpaceMarine(
+//                    Long.parseLong(argument) + 1,
+//                    asker.askName(),
+//                    asker.askCoordinates(),
+//                    asker.askLocalDate(),
+//                    asker.askHealth(),
+//                    asker.askHeartCount(),
+//                    asker.askAchievements(),
+//                    asker.askMeleeWeapon(),
+//                    asker.askChapter()), Long.parseLong(argument));
+            Client.readyToExchange("update", argument, new SpaceMarine(
                     asker.askName(),
                     asker.askCoordinates(),
                     asker.askLocalDate(),
@@ -46,17 +59,19 @@ public class UpdateCommand extends AbstractCommand implements Command {
                     asker.askHeartCount(),
                     asker.askAchievements(),
                     asker.askMeleeWeapon(),
-                    asker.askChapter()), Long.parseLong(argument));
-            System.out.println("Обновление бойца окончено!");
+                    asker.askChapter()));
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "' id");
         } catch (NumberFormatException exception) {
             System.out.println("Айди должен быть представлен числом!");
-        } catch (IncorrectId e) {
-            System.out.println("Айди солдата должен лежать в диапозоне [0;" + sizeCollection + "]");
-        } catch (EmptyCollection e) {
-            System.out.println("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");
-        } catch (Exception e) {
+        }
+//        catch (IncorrectId e) {
+//                  System.out.println("Айди солдата должен лежать в диапозоне [0;" + sizeCollection + "]");
+//            }
+//        catch (EmptyCollection e) {
+//            System.out.println("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");
+//        }
+        catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
     }

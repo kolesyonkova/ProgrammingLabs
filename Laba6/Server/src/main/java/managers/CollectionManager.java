@@ -35,17 +35,18 @@ public class CollectionManager {
 
     /**
      * Update collection
-     *
-     * @param spaceMarine -new marina
+     *  @param spaceMarine -new marina
      * @param id          -id of marina, which one update
+     * @return
      */
-    public void updateCollection(SpaceMarine spaceMarine, Long id) {
+    public String updateCollection(SpaceMarine spaceMarine, Long id) {
         tmpMarine.addAll(0, marineStack);
         marineStack.clear();
         tmpMarine.set(Integer.parseInt(String.valueOf(id)), spaceMarine);
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate = LocalDate.now();
+        return "Элемент коллекции успешно обновлён!";
     }
 
     /**
@@ -61,14 +62,17 @@ public class CollectionManager {
      * Removes marines, which one greater compare marine
      *
      * @param compareMarine -compare marine
+     * @return
      */
-    public void removeGreaterCommand(SpaceMarine compareMarine) {
+    public String removeGreaterCommand(SpaceMarine compareMarine) {
         tmpMarine.addAll(0, marineStack);
         marineStack.clear();
         tmpMarine.removeIf(spaceMarine -> spaceMarine.compareTo(compareMarine) > 0);
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate = LocalDate.now();
+
+        return "Удаление завершено!";
     }
 
     /**
@@ -131,8 +135,9 @@ public class CollectionManager {
      * removes marines which one had same achievements
      *
      * @param argument -achievement
+     * @return
      */
-    public void removeAnyByAchievements(String argument) {
+    public String removeAnyByAchievements(String argument) {
         tmpMarine.addAll(0, marineStack);
         for (SpaceMarine marine : tmpMarine
         ) {
@@ -145,6 +150,7 @@ public class CollectionManager {
         marineStack.addAll(0, tmpMarine);
         tmpMarine.clear();
         lastUpdate = LocalDate.now();
+        return "Удаление окончено!";
     }
 
     /**

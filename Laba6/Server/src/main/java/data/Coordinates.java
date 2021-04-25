@@ -1,10 +1,13 @@
 package data;
 
+import java.io.Serializable;
+
 /**
  * Coordinates of marine.
  */
 
-public class Coordinates {
+public class Coordinates implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Double x; //Значение поля должно быть больше -56, Поле не может быть null
     private Integer y; //Поле не может быть null
 

@@ -114,18 +114,8 @@ public class CollectionManager {
      *
      * @param argument -achievement
      */
-    public void removeAnyByAchievements(String argument) {
-        tmpMarine.addAll(0, marineStack);
-        for (SpaceMarine marine : tmpMarine
-        ) {
-            if (marine.getAchievements().equals(argument)) {
-                tmpMarine.remove(marine);
-                break;
-            }
-        }
-        marineStack.clear();
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+    public void removeAnyByAchievements(String argument) throws IOException, ClassNotFoundException {
+        Client.readyToExchange("remove_any_by_achievements", argument, null);
         lastUpdate = LocalDate.now();
     }
 

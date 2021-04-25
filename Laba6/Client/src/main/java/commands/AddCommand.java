@@ -4,7 +4,9 @@ import data.SpaceMarine;
 import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
+import util.Client;
 
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 /**
@@ -30,8 +32,7 @@ public class AddCommand extends AbstractCommand implements Command {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
-            collectionManager.addToCollection(new SpaceMarine(
-                    collectionManager.generateId(),
+            SpaceMarine spaceMarine = new SpaceMarine(
                     asker.askName(),
                     asker.askCoordinates(),
                     asker.askLocalDate(),
@@ -39,12 +40,15 @@ public class AddCommand extends AbstractCommand implements Command {
                     asker.askHeartCount(),
                     asker.askAchievements(),
                     asker.askMeleeWeapon(),
-                    asker.askChapter()));
-            System.out.println("Создание бойца окончено!");
+                    asker.askChapter());
+            Client.readyToExchange("add", "", spaceMarine);
+            //System.out.println("Создание бойца окончено!");
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "'");
-        }catch (NoSuchElementException exception) {
+        } catch (NoSuchElementException exception) {
             System.out.println("Пользовательский ввод не обнаружен!");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Ошибка ввода/вывода. Add command.");
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }

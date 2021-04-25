@@ -1,12 +1,14 @@
 package data;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 /**
  * Main character. Is stored in the collection.
  */
-public class SpaceMarine implements Comparable<SpaceMarine> {
+public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
+    private static final long serialVersionUID = 1L;
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -29,7 +31,20 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         this.chapter = chapter;
         checkAchievements();
     }
-
+    public SpaceMarine( String name, Coordinates coordinates, LocalDate creationDate, long health, Integer heartCount, String achievements, MeleeWeapon meleeWeapon, Chapter chapter) {
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.health = health;
+        this.heartCount = heartCount;
+        this.achievements = achievements;
+        this.meleeWeapon = meleeWeapon;
+        this.chapter = chapter;
+        checkAchievements();
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public void checkAchievements() {
         if (achievements.equals("")) {
             achievements = "отсутсвуют";

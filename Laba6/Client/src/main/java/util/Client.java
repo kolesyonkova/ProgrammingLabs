@@ -3,6 +3,7 @@ package util;
 import data.SpaceMarine;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
@@ -17,6 +18,15 @@ public class Client {
             System.out.println("Starting client...");
             client = SocketChannel.open(new InetSocketAddress("localhost", 8089));
             data = ByteBuffer.allocate(valueOfByteBuffer);
+            System.out.println("Клиент подключился к серверу");
+        } catch (ConnectException e) {
+            System.out.println("Невозможно подключиться! Реконнект через 5 произойдёт");
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException interruptedException) {
+                interruptedException.printStackTrace();
+            }
+            start();
         } catch (IOException e) {
             e.printStackTrace();
         }

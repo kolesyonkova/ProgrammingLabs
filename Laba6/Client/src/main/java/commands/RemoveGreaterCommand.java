@@ -5,6 +5,7 @@ import exceptions.EmptyCollection;
 import exceptions.WrongArgumentException;
 import managers.Asker;
 import managers.CollectionManager;
+import util.Client;
 
 /**
  * Command 'remove_greater'. Removes all element from the collection that exceed the specified value.
@@ -28,11 +29,10 @@ public class RemoveGreaterCommand extends AbstractCommand implements Command {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
-            if (collectionManager.getSizeCollection() == 0) {
-                throw new EmptyCollection();
-            }
-            collectionManager.removeGreaterCommand(new SpaceMarine(
-                    collectionManager.generateId(),
+//            if (collectionManager.getSizeCollection() == 0) {
+//                throw new EmptyCollection();}
+
+            Client.readyToExchange("remove_greater", "", new SpaceMarine(
                     asker.askName(),
                     asker.askCoordinates(),
                     asker.askLocalDate(),
@@ -43,9 +43,11 @@ public class RemoveGreaterCommand extends AbstractCommand implements Command {
                     asker.askChapter()));
         } catch (WrongArgumentException e) {
             System.out.println("Используйте: '" + getName() + "' {element}");
-        } catch (EmptyCollection e) {
-            System.out.println("Коллекция пуста. Чтобы удалить превосходящие элементы, добавьте их");
-        } catch (Exception e) {
+        }
+//        catch (EmptyCollection e) {
+//            System.out.println("Коллекция пуста. Чтобы удалить превосходящие элементы, добавьте их");
+//        }
+        catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }
     }
