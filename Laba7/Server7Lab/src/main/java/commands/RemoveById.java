@@ -1,6 +1,6 @@
 package commands;
 
-import data.SpaceMarine;
+import DAO.DAO;
 import exceptions.EmptyCollection;
 import exceptions.MarineNotFoundException;
 import exceptions.WrongArgumentException;
@@ -31,17 +31,16 @@ public class RemoveById extends AbstractCommand implements Command {
             if (collectionManager.collectionIsEmpty()) {
                 throw new EmptyCollection();
             }
-            Long id = Long.parseLong(argument);
-            SpaceMarine marineToRemove = collectionManager.getById(id);
-            if (marineToRemove == null) throw new MarineNotFoundException();
-            return collectionManager.removeFromCollection(marineToRemove);
+            if (!DAO.getDaoSpaceMarine().listOfID().contains(Long.parseLong(argument)))
+                throw new MarineNotFoundException();
+            return collectionManager.removeFromCollection(argument);
         } catch (WrongArgumentException exception) {
             System.out.println("Используйте: '" + getName() + "' id");
         } catch (NumberFormatException exception) {
             System.out.println("Айди должен быть представлен числом!");
         } catch (MarineNotFoundException exception) {
-            System.out.println("Бойца с таким айди в коллекции нет!");
-            return "Бойца с таким айди в коллекции нет!";
+            System.out.println("Бойца с таким айди в коллекции нет! Айди должен принадлежать :" + DAO.getDaoSpaceMarine().listOfID());
+            return "Бойца с таким айди в коллекции нет! Айди должен принадлежать :" + DAO.getDaoSpaceMarine().listOfID();
         } catch (EmptyCollection e) {
             System.out.println("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
             return "Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию";

@@ -22,6 +22,22 @@ public class DAOSpaceMarine {
         this.connection = connection;
     }
 
+    public void clear() {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.CLEAR.QUERY)) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeByID(String argument) {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_BY_ID.QUERY)) {
+            statement.setLong(1, Long.parseLong(argument));
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public int create(SpaceMarine spaceMarine) {
         int result = 0;
@@ -36,12 +52,14 @@ public class DAOSpaceMarine {
 
     public Stack<SpaceMarine> read() {
         List<SpaceMarine> spaceMarineList = new ArrayList<>();
+        ArrayList<Long> longArrayList = listOfID();
         Stack<SpaceMarine> spaceMarines = new Stack<>();
-        int i = countOfElements();
-        System.out.println(countOfElements());
-        for (int numberMarine = 1; numberMarine <= i; numberMarine++) {
+
+
+        for (Long numberMarine : longArrayList
+        ) {
             try (PreparedStatement statement = connection.prepareStatement("SELECT * from \"SpaceMarine\" where id=(?)")) {
-                statement.setInt(1, numberMarine);
+                statement.setInt(1, Math.toIntExact(numberMarine));
                 ResultSet resultSet = statement.executeQuery();
                 while (resultSet.next()) {
                     spaceMarineList.add(getSpaceMarine(resultSet));
@@ -57,17 +75,19 @@ public class DAOSpaceMarine {
     }
 
     public SpaceMarine getSpaceMarine(ResultSet resultSet) throws SQLException {
-
         SpaceMarine marine = new SpaceMarine(
                 resultSet.getLong("id"),
-                resultSet.getString("name"), new Coordinates(resultSet.getDouble("coordinateX"), resultSet.getInt("coordinateY")),
+                resultSet.getString("name"),
+                new Coordinates(resultSet.getDouble("coordinateX"), resultSet.getInt("coordinateY")),
                 LocalDate.now(),
                 resultSet.getInt("health"),
                 resultSet.getInt("heartCount"),
                 resultSet.getString("achievement"),
                 MeleeWeapon.valueOf(resultSet.getString("meleeWeapon")),
-                new Chapter(resultSet.getString("chapterName"), resultSet.getString("parentLegion"), Long.parseLong(String.valueOf(resultSet.getInt("marinesCount"))), resultSet.getString("world")));
-        System.out.println(marine);
+                new Chapter(resultSet.getString("chapterName"),
+                        resultSet.getString("parentLegion"),
+                        Long.parseLong(String.valueOf(resultSet.getInt("marinesCount"))),
+                        resultSet.getString("world")));
         return marine;
     }
 
@@ -97,12 +117,25 @@ public class DAOSpaceMarine {
         statement.setString(12, spaceMarine.getChapter().getWorld());
     }
 
+    public ArrayList listOfID() {
+        ArrayList<Long> idList = new ArrayList<>();
+        try (PreparedStatement statement = connection.prepareStatement("SELECT id from \"SpaceMarine\"")) {
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                idList.add(resultSet.getLong("id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idList;
+    }
+
     public int countOfElements() {
         Integer countOfElements = 0;
-        try (PreparedStatement statement = connection.prepareStatement("select max(id) from \"SpaceMarine\"")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT count(*) FROM \"SpaceMarine\"")) {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                String res = resultSet.getString("max");
+                String res = resultSet.getString("count");
                 countOfElements = Integer.parseInt(res);
             }
             return countOfElements;
@@ -110,5 +143,15 @@ public class DAOSpaceMarine {
             e.printStackTrace();
         }
         return countOfElements;
+    }
+
+    private enum SQLQuery {
+        REMOVE_BY_ID("DELETE FROM \"SpaceMarine\" WHERE id=(?)"),
+        CLEAR("DELETE FROM \"SpaceMarine\"");
+        String QUERY;
+
+        SQLQuery(String QUERY) {
+            this.QUERY = QUERY;
+        }
     }
 }

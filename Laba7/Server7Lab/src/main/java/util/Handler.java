@@ -72,8 +72,8 @@ public class Handler {
                     System.out.println(Long.parseLong(exchangeClass.getArgument()) < 1 || Integer.parseInt(exchangeClass.getArgument()) > DAO.getDaoSpaceMarine().countOfElements());
                     if (DAO.getDaoSpaceMarine().countOfElements() == 0) {
                         exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете её обновить. Для начала добавьте элемент в коллекцию");
-                    } else if (Long.parseLong(exchangeClass.getArgument()) < 1 || Integer.parseInt(exchangeClass.getArgument()) > DAO.getDaoSpaceMarine().countOfElements()) {
-                        exchangeClass.setAnswer("Айди солдата должен лежать в диапозоне [1;" + (DAO.getDaoSpaceMarine().countOfElements()) + "]");
+                    } else if (!DAO.getDaoSpaceMarine().listOfID().contains(Long.parseLong(exchangeClass.getArgument()))) {
+                        exchangeClass.setAnswer("Айди солдата должен лежать в диапозоне " + DAO.getDaoSpaceMarine().listOfID());
                     } else {
                         exchangeClass.getSpaceMarine().setId(Long.valueOf(exchangeClass.getArgument()));
                         exchangeClass.setAnswer(collectionManager.updateCollection(exchangeClass.getSpaceMarine(), Long.valueOf(exchangeClass.getArgument())));

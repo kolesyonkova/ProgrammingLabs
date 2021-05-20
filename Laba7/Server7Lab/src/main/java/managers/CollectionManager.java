@@ -42,7 +42,7 @@ public class CollectionManager {
      * @return
      */
     public String updateCollection(SpaceMarine spaceMarine, Long id) {
-        DAO.getDaoSpaceMarine().update(spaceMarine,id);
+        DAO.getDaoSpaceMarine().update(spaceMarine, id);
         lastUpdate = LocalDate.now();
         return "Элемент коллекции успешно обновлён!";
     }
@@ -113,7 +113,7 @@ public class CollectionManager {
      * @return boolean result
      */
     public boolean collectionIsEmpty() {
-        return DAO.getDaoSpaceMarine().countOfElements()<0;
+        return DAO.getDaoSpaceMarine().countOfElements() == 0;
     }
 
     /**
@@ -194,11 +194,11 @@ public class CollectionManager {
     /**
      * remove marine from collection
      *
-     * @param marine - removed marine
+     * @param id
      * @return
      */
-    public String removeFromCollection(SpaceMarine marine) {
-        marineStack.remove(marine);
+    public String removeFromCollection(String id) {
+        DAO.getDaoSpaceMarine().removeByID(id);
         System.out.println("Удаление бойца окончено!");
         return "Удаление бойца окончено!";
     }
@@ -242,7 +242,7 @@ public class CollectionManager {
      */
     public String clearCollection() {
         String ans = "";
-        marineStack.clear();
+        DAO.getDaoSpaceMarine().clear();
         lastUpdate = LocalDate.now();
         ans = "Коллекция очищена!";
         return ans;
