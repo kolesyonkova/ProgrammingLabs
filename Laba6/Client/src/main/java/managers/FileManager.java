@@ -25,14 +25,6 @@ public class FileManager {
     public FileManager(String path) {
         this.myenv = path;
         this.mainFile = path;
-        try {
-            this.file = new File(System.getenv(myenv));
-        } catch (NullPointerException e) {
-            System.out.println("Системная переменная с загрузочным файлом не найдена! Добавьте её и попробуйте вновь");
-            System.exit(0);
-        } catch (Exception e) {
-            System.out.println("Что-то пошло не так. Перезапустите программу");
-        }
     }
 
     //    public void checkRights(File file) {

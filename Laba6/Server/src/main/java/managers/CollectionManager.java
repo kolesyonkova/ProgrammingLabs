@@ -35,7 +35,8 @@ public class CollectionManager {
 
     /**
      * Update collection
-     *  @param spaceMarine -new marina
+     *
+     * @param spaceMarine -new marina
      * @param id          -id of marina, which one update
      * @return
      */
@@ -87,7 +88,6 @@ public class CollectionManager {
         for (Map.Entry<Long, Long> item : groupById.entrySet()) {
             System.out.println("Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент");
             answer += "Айди " + item.getKey() + " содержит  - " + item.getValue() + " элемент" + "\n";
-
         }
         return answer;
     }

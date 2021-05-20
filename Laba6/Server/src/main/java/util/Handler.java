@@ -50,10 +50,16 @@ public class Handler {
                     exchangeClass.setAnswer(commandManager.getHistory(exchangeClass.getArgument()));
                     break;
                 case "remove_all_by_health":
-                    exchangeClass.setAnswer(collectionManager.removeAllByHealth(Long.parseLong(exchangeClass.getArgument())));
+                    if (collectionManager.collectionIsEmpty()) {
+                        exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+                    } else
+                        exchangeClass.setAnswer(collectionManager.removeAllByHealth(Long.parseLong(exchangeClass.getArgument())));
                     break;
                 case "remove_first":
-                    exchangeClass.setAnswer(collectionManager.removeFirst());
+                    if (collectionManager.collectionIsEmpty()) {
+                        exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
+                    } else
+                        exchangeClass.setAnswer(collectionManager.removeFirst());
                     break;
                 case "group_counting_by_id":
                     exchangeClass.setAnswer(collectionManager.groupCountingById());

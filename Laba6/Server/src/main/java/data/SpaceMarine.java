@@ -110,4 +110,8 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     public int compareTo(SpaceMarine compareMarine) {
         return (int) (this.getHealth() - compareMarine.getHealth());
     }
+
+    public String toCsv() {
+        return name + "," + coordinates.toCsv() + "," + health + "," + heartCount + "," + achievements + "," + meleeWeapon + "," + chapter.toCsv();
+    }
 }

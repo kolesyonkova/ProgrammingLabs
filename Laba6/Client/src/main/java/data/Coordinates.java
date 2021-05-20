@@ -27,4 +27,8 @@ public class Coordinates implements Serializable {
                 "x=" + x + " " +
                         "y=" + y;
     }
+    public String toCsv() {
+        return x + "," + y;
+    }
+
 }

@@ -46,4 +46,8 @@ public class Chapter implements Serializable {
                         "Количество морских пехотинцев: " + marinesCount + "\n" +
                         "Мир: " + world;
     }
+
+    public String toCsv() {
+        return name + "," + parentLegion + "," + marinesCount + "," + world;
+    }
 }

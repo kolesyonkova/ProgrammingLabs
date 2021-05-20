@@ -16,7 +16,7 @@ public class Client {
     public static void start() {
         try {
             System.out.println("Starting client...");
-            client = SocketChannel.open(new InetSocketAddress("localhost", 8089));
+            client = SocketChannel.open(new InetSocketAddress("localhost", 8088));
             data = ByteBuffer.allocate(valueOfByteBuffer);
             System.out.println("Клиент подключился к серверу");
         } catch (ConnectException e) {
@@ -32,19 +32,32 @@ public class Client {
         }
     }
 
-    public static void writeObject(ExchangeClass testClass) throws IOException, ClassNotFoundException {
-        data = ByteBuffer.allocate(valueOfByteBuffer);
-        data.put(serialize(testClass));
-        data.flip();
-        client.write(data);
-        readObject();
+    public static void writeObject(ExchangeClass testClass) {
+        try {
+            data = ByteBuffer.allocate(valueOfByteBuffer);
+            data.put(serialize(testClass));
+            data.flip();
+            client.write(data);
+            readObject();
+        } catch (IOException e) {
+            System.out.println("Сервер отключён. Пытаюсь переподключиться...");
+            start();
+            writeObject(testClass);
+        }
     }
 
-    public static void readObject() throws IOException, ClassNotFoundException {
-        ByteBuffer byteBuffer = ByteBuffer.allocate(valueOfByteBuffer);
-        client.read(byteBuffer);
-        ExchangeClass testClass = deserialize(byteBuffer.array());
-        System.out.println(testClass.getAnswer());
+    public static void readObject() {
+        try {
+            ByteBuffer byteBuffer = ByteBuffer.allocate(valueOfByteBuffer);
+            client.read(byteBuffer);
+            ExchangeClass testClass = deserialize(byteBuffer.array());
+            System.out.println(testClass.getAnswer());
+        } catch (ClassNotFoundException e) {
+            System.out.println("Что-то пошло не так с записью! Клиент");
+        } catch (IOException e) {
+            System.out.println("Сервер отключён. Пытаюсь переподключиться...");
+            start();
+        }
     }
 
     public static byte[] serialize(Object obj) throws IOException {
@@ -64,7 +77,7 @@ public class Client {
         }
     }
 
-    public static void readyToExchange(String name, String argument, SpaceMarine spaceMarine) throws IOException, ClassNotFoundException {
+    public static void readyToExchange(String name, String argument, SpaceMarine spaceMarine) {
         ExchangeClass exchangeClass = new ExchangeClass();
         exchangeClass.setName(name);
         exchangeClass.setArgument(argument);

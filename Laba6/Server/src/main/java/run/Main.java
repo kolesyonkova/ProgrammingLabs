@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Колесенкова Екатерина P3112
  */
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) {
 
         Scanner userScanner = new Scanner(System.in);
         final String myenv = "WC_FILE";
@@ -22,10 +22,17 @@ public class Main {
         CommandManager commandManager = new CommandManager(new AddCommand(collectionManager, asker), new ClearCommand(collectionManager), new GroupCountingByIdCommand(collectionManager), new ShowCommand(collectionManager), new SaveCommand(collectionManager, fileManager), new HelpCommand(), new HistoryCommand(), new InfoCommand(collectionManager), new RemoveAllByHealthCommand(collectionManager), new RemoveAnyByAchievementsCommand(collectionManager), new RemoveFirstCommand(collectionManager), new RemoveGreaterCommand(collectionManager, asker), new UpdateCommand(collectionManager, asker), new ExitCommand(), new RemoveById(collectionManager));
         ConsoleManager consoleManager = new ConsoleManager(userScanner, commandManager, fileManager);
         collectionManager.loadCollectionFromStartFile();
-
-        //consoleManager.userMode();
+        Thread threadForReceiveFromTerminal = new Thread() {
+            @Override
+            public void run() {
+                consoleManager.userMode();
+            }
+        };
+        Thread startReceiveFromServerTerminal = new Thread(threadForReceiveFromTerminal);
+        startReceiveFromServerTerminal.start();
         Server server = new Server(userScanner, myenv, collectionManager, fileManager, asker, commandManager);
         server.start();
     }
+
 }
 

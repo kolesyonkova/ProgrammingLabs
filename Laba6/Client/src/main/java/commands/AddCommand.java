@@ -47,8 +47,6 @@ public class AddCommand extends AbstractCommand implements Command {
             System.out.println("Используйте: '" + getName() + "'");
         } catch (NoSuchElementException exception) {
             System.out.println("Пользовательский ввод не обнаружен!");
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Ошибка ввода/вывода. Add command.");
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. Повторите ввод.");
         }

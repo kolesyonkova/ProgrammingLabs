@@ -31,7 +31,8 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
         this.chapter = chapter;
         checkAchievements();
     }
-    public SpaceMarine( String name, Coordinates coordinates, LocalDate creationDate, long health, Integer heartCount, String achievements, MeleeWeapon meleeWeapon, Chapter chapter) {
+
+    public SpaceMarine(String name, Coordinates coordinates, LocalDate creationDate, long health, Integer heartCount, String achievements, MeleeWeapon meleeWeapon, Chapter chapter) {
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
@@ -42,9 +43,11 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
         this.chapter = chapter;
         checkAchievements();
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public void checkAchievements() {
         if (achievements.equals("")) {
             achievements = "отсутсвуют";
@@ -56,7 +59,7 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     }
 
     public boolean isEmpty() {
-        return (this.name == null ||this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null|| this.meleeWeapon == null ||this.chapter == null||this.health==0L);
+        return (this.name == null || this.id == null || this.coordinates == null || this.creationDate == null || this.heartCount == null || this.achievements == null || this.meleeWeapon == null || this.chapter == null || this.health == 0L);
     }
 
     @Override
@@ -102,6 +105,9 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
                         chapter;
     }
 
+    public String toCsv() {
+        return name + "," + coordinates.toCsv() + "," + health + "," + heartCount + "," + achievements + "," + meleeWeapon + "," + chapter.toCsv();
+    }
 
     @Override
     public int compareTo(SpaceMarine compareMarine) {
