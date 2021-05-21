@@ -89,7 +89,6 @@ public class Handler {
                     if (collectionManager.getSizeCollection() == 0) {
                         exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
                     } else {
-                        exchangeClass.getSpaceMarine().setId(collectionManager.generateId());
                         exchangeClass.setAnswer(collectionManager.removeGreaterCommand(exchangeClass.getSpaceMarine()));
                     }
                     break;

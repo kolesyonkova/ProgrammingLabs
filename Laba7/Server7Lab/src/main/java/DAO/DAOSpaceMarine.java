@@ -22,8 +22,43 @@ public class DAOSpaceMarine {
         this.connection = connection;
     }
 
+    public void removeFirst() {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_FIRST.QUERY)) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeAllByHealth(long argument) {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_ALL_BY_HEALTH.QUERY)) {
+            statement.setLong(1, argument);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeGreater(SpaceMarine spaceMarine) {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_GREATER.QUERY)) {
+            statement.setLong(1, spaceMarine.getHealth());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void clear() {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.CLEAR.QUERY)) {
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeAnyByAchievements(String argument) {
+        try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_ANY_BY_ACHIEVEMENTS.QUERY)) {
+            statement.setString(1, argument);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -147,7 +182,11 @@ public class DAOSpaceMarine {
 
     private enum SQLQuery {
         REMOVE_BY_ID("DELETE FROM \"SpaceMarine\" WHERE id=(?)"),
-        CLEAR("DELETE FROM \"SpaceMarine\"");
+        CLEAR("DELETE FROM \"SpaceMarine\""),
+        REMOVE_GREATER("DELETE FROM \"SpaceMarine\" WHERE health>(?)"),
+        REMOVE_FIRST("DELETE FROM \"SpaceMarine\" WHERE id=(SELECT MIN(id) FROM \"SpaceMarine\");"),
+        REMOVE_ANY_BY_ACHIEVEMENTS("DELETE FROM \"SpaceMarine\" WHERE id=(select id from \"SpaceMarine\" WHERE  achievement=(?) LIMIT 1)"),
+        REMOVE_ALL_BY_HEALTH("DELETE FROM \"SpaceMarine\" WHERE health=(?)");
         String QUERY;
 
         SQLQuery(String QUERY) {

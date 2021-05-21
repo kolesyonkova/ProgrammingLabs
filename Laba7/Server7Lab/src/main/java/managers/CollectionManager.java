@@ -63,11 +63,7 @@ public class CollectionManager {
      * @return
      */
     public String removeGreaterCommand(SpaceMarine compareMarine) {
-        tmpMarine.addAll(0, marineStack);
-        marineStack.clear();
-        tmpMarine.removeIf(spaceMarine -> spaceMarine.compareTo(compareMarine) > 0);
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+        DAO.getDaoSpaceMarine().removeGreater(compareMarine);
         lastUpdate = LocalDate.now();
 
         return "Удаление завершено!";
@@ -96,11 +92,7 @@ public class CollectionManager {
      * @return
      */
     public String removeAllByHealth(long health) {
-        tmpMarine.addAll(0, marineStack);
-        marineStack.clear();
-        tmpMarine.removeIf(marine -> health == marine.getHealth());
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+        DAO.getDaoSpaceMarine().removeAllByHealth(health);
         lastUpdate = LocalDate.now();
         String answer = "Удаление окончено!";
         System.out.println("Удаление окончено!");
@@ -135,17 +127,7 @@ public class CollectionManager {
      * @return
      */
     public String removeAnyByAchievements(String argument) {
-        tmpMarine.addAll(0, marineStack);
-        for (SpaceMarine marine : tmpMarine
-        ) {
-            if (marine.getAchievements().equals(argument)) {
-                tmpMarine.remove(marine);
-                break;
-            }
-        }
-        marineStack.clear();
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+        DAO.getDaoSpaceMarine().removeAnyByAchievements(argument);
         lastUpdate = LocalDate.now();
         return "Удаление окончено!";
     }
@@ -157,11 +139,7 @@ public class CollectionManager {
      */
     public String removeFirst() {
         String answer = "";
-        tmpMarine.addAll(0, marineStack);
-        tmpMarine.remove(0);
-        marineStack.clear();
-        marineStack.addAll(0, tmpMarine);
-        tmpMarine.clear();
+        DAO.getDaoSpaceMarine().removeFirst();
         System.out.println("Удаление первого бойца окончено!");
         answer = "Удаление первого бойца окончено!";
         lastUpdate = LocalDate.now();
