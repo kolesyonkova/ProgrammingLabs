@@ -1,5 +1,6 @@
 package commands;
 
+import DAO.DAO;
 import exceptions.WrongArgumentException;
 import managers.CollectionManager;
 import managers.FileManager;
@@ -19,6 +20,7 @@ public class SaveCommand extends AbstractCommand implements Command {
 
     /**
      * Execute of 'save' command.
+     *
      * @return
      */
     @Override
@@ -27,7 +29,7 @@ public class SaveCommand extends AbstractCommand implements Command {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
-            fileManager.saveCollection(collectionManager.getMarineStack());
+            fileManager.saveCollection(DAO.getDaoSpaceMarine().read());
         } catch (WrongArgumentException e) {
             System.out.println("Используйте: '" + getName() + "'");
         } catch (Exception e) {

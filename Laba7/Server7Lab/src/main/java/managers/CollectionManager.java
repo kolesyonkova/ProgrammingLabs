@@ -75,6 +75,7 @@ public class CollectionManager {
      * @return
      */
     public String groupCountingById() {
+        marineStack = DAO.getDaoSpaceMarine().read();
         String answer = "";
         Map<Long, Long> groupById = marineStack.stream().collect(
                 Collectors.groupingBy(SpaceMarine::getId, Collectors.counting()));

@@ -1,5 +1,6 @@
 package managers;
 
+import DAO.DAO;
 import data.SpaceMarine;
 import exceptions.EmptyCollection;
 
@@ -135,7 +136,7 @@ public class FileManager {
                         }
                         ascerForStartFIle = new AscerForStartFIle(ar);
                         SpaceMarine pushingObject = ascerForStartFIle.startFunc();
-                        if (!(pushingObject == null)) stackFromFile.push(pushingObject);
+                        if (!(pushingObject == null)) DAO.getDaoSpaceMarine().create(pushingObject);
                         ar.clear();
                     } catch (EmptyCollection e) {
                         System.out.println("В данной строке недостаточно аргументов для создания объекта");
