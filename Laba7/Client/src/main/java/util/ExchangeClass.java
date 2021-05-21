@@ -10,6 +10,15 @@ public class ExchangeClass implements Serializable {
     String argument;
     SpaceMarine spaceMarine;
     String answer;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getName() {
         return nameOfCommand;

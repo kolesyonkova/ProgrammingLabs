@@ -4,6 +4,7 @@ import data.Chapter;
 import data.Coordinates;
 import data.MeleeWeapon;
 import data.SpaceMarine;
+import util.User;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -17,6 +18,15 @@ import java.util.Stack;
 
 public class DAOSpaceMarine {
     Connection connection;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public DAOSpaceMarine(Connection connection) {
         this.connection = connection;
@@ -76,8 +86,9 @@ public class DAOSpaceMarine {
 
     public int create(SpaceMarine spaceMarine) {
         int result = 0;
-        try (PreparedStatement statement = connection.prepareStatement("insert into \"SpaceMarine\"(id,name, coordinateX, coordinateY,creation_date, health, heartCount, achievement, meleeWeapon, chapterName,parentLegion, marinesCount, world, userCreateId) values (default, (?),(?) ,(?), (?), (?), (?), (?), (?), (?), (?), (?),(?), 1)")) {
+        try (PreparedStatement statement = connection.prepareStatement("insert into \"SpaceMarine\"(id,name, coordinateX, coordinateY,creation_date, health, heartCount, achievement, meleeWeapon, chapterName,parentLegion, marinesCount, world, userCreateId) values (default, (?),(?) ,(?), (?), (?), (?), (?), (?), (?), (?), (?),(?), (?))")) {
             SetTOUpdate(spaceMarine, statement);
+            statement.setInt(13, Integer.parseInt(DAO.getDaoUser().login(user)));
             result = statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -127,10 +138,12 @@ public class DAOSpaceMarine {
     }
 
     public void update(SpaceMarine spaceMarine, Long id) {
-        try (PreparedStatement statement = connection.prepareStatement("Update \"SpaceMarine\" SET name=(?), coordinateX=(?), coordinateY=(?),creation_date=(?), health=(?), heartCount=(?), achievement=(?), meleeWeapon=(?), chapterName=(?),parentLegion=(?), marinesCount=(?), world=(?) WHERE id=(?)")) {
+        try (PreparedStatement statement = connection.prepareStatement("Update \"SpaceMarine\" SET name=(?), coordinateX=(?), coordinateY=(?),creation_date=(?), health=(?), heartCount=(?), achievement=(?), meleeWeapon=(?), chapterName=(?),parentLegion=(?), marinesCount=(?), world=(?) WHERE id=(?) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)")) {
             SetTOUpdate(spaceMarine, statement);
             System.out.println(id);
             statement.setLong(13, id);
+            statement.setString(14, user.getLogin());
+            statement.setString(15, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

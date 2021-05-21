@@ -20,8 +20,12 @@ public class DAO {
     private static String password = scanner.nextLine();
     private static final ConnectionToDatabase connectionToDatabase = new ConnectionToDatabase(login, password);
     private static final DAOSpaceMarine daoSpaceMarine = new DAOSpaceMarine(connectionToDatabase.getConnection());
-
+    private static final DAOUser daoUser=new DAOUser(connectionToDatabase.getConnection());
     public static DAOSpaceMarine getDaoSpaceMarine() {
         return daoSpaceMarine;
+    }
+
+    public static DAOUser getDaoUser() {
+        return daoUser;
     }
 }

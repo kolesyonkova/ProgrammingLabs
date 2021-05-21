@@ -6,6 +6,7 @@ import managers.CollectionManager;
 import managers.CommandManager;
 import managers.FileManager;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Handler {
@@ -31,6 +32,7 @@ public class Handler {
             commandManager.addToHistory(exchangeClass.getName());
             switch (exchangeClass.getName().trim()) {
                 case "add":
+                    DAO.getDaoSpaceMarine().setUser(exchangeClass.getUser());
                     exchangeClass.getSpaceMarine().setId(collectionManager.generateId());
                     collectionManager.addToCollection(exchangeClass.getSpaceMarine());
                     exchangeClass.setAnswer("Элемент успешно добавлен в коллецию");
@@ -90,6 +92,22 @@ public class Handler {
                         exchangeClass.setAnswer("Коллекция пуста, поэтому Вы не можете удалить из неё элементы. Для начала добавьте элемент в коллекцию");
                     } else {
                         exchangeClass.setAnswer(collectionManager.removeGreaterCommand(exchangeClass.getSpaceMarine()));
+                    }
+                    break;
+                case "register":
+                    exchangeClass.setAnswer(DAO.getDaoUser().create(exchangeClass.getUser()));
+                    if (exchangeClass.getAnswer().equals("1")) {
+                        exchangeClass.setAnswer("Пользователь успешно создан!");
+                    }
+                    break;
+                case "login":
+                    try {
+                        exchangeClass.setAnswer(DAO.getDaoUser().login(exchangeClass.getUser()));
+                        if (exchangeClass.getAnswer() == null)
+                            exchangeClass.setAnswer("Такого пользователя не существует.Повторите попытку");
+                        else exchangeClass.setAnswer("Вы успешно вошли!");
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
                     break;
                 default:

@@ -159,6 +159,11 @@ public class ConsoleManager {
                 case "group_counting_by_id":
                     commandManager.groupCountingByIdCommand(userCommand[1]);
                     break;
+                case "register":
+                    commandManager.registration();
+                    break;
+                case "login":
+                    commandManager.login();
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");
             }

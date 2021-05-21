@@ -5,6 +5,7 @@ import util.Client;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Operates with the commands.
@@ -118,6 +119,30 @@ public class CommandManager {
     public void clearCollection(String argument) {
         clearCommand.execute(argument);
     }
+
+    public void registration() {
+        Scanner scanner = new Scanner(System.in);
+        String login = "";
+        String password = "";
+        Register register = new Register();
+        System.out.println("Введите логин: ");
+        login = scanner.nextLine().trim();
+        System.out.println("Введите пароль: ");
+        password = scanner.nextLine().trim();
+        register.execute(login, password);
+    }
+    public void login() {
+        Scanner scanner = new Scanner(System.in);
+        String login = "";
+        String password = "";
+        Login register = new Login();
+        System.out.println("Введите логин: ");
+        login = scanner.nextLine().trim();
+        System.out.println("Введите пароль: ");
+        password = scanner.nextLine().trim();
+        register.execute(login, password);
+    }
+
 
     /**
      * Add command to history.

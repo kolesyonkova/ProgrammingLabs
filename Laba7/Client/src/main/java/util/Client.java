@@ -9,10 +9,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
 public class Client {
-    private static int valueOfByteBuffer = 65536;
+    private static final int valueOfByteBuffer = 65536;
     private static SocketChannel client;
     private static ByteBuffer data;
-
+    private static User user;
     public static void start() {
         try {
             System.out.println("Starting client...");
@@ -82,6 +82,22 @@ public class Client {
         exchangeClass.setName(name);
         exchangeClass.setArgument(argument);
         exchangeClass.setSpaceMarine(spaceMarine);
+        exchangeClass.setUser(user);
+        writeObject(exchangeClass);
+    }
+
+
+    public static void setUser(User user) {
+        Client.user = user;
+    }
+
+    public static void readyToExchange(String name, String argument, SpaceMarine spaceMarine, User user) {
+        setUser(user);
+        ExchangeClass exchangeClass = new ExchangeClass();
+        exchangeClass.setName(name);
+        exchangeClass.setArgument(argument);
+        exchangeClass.setSpaceMarine(spaceMarine);
+        exchangeClass.setUser(user);
         writeObject(exchangeClass);
     }
 

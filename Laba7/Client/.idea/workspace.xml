@@ -25,6 +25,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/HelpCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/HistoryCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Register.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveAllByHealthCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveAnyByAchievementsCommand.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" afterDir="false" />
@@ -61,6 +63,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/run/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/util/Client.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/util/ExchangeClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server/.idea/gradle.xml" afterDir="false" />
@@ -222,9 +225,12 @@
       <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAO.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAOSpaceMarine$SQLQuery.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAOSpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/util/Handler.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/ConnectionToDatabase.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAOSpaceMarine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAOUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/util/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/description.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/encodings.xml" beforeDir="false" />
@@ -447,7 +453,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server7Lab" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
@@ -595,7 +601,8 @@
       <workItem from="1619461787233" duration="2019000" />
       <workItem from="1619463937014" duration="3246000" />
       <workItem from="1619470953206" duration="312000" />
-      <workItem from="1621520112910" duration="20319000" />
+      <workItem from="1621520112910" duration="28424000" />
+      <workItem from="1621580124646" duration="523000" />
     </task>
     <servers />
   </component>
@@ -622,6 +629,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619462279094" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1621562948664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1621562948664" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618949853996">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -630,26 +641,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619130412017" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1619202182339">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621580132653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1619202182339" />
-    <state width="724" height="232" key="GridCell.Tab.0.bottom" timestamp="1621558543585">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621580132653" />
+    <state width="726" height="233" key="GridCell.Tab.0.bottom" timestamp="1621567873136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="232" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1621558543585" />
-    <state width="724" height="232" key="GridCell.Tab.0.center" timestamp="1621558543585">
+    <state width="726" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1621567873136" />
+    <state width="726" height="233" key="GridCell.Tab.0.center" timestamp="1621567873136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="232" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1621558543585" />
-    <state width="724" height="232" key="GridCell.Tab.0.left" timestamp="1621558543585">
+    <state width="726" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1621567873136" />
+    <state width="726" height="233" key="GridCell.Tab.0.left" timestamp="1621567873136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="232" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1621558543585" />
-    <state width="724" height="232" key="GridCell.Tab.0.right" timestamp="1621558543585">
+    <state width="726" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1621567873136" />
+    <state width="726" height="233" key="GridCell.Tab.0.right" timestamp="1621567873136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="232" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1621558543585" />
+    <state width="726" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1621567873136" />
     <state width="724" height="263" key="GridCell.Tab.1.bottom" timestamp="1619470893156">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -3,6 +3,7 @@ package managers;
 import DAO.DAO;
 import data.SpaceMarine;
 import exceptions.EmptyCollection;
+import util.User;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -124,6 +125,9 @@ public class FileManager {
             try (FileInputStream fstream = new FileInputStream(System.getenv(myenv))) {
                 String reader;
                 BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+                User user = new User();
+                DAO.getDaoUser().create(user);
+                DAO.getDaoSpaceMarine().setUser(user);
                 while ((reader = br.readLine()) != null) {
                     try {
                         ar.clear();
@@ -136,7 +140,9 @@ public class FileManager {
                         }
                         ascerForStartFIle = new AscerForStartFIle(ar);
                         SpaceMarine pushingObject = ascerForStartFIle.startFunc();
-                        if (!(pushingObject == null)) DAO.getDaoSpaceMarine().create(pushingObject);
+                        if (!(pushingObject == null)) {
+                            DAO.getDaoSpaceMarine().create(pushingObject);
+                        }
                         ar.clear();
                     } catch (EmptyCollection e) {
                         System.out.println("В данной строке недостаточно аргументов для создания объекта");
