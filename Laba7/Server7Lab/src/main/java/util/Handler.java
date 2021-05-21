@@ -29,6 +29,10 @@ public class Handler {
 
     public static ExchangeClass startCommand(ExchangeClass exchangeClass) {
         try {
+            if (exchangeClass.getUser() == null) {
+                exchangeClass.setAnswer("Вы не можете работать с сервером, пока не авторитизируетесь!");
+                return exchangeClass;
+            }
             DAO.getDaoSpaceMarine().setUser(exchangeClass.getUser());
             commandManager.addToHistory(exchangeClass.getName());
             switch (exchangeClass.getName().trim()) {
