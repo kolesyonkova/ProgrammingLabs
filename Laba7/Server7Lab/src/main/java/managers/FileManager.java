@@ -6,6 +6,7 @@ import exceptions.EmptyCollection;
 import util.User;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -126,7 +127,14 @@ public class FileManager {
                 String reader;
                 BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
                 User user = new User();
-                DAO.getDaoUser().create(user);
+                try {
+                    if (DAO.getDaoUser().login(user) == null) {
+                        DAO.getDaoUser().create(user);
+                    }
+//                    System.out.println(DAO.getDaoUser().login(user));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 DAO.getDaoSpaceMarine().setUser(user);
                 while ((reader = br.readLine()) != null) {
                     try {

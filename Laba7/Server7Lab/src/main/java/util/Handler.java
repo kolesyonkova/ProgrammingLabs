@@ -29,6 +29,7 @@ public class Handler {
 
     public static ExchangeClass startCommand(ExchangeClass exchangeClass) {
         try {
+            DAO.getDaoSpaceMarine().setUser(exchangeClass.getUser());
             commandManager.addToHistory(exchangeClass.getName());
             switch (exchangeClass.getName().trim()) {
                 case "add":

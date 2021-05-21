@@ -1,10 +1,13 @@
 package managers;
 
+import DAO.DAO;
 import exceptions.NoAccessToFileException;
 import exceptions.ScriptRecursionException;
+import util.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -46,6 +49,7 @@ public class ConsoleManager {
             System.out.println("Непредвиденная ошибка!");
         }
     }
+
     /**
      * Mode for work with commands from a script.
      */
@@ -108,6 +112,16 @@ public class ConsoleManager {
      */
     public void startCommand(String[] userCommand) {
         try {
+            User user = new User();
+            try {
+                if (DAO.getDaoUser().login(user) == null) {
+                    DAO.getDaoUser().create(user);
+                }
+//                    System.out.println(DAO.getDaoUser().login(user));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            DAO.getDaoSpaceMarine().setUser(user);
             switch (userCommand[0]) {
                 case "add":
                     commandManager.addCollection(userCommand[1]);

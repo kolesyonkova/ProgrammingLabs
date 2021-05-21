@@ -34,6 +34,8 @@ public class DAOSpaceMarine {
 
     public void removeFirst() {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_FIRST.QUERY)) {
+            statement.setString(1, user.getLogin());
+            statement.setString(2, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,6 +45,8 @@ public class DAOSpaceMarine {
     public void removeAllByHealth(long argument) {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_ALL_BY_HEALTH.QUERY)) {
             statement.setLong(1, argument);
+            statement.setString(2, user.getLogin());
+            statement.setString(3, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,6 +56,8 @@ public class DAOSpaceMarine {
     public void removeGreater(SpaceMarine spaceMarine) {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_GREATER.QUERY)) {
             statement.setLong(1, spaceMarine.getHealth());
+            statement.setString(2, user.getLogin());
+            statement.setString(3, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -60,6 +66,8 @@ public class DAOSpaceMarine {
 
     public void clear() {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.CLEAR.QUERY)) {
+            statement.setString(1, user.getLogin());
+            statement.setString(2, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,6 +77,8 @@ public class DAOSpaceMarine {
     public void removeAnyByAchievements(String argument) {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_ANY_BY_ACHIEVEMENTS.QUERY)) {
             statement.setString(1, argument);
+            statement.setString(2, user.getLogin());
+            statement.setString(3, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -78,6 +88,8 @@ public class DAOSpaceMarine {
     public void removeByID(String argument) {
         try (PreparedStatement statement = connection.prepareStatement(SQLQuery.REMOVE_BY_ID.QUERY)) {
             statement.setLong(1, Long.parseLong(argument));
+            statement.setString(2, user.getLogin());
+            statement.setString(3, DAOUser.encryptString(user.getPassword()));
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -140,7 +152,6 @@ public class DAOSpaceMarine {
     public void update(SpaceMarine spaceMarine, Long id) {
         try (PreparedStatement statement = connection.prepareStatement("Update \"SpaceMarine\" SET name=(?), coordinateX=(?), coordinateY=(?),creation_date=(?), health=(?), heartCount=(?), achievement=(?), meleeWeapon=(?), chapterName=(?),parentLegion=(?), marinesCount=(?), world=(?) WHERE id=(?) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)")) {
             SetTOUpdate(spaceMarine, statement);
-            System.out.println(id);
             statement.setLong(13, id);
             statement.setString(14, user.getLogin());
             statement.setString(15, DAOUser.encryptString(user.getPassword()));
@@ -194,12 +205,12 @@ public class DAOSpaceMarine {
     }
 
     private enum SQLQuery {
-        REMOVE_BY_ID("DELETE FROM \"SpaceMarine\" WHERE id=(?)"),
-        CLEAR("DELETE FROM \"SpaceMarine\""),
-        REMOVE_GREATER("DELETE FROM \"SpaceMarine\" WHERE health>(?)"),
-        REMOVE_FIRST("DELETE FROM \"SpaceMarine\" WHERE id=(SELECT MIN(id) FROM \"SpaceMarine\");"),
-        REMOVE_ANY_BY_ACHIEVEMENTS("DELETE FROM \"SpaceMarine\" WHERE id=(select id from \"SpaceMarine\" WHERE  achievement=(?) LIMIT 1)"),
-        REMOVE_ALL_BY_HEALTH("DELETE FROM \"SpaceMarine\" WHERE health=(?)");
+        REMOVE_BY_ID("DELETE FROM \"SpaceMarine\" WHERE id=(?) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)"),
+        CLEAR("DELETE FROM \"SpaceMarine\" where userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)"),
+        REMOVE_GREATER("DELETE FROM \"SpaceMarine\" WHERE health>(?) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)"),
+        REMOVE_FIRST("DELETE FROM \"SpaceMarine\" WHERE id=(SELECT MIN(id) FROM \"SpaceMarine\") AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1);"),
+        REMOVE_ANY_BY_ACHIEVEMENTS("DELETE FROM \"SpaceMarine\" WHERE id=(select id from \"SpaceMarine\" WHERE  achievement=(?) LIMIT 1) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)"),
+        REMOVE_ALL_BY_HEALTH("DELETE FROM \"SpaceMarine\" WHERE health=(?) AND userCreateId=(SELECT id from \"User\" where login=(?) and password=(?) limit 1)");
         String QUERY;
 
         SQLQuery(String QUERY) {
