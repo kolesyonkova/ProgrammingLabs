@@ -164,6 +164,7 @@ public class ConsoleManager {
                     break;
                 case "login":
                     commandManager.login();
+                    break;
                 default:
                     System.out.println("Не является внутренней командой. Повтороте ввод или напишите help для получения актуального списка команд.");
             }

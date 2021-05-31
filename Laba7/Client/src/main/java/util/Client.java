@@ -13,6 +13,7 @@ public class Client {
     private static SocketChannel client;
     private static ByteBuffer data;
     private static User user;
+
     public static void start() {
         try {
             System.out.println("Starting client...");
@@ -52,6 +53,9 @@ public class Client {
             client.read(byteBuffer);
             ExchangeClass testClass = deserialize(byteBuffer.array());
             System.out.println(testClass.getAnswer());
+            if (testClass.getAnswer().equals("Такого пользователя не существует.Повторите попытку")) setUser(null);
+            if (testClass.getAnswer().equals("Пользователь уже в сети, вы не можете войти. Завершите все другие сессии, чтобы войти"))
+                setUser(null);
         } catch (ClassNotFoundException e) {
             System.out.println("Что-то пошло не так с записью! Клиент");
         } catch (IOException e) {

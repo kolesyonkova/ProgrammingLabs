@@ -131,15 +131,25 @@ public class CommandManager {
         password = scanner.nextLine().trim();
         register.execute(login, password);
     }
+
     public void login() {
         Scanner scanner = new Scanner(System.in);
         String login = "";
         String password = "";
         Login register = new Login();
-        System.out.println("Введите логин: ");
-        login = scanner.nextLine().trim();
-        System.out.println("Введите пароль: ");
-        password = scanner.nextLine().trim();
+        while (true) {
+            System.out.println("Введите логин: ");
+            login = scanner.nextLine().trim();
+            if (login.equals("")) System.out.println("Логин не может быть null, повторите ввод");
+            else break;
+        }
+        while (true) {
+            System.out.println("Введите пароль: ");
+            password = scanner.nextLine().trim();
+            if (password.equals("")) System.out.println("Пароль не может быть null, повторите ввод");
+            else break;
+        }
+
         register.execute(login, password);
     }
 

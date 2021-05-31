@@ -1,6 +1,7 @@
 package commands;
 
 import exceptions.WrongArgumentException;
+import util.Client;
 
 /**
  * Command 'exit'. Exits the program.
@@ -19,6 +20,7 @@ public class ExitCommand extends AbstractCommand implements Command {
             if (!argument.isEmpty()) {
                 throw new WrongArgumentException();
             }
+            Client.readyToExchange("exit", "", null);
             System.out.println("Программа успешно завершена!");
             System.exit(0);
         } catch (WrongArgumentException e) {

@@ -220,17 +220,289 @@
       <change afterPath="$PROJECT_DIR$/../Server/src/main/java/util/Exchanger.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server/src/main/java/util/Handler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Server/src/main/java/util/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/ConnectionToDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAOSpaceMarine$SQLQuery.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/DAO/DAOSpaceMarine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/out/production/classes/util/Handler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/ConnectionToDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAOSpaceMarine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/DAO/DAOUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server7Lab/src/main/java/util/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/Server7LabWithMulti.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources/1b054087-3b12-489a-b6f8-932043495284.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources/1b054087-3b12-489a-b6f8-932043495284/storage_v2/_src_/database/studs.ww2LBg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources/1b054087-3b12-489a-b6f8-932043495284/storage_v2/_src_/database/studs.ww2LBg/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources/1b054087-3b12-489a-b6f8-932043495284/storage_v2/_src_/database/studs.ww2LBg/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/dataSources/1b054087-3b12-489a-b6f8-932043495284/storage_v2/_src_/database/studs.ww2LBg/schema/s311704.O2A9HQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/ConnectionToDatabase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/DAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/DAOSpaceMarine$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/DAOSpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/DAOUser$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/DAO/DAOUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/AbstractCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/AddCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/ClearCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/Command.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/ExitCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/GroupCountingByIdCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/HelpCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/HistoryCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/InfoCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/RemoveAllByHealthCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/RemoveAnyByAchievementsCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/RemoveById.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/RemoveFirstCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/RemoveGreaterCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/SaveCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/ShowCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/commands/UpdateCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/data/Chapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/data/Coordinates.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/data/MeleeWeapon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/data/SpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/CanNotExecuteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/EmptyCollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/FileNotExistException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/IncorrectId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/IncorrectInputInScriptException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/LowHealthException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/MarineNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/MustBeNotEmptyException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/NoAccessToFileException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/NumberOfHeartCountsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/NumberOfMarinesException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/ScriptRecursionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/UnReadException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/UnWriteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/exceptions/WrongArgumentException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/AscerForStartFIle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/Asker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/CollectionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/CommandManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/ConsoleManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/managers/FileManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/run/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/run/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/util/ExchangeClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/util/Exchanger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/util/Handler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/util/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/classes/java/main/util/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/libs/DemoFat-SNAPSHOT.1-0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/libs/ServerTestJB-SNAPSHOT.1-0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/tmp/customFatJar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/ConnectionToDatabase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/DAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/DAOSpaceMarine$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/DAOSpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/DAOUser$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/DAO/DAOUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/AbstractCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/AddCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/ClearCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/Command.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/ExitCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/GroupCountingByIdCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/HelpCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/HistoryCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/InfoCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/RemoveAllByHealthCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/RemoveAnyByAchievementsCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/RemoveById.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/RemoveFirstCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/RemoveGreaterCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/SaveCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/ShowCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/commands/UpdateCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/data/Chapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/data/Coordinates.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/data/MeleeWeapon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/data/SpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/CanNotExecuteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/EmptyCollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/FileNotExistException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/IncorrectId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/IncorrectInputInScriptException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/LowHealthException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/MarineNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/MustBeNotEmptyException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/NoAccessToFileException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/NumberOfHeartCountsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/NumberOfMarinesException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/ScriptRecursionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/UnReadException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/UnWriteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/exceptions/WrongArgumentException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/AscerForStartFIle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/Asker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/CollectionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/CommandManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/ConsoleManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/managers/FileManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/run/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/run/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/util/ExchangeClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/util/Exchanger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/util/Handler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/util/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/out/production/classes/util/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/DAO/ConnectionToDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/DAO/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/DAO/DAOSpaceMarine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/DAO/DAOUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/AbstractCommnad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/GroupCountingByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/HistoryCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/RemoveAllByHealthCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/RemoveAnyByAchievementsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/RemoveById.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/RemoveFirstCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/RemoveGreaterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/SaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/commands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/data/Chapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/data/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/data/MeleeWeapon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/data/SpaceMarine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/CanNotExecuteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/EmptyCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/FileNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/IncorrectId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/IncorrectInputInScriptException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/LowHealthException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/MarineNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/MustBeNotEmptyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/NoAccessToFileException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/NumberOfHeartCountsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/NumberOfMarinesException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/ScriptRecursionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/UnReadException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/UnWriteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/exceptions/WrongArgumentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/AscerForStartFIle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/Asker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/CommandManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/ConsoleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/managers/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/run/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/util/ExchangeClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/util/Exchanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/util/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/util/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server7LabWithMulti/src/main/java/util/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/ConnectionToDatabase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/DAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/DAOSpaceMarine$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/DAOSpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/DAOUser$SQLQuery.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/DAO/DAOUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/AbstractCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/AddCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/ClearCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/Command.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/ExitCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/GroupCountingByIdCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/HelpCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/HistoryCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/InfoCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/RemoveAllByHealthCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/RemoveAnyByAchievementsCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/RemoveById.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/RemoveFirstCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/RemoveGreaterCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/SaveCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/ShowCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/commands/UpdateCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/data/Chapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/data/Coordinates.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/data/MeleeWeapon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/data/SpaceMarine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/CanNotExecuteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/EmptyCollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/FileNotExistException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/IncorrectId.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/IncorrectInputInScriptException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/LowHealthException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/MarineNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/MustBeNotEmptyException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/NoAccessToFileException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/NumberOfHeartCountsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/NumberOfMarinesException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/ScriptRecursionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/UnReadException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/UnWriteException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/exceptions/WrongArgumentException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/AscerForStartFIle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/Asker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/CollectionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/CommandManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/ConsoleManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/managers/FileManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/run/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/util/ExchangeClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/util/Exchanger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/util/Handler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/util/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/classes/java/main/util/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/libs/ServerTestJB-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/libs/all-in-one-jar-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/resources/main/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/resources/main/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/tmp/customFatJar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerTestJB/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/BCOMP/BCOMP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/Laba2/Laba2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/TESt/TESt.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/TestPatterns/TestPatterns.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/first/first.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/lab3/lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/second/second.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/third/third.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/untitled1/untitled1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/Лаба №1 попытка 1/Лаба №1 попытка 1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Всё до 7/Обучение/4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/description.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../4/.idea/encodings.xml" beforeDir="false" />
@@ -436,7 +708,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -453,9 +725,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server7Lab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -471,7 +743,7 @@
       <command value="gradle customFatJar" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.Client [customFatJar]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="run.Main" />
       <module name="Client.main" />
@@ -602,7 +874,13 @@
       <workItem from="1619463937014" duration="3246000" />
       <workItem from="1619470953206" duration="312000" />
       <workItem from="1621520112910" duration="28424000" />
-      <workItem from="1621580124646" duration="3514000" />
+      <workItem from="1621580124646" duration="4702000" />
+      <workItem from="1621587646477" duration="10991000" />
+      <workItem from="1621805954647" duration="5380000" />
+      <workItem from="1621903250216" duration="1896000" />
+      <workItem from="1621929170326" duration="1579000" />
+      <workItem from="1621939644972" duration="366000" />
+      <workItem from="1621974767863" duration="306000" />
     </task>
     <servers />
   </component>
@@ -641,26 +919,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619130412017" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621580132653">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621805983137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621580132653" />
-    <state width="726" height="233" key="GridCell.Tab.0.bottom" timestamp="1621583299680">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621805983137" />
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom" timestamp="1621930149776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1621583299680" />
-    <state width="726" height="233" key="GridCell.Tab.0.center" timestamp="1621583299680">
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1621930149776" />
+    <state width="1493" height="240" key="GridCell.Tab.0.center" timestamp="1621930149776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1621583299680" />
-    <state width="726" height="233" key="GridCell.Tab.0.left" timestamp="1621583299680">
+    <state width="1493" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1621930149776" />
+    <state width="1493" height="240" key="GridCell.Tab.0.left" timestamp="1621930149776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1621583299680" />
-    <state width="726" height="233" key="GridCell.Tab.0.right" timestamp="1621583299680">
+    <state width="1493" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1621930149776" />
+    <state width="1493" height="240" key="GridCell.Tab.0.right" timestamp="1621930149776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1621583299680" />
+    <state width="1493" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1621930149776" />
     <state width="724" height="263" key="GridCell.Tab.1.bottom" timestamp="1619470893156">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -677,17 +955,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="724" height="263" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1619470893156" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1618270095673">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1621809778331">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618270095673" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1621809778331" />
     <state x="478" y="116" width="579" height="592" key="find.popup" timestamp="1619462450964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="116" width="579" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1619462450964" />
-    <state x="425" y="186" width="672" height="677" key="run.anything.popup" timestamp="1619468172963">
+    <state x="425" y="186" width="672" height="677" key="run.anything.popup" timestamp="1621930149769">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="186" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1619468172963" />
+    <state x="425" y="186" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1621930149769" />
   </component>
 </project>
