@@ -31,6 +31,6 @@ public abstract class ButtonListeners {
     }
 
     public static void invokeAddCommand() {
-        //MainFrameManager.getInstance().switchPanel(new CreateSpaceMarinePanel().getPanel());
+        MainFrameManager.getInstance().switchPanel(new SpaceMarinePanel().getPanel());
     }
 }
