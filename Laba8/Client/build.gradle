@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version 'SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'run.Main'
+        )
+    }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.swinglabs', name: 'swingx', version: '1.6.1'
+
+}
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'run.Main'
+    }
+    baseName = 'DemoFat'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree() } }
+    with jar
+}

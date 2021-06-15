@@ -1,0 +1,6 @@
+show
+save
+clear
+history
+execute_script skript.txt
+show
