@@ -337,6 +337,38 @@ public class GeneralMenu extends JFrame {
                 ButtonListeners.invokeAddCommand();
             }
         });
+        removeFirstButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonListeners.invokeRemoveFirstCommand();
+            }
+        });
+        removeByIdButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonListeners.invokeRemoveByIdCommand();
+            }
+        });
+        removeAllByHealthButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonListeners.invokeRemoveAllByHealthCommand();
+            }
+        });
+        removeAnyByAchievementsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonListeners.invokeRemoveAnyByAchievementsCommand();
+            }
+        });
+        backToRegistrationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainFrameManager.getInstance().switchPanel(new GeneralMenu().getPanel());
+            }
+        });
+
+
     }
 
     public JPanel getPanel() {

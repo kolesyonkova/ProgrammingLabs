@@ -33,4 +33,48 @@ public abstract class ButtonListeners {
     public static void invokeAddCommand() {
         MainFrameManager.getInstance().switchPanel(new SpaceMarinePanel().getPanel());
     }
+
+    public static void invokeRemoveFirstCommand() {
+        Client.readyToExchange("remove_first", "", null);
+        JOptionPane.showMessageDialog(null, Client.getAnswer());
+    }
+
+    public static void invokeRemoveByIdCommand() {
+        String answer = "";
+        try {
+            String key = JOptionPane.showInputDialog(null, "Input key(id)");
+            Client.readyToExchange("remove_by_id", key, null);
+
+        } catch (Exception e) {
+            answer = e.getMessage();
+        } finally {
+            JOptionPane.showMessageDialog(null, Client.getAnswer());
+        }
+    }
+
+    public static void invokeRemoveAllByHealthCommand() {
+        String answer = "";
+        try {
+            String key = JOptionPane.showInputDialog(null, "Input key(health)");
+            Client.readyToExchange("remove_all_by_health", key, null);
+
+        } catch (Exception e) {
+            answer = e.getMessage();
+        } finally {
+            JOptionPane.showMessageDialog(null, Client.getAnswer());
+        }
+    }
+
+    public static void invokeRemoveAnyByAchievementsCommand() {
+        String answer = "";
+        try {
+            String key = JOptionPane.showInputDialog(null, "Input key(achievements)");
+            Client.readyToExchange("remove_any_by_achievements", key, null);
+
+        } catch (Exception e) {
+            answer = e.getMessage();
+        } finally {
+            JOptionPane.showMessageDialog(null, Client.getAnswer());
+        }
+    }
 }

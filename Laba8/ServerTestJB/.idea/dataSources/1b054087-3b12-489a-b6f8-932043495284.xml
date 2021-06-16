@@ -789,7 +789,7 @@ true posixrules
     <database id="3" parent="1" name="studs">
       <ObjectId>17325</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>34475754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>34475943</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|2191395|2191397|1
 sequence|table|1411283|1411285|1
@@ -3440,8 +3440,6 @@ sequence|table|1623245|1623247|1
 sequence|table|1623274|1623276|1
 sequence|table|1623287|1623289|1
 sequence|table|1726864|1726866|1
-sequence|table|2207252|2207254|1
-sequence|table|2207263|2207265|1
 sequence|table|1603488|1603490|1
 sequence|table|1611495|1611497|1
 sequence|table|1600645|1600647|1
@@ -3496,9 +3494,11 @@ sequence|table|1727063|1727065|1
 sequence|table|1727092|1727094|1
 sequence|table|2158122|2158124|1
 sequence|table|2158158|2158160|1
+sequence|table|2207387|2207389|1
 sequence|table|1669377|1669379|1
 sequence|table|1669392|1669394|1
 sequence|table|1669407|1669409|1
+sequence|table|2207398|2207400|1
 sequence|table|1832157|1832159|1
 sequence|table|1832174|1832176|1
 sequence|table|1834971|1834973|1
@@ -3509,6 +3509,7 @@ sequence|table|1669422|1669424|1
 sequence|table|1641334|1641336|1
 sequence|table|1641373|1641375|1
 sequence|table|1642317|1642319|1
+sequence|table|2207339|2207341|1
 sequence|table|1642340|1642342|1
 sequence|table|1642351|1642353|1
 sequence|table|1669458|1669460|1
@@ -3541,6 +3542,7 @@ sequence|table|2118633|2118635|1
 sequence|table|2118645|2118647|1
 sequence|table|1659498|1659500|1
 sequence|table|2198161|2198163|1
+sequence|table|2207377|2207379|1
 sequence|table|1659506|1659508|1
 sequence|table|1642399|1642401|1
 sequence|table|1659522|1659524|1
@@ -24066,7 +24068,7 @@ sequence|table|2204089|2204072|1
       <ObjectId>1609450</ObjectId>
       <StateNumber>31729867</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>34475755</IntrospectionStateNumber>
+      <IntrospectionStateNumber>34475944</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <schema id="3896" parent="3" name="s311705">
@@ -26135,130 +26137,130 @@ sequence|table|2204089|2204072|1
     <language id="4306" parent="3" name="plpgsql"/>
     <language id="4307" parent="3" name="sql"/>
     <sequence id="4308" parent="3895" name="SpaceMarine_id_seq">
-      <ObjectId>2207263</ObjectId>
+      <ObjectId>2207398</ObjectId>
       <Owner>s311704</Owner>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
     </sequence>
     <sequence id="4309" parent="3895" name="User_id_seq">
-      <ObjectId>2207252</ObjectId>
+      <ObjectId>2207387</ObjectId>
       <Owner>s311704</Owner>
-      <StateNumber>34475752</StateNumber>
+      <StateNumber>34475940</StateNumber>
     </sequence>
     <table id="4310" parent="3895" name="SpaceMarine">
-      <ObjectId>2207265</ObjectId>
+      <ObjectId>2207400</ObjectId>
       <Owner>s311704</Owner>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
     </table>
     <table id="4311" parent="3895" name="User">
-      <ObjectId>2207254</ObjectId>
+      <ObjectId>2207389</ObjectId>
       <Owner>s311704</Owner>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
     </table>
     <column id="4312" parent="4310" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <DefaultExpression>nextval(&apos;&quot;SpaceMarine_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="4313" parent="4310" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4314" parent="4310" name="coordinatex">
       <Position>3</Position>
       <DataType>numeric|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1700</TypeId>
     </column>
     <column id="4315" parent="4310" name="coordinatey">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="4316" parent="4310" name="creation_date">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4317" parent="4310" name="health">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="4318" parent="4310" name="heartcount">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="4319" parent="4310" name="achievement">
       <Position>8</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="4320" parent="4310" name="meleeweapon">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4321" parent="4310" name="chaptername">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4322" parent="4310" name="parentlegion">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4323" parent="4310" name="marinescount">
       <Position>12</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="4324" parent="4310" name="world">
       <Position>13</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4325" parent="4310" name="usercreateid">
       <Position>14</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>34475753</StateNumber>
+      <StateNumber>34475941</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="4326" parent="4310" name="SpaceMarine_pkey">
-      <ObjectId>2207272</ObjectId>
-      <StateNumber>34475753</StateNumber>
+      <ObjectId>2207407</ObjectId>
+      <StateNumber>34475941</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="4327" parent="4310" name="SpaceMarine_pkey">
-      <ObjectId>2207273</ObjectId>
-      <StateNumber>34475753</StateNumber>
+      <ObjectId>2207408</ObjectId>
+      <StateNumber>34475941</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>SpaceMarine_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="4328" parent="4310" name="SpaceMarine_usercreateid_fkey">
-      <ObjectId>2207274</ObjectId>
-      <StateNumber>34475753</StateNumber>
+      <ObjectId>2207409</ObjectId>
+      <StateNumber>34475941</StateNumber>
       <ColNames>usercreateid</ColNames>
-      <RefTableId>2207254</RefTableId>
+      <RefTableId>2207389</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>User</RefTableName>
       <RefKeyName>User_pkey</RefKeyName>
@@ -26268,32 +26270,32 @@ sequence|table|2204089|2204072|1
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>34475752</StateNumber>
+      <StateNumber>34475940</StateNumber>
       <DefaultExpression>nextval(&apos;&quot;User_id_seq&quot;&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="4330" parent="4311" name="login">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475752</StateNumber>
+      <StateNumber>34475940</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="4331" parent="4311" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>34475752</StateNumber>
+      <StateNumber>34475940</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="4332" parent="4311" name="User_pkey">
-      <ObjectId>2207261</ObjectId>
-      <StateNumber>34475752</StateNumber>
+      <ObjectId>2207396</ObjectId>
+      <StateNumber>34475940</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="4333" parent="4311" name="User_pkey">
-      <ObjectId>2207262</ObjectId>
-      <StateNumber>34475752</StateNumber>
+      <ObjectId>2207397</ObjectId>
+      <StateNumber>34475940</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>User_pkey</UnderlyingIndexName>
